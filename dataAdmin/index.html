@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+<!-- <html lang="en" ng-app="seniorApp" class="ng-cloak" ng-controller="homepageController" class="no-js lt-ie9 lt-ie8 lt-ie7"> 
+   <html lang="en" ng-app="seniorApp" class="no-js lt-ie9 lt-ie8">
+   <html lang="en" ng-app="seniorApp" class="no-js lt-ie9">   -->
+<html lang="en" ng-app="seniorApp"  ng-controller="mainController" class="ng-cloak"> 
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Emoha</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/">
+<link rel="stylesheet" href="app/app.css">
+<style>
+.swal-overlay--show-modal .swal-modal {
+    opacity: 1;
+    pointer-events: auto;
+    box-sizing: border-box;
+    -webkit-animation: showSweetAlert .3s;
+    animation: showSweetAlert .3s;
+    will-change: transform;
+    background-color: red;
+}
+.swal-title {
+    color: white;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    display: block;
+    padding: 13px 16px;
+    font-size: 27px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 0;
+}
+.swal-text {
+    font-size: 18px;
+    position: relative;
+    float: none;
+    line-height: normal;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+    font-weight: 400;
+    color: white;
+    max-width: calc(100% - 20px);
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+.swal-button {
+    background-color: white;
+    color: black;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 24px;
+    margin: 0;
+    cursor: pointer;
+}
+</style>
+<!-- favicon
+  ============================================ -->
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="../assets/images/admin_img/favicon.ico">
+<!-- Google Fonts
+  ============================================ -->
+<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+<!-- Bootstrap CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+<!-- Bootstrap CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+<!-- owl.carousel CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/owl.carousel.css">
+<link rel="stylesheet" href="../assets/css/owl.theme.css">
+<link rel="stylesheet" href="../assets/css/owl.transitions.css">
+<!-- animate CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/animate.css">
+<!-- normalize CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/normalize.css">
+<!-- meanmenu icon CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/meanmenu.min.css">
+<!-- main CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/main.css">
+<!-- morrisjs CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/morrisjs/morris.css">
+<!-- mCustomScrollbar CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/scrollbar/jquery.mCustomScrollbar.min.css">
+<!-- metisMenu CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/metisMenu/metisMenu.min.css">
+<link rel="stylesheet" href="../assets/css/metisMenu/metisMenu-vertical.css">
+<!-- calendar CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/calendar/fullcalendar.min.css">
+<link rel="stylesheet" href="../assets/css/calendar/fullcalendar.print.min.css">
+ <!-- modals CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/modals.css">
+<!-- forms CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/form/all-type-forms.css">
+       
+<link rel="stylesheet" href="../assets/css/touchspin/jquery.bootstrap-touchspin.min.css">
+   
+<link rel="stylesheet" href="../assets/css/datapicker/datepicker3.css">
+<!-- forms CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/form/themesaller-forms.css">
+<!-- colorpicker CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/colorpicker/colorpicker.css">
+<!-- select2 CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/select2/select2.min.css">
+<!-- chosen CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/chosen/bootstrap-chosen.css">
+<!-- ionRangeSlider CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/ionRangeSlider/ion.rangeSlider.css">
+<link rel="stylesheet" href="../assets/css/ionRangeSlider/ion.rangeSlider.skinFlat.css">
+       
+<link rel="stylesheet" href="../assets/css/editor/select2.css">
+<link rel="stylesheet" href="../assets/css/editor/datetimepicker.css">
+<link rel="stylesheet" href="../assets/css/editor/bootstrap-editable.css">
+<link rel="stylesheet" href="../assets/css/editor/x-editor-style.css">
+<!-- normalize CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/data-table/bootstrap-table.css">
+<link rel="stylesheet" href="../assets/css/data-table/bootstrap-editable.css">
+<!-- style CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/style.css">
+<!-- responsive CSS
+  ============================================ -->
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<!-- modernizr JS
+  ============================================ -->
+<script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
+<link rel="stylesheet" href="../assets/css/stepper.css">
+<!-- tabs CSS
+============================================ -->
+<link rel="stylesheet" href="../assets/css/tabs.css">
+<!-- notifications CSS
+		============================================ -->
+<link rel="stylesheet" href="../assets/css/notifications/Lobibox.min.css">
+<link rel="stylesheet" href="../assets/css/notifications/notifications.css">
+<link rel="stylesheet" href="../assets/css/chatbox.css">
+<!-- <link rel="stylesheet" href="../assets/css/sweartAlert.css"> -->
+<!-- <link rel="stylesheet" href="assets/css/login.css"> -->
+</head>
+
+<body >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="../assets/js/jquery.mCustomScrollbar.js"></script>
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css"> -->
+    <link href="../assets/css/fullcalendar.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.19.5/select.min.css">
+    <link href="../assets/css/jquery.datetimepicker.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../assets/css/angular-socialshare.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/angular-csp.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.2/js/bootstrap-select.min.js"></script>
+    <script src="../assets/js/waves.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <script src="../assets/dependencies/angular-ui-notification/angular-ui-notification.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <script src="../assets/dependencies/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="../assets/dependencies/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="../assets/dependencies/angular-bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.1/angular-sanitize.min.js"></script>
+    <script src="../assets/dependencies/select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/checklist-model/0.8.0/checklist-model.min.js"></script>
+    <script src="../assets/dependencies/calendar.js"></script>
+    <script src="../assets/dependencies/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/satellizer/0.14.1/satellizer.min.js"></script>
+    <script src="../assets/dependencies/angular-scroll.min.js"></script>
+    <script src="../assets/dependencies/dirPagination.js"></script>
+    <!-- <script src="../assets/dependencies/datetime-picker.js"></script> -->
+    <script src="../assets/js/slick.js"></script>
+    <!-- <script src="../assets/js/sweart.min.js"></script> -->
+    <!-- <script src="assets/js/angular-recaptcha.min.js"></script> -->
+    <!-- <script src="assets/js/angular-socialshare.min.js"></script> -->
+    
+    <noscript>
+        <META HTTP-EQUIV="Refresh" CONTENT="0;URL=isJSD.html">
+    </noscript>
+    
+     <div class="sideMenu" ng-include="'../templates/common/sideMenu.tpl.html'"></div>
+
+      <!-- Mobile Menu start -->
+      <div class="mobile-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul class="mobile-menu-nav">
+                                    <li><a data-toggle="collapse" data-target="#Charts" href="#">Customer <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul class="collapse dropdown-header-top">   
+                                            <li><a href="/registration">Registration</a></li>
+                                            <li><a href="/customer">Customer</a></li>
+                                            <li><a href="#productDetail/">Product Detail</a></li>
+                                            <li><a href="#productCart/">Product Cart</a></li>
+                                            <li><a href="#productPayment/">Product Payment</a></li>
+                                            <li><a href="#analytics/">Analytics</a></li>
+                                            <li><a href="#widgets/">Widgets</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="demo" class="collapse dropdown-header-top">
+                                            <li><a href="mailbox.html">Inbox</a>
+                                            </li>
+                                            <li><a href="mailbox-view.html">View Mail</a>
+                                            </li>
+                                            <li><a href="mailbox-compose.html">Compose Mail</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="others" class="collapse dropdown-header-top">
+                                            <li><a href="file-manager.html">File Manager</a></li>
+                                            <li><a href="contacts.html">Contacts Client</a></li>
+                                            <li><a href="projects.html">Project</a></li>
+                                            <li><a href="project-details.html">Project Details</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                            <li><a href="404.html">404 Page</a></li>
+                                            <li><a href="500.html">500 Page</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
+                                            <li><a href="google-map.html">Google Map</a>
+                                            </li>
+                                            <li><a href="data-maps.html">Data Maps</a>
+                                            </li>
+                                            <li><a href="pdf-viewer.html">Pdf Viewer</a>
+                                            </li>
+                                            <li><a href="x-editable.html">X-Editable</a>
+                                            </li>
+                                            <li><a href="code-editor.html">Code Editor</a>
+                                            </li>
+                                            <li><a href="tree-view.html">Tree View</a>
+                                            </li>
+                                            <li><a href="preloader.html">Preloader</a>
+                                            </li>
+                                            <li><a href="images-cropper.html">Images Cropper</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="Chartsmob" class="collapse dropdown-header-top">
+                                            <li><a href="bar-charts.html">Bar Charts</a>
+                                            </li>
+                                            <li><a href="line-charts.html">Line Charts</a>
+                                            </li>
+                                            <li><a href="area-charts.html">Area Charts</a>
+                                            </li>
+                                            <li><a href="rounded-chart.html">Rounded Charts</a>
+                                            </li>
+                                            <li><a href="c3.html">C3 Charts</a>
+                                            </li>
+                                            <li><a href="sparkline.html">Sparkline Charts</a>
+                                            </li>
+                                            <li><a href="peity.html">Peity Charts</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="Tablesmob" class="collapse dropdown-header-top">
+                                            <li><a href="static-table.html">Static Table</a>
+                                            </li>
+                                            <li><a href="data-table.html">Data Table</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="formsmob" class="collapse dropdown-header-top">
+                                            <li><a href="basic-form-element.html">Basic Form Elements</a>
+                                            </li>
+                                            <li><a href="advance-form-element.html">Advanced Form Elements</a>
+                                            </li>
+                                            <li><a href="password-meter.html">Password Meter</a>
+                                            </li>
+                                            <li><a href="multi-upload.html">Multi Upload</a>
+                                            </li>
+                                            <li><a href="tinymc.html">Text Editor</a>
+                                            </li>
+                                            <li><a href="dual-list-box.html">Dual List Box</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="Appviewsmob" class="collapse dropdown-header-top">
+                                            <li><a href="basic-form-element.html">Basic Form Elements</a>
+                                            </li>
+                                            <li><a href="advance-form-element.html">Advanced Form Elements</a>
+                                            </li>
+                                            <li><a href="password-meter.html">Password Meter</a>
+                                            </li>
+                                            <li><a href="multi-upload.html">Multi Upload</a>
+                                            </li>
+                                            <li><a href="tinymc.html">Text Editor</a>
+                                            </li>
+                                            <li><a href="dual-list-box.html">Dual List Box</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                        <ul id="Pagemob" class="collapse dropdown-header-top">
+                                            <li><a href="login.html">Login</a>
+                                            </li>
+                                            <li><a href="register.html">Register</a>
+                                            </li>
+                                            <li><a href="lock.html">Lock</a>
+                                            </li>
+                                            <!-- <li><a href="password-recovery.html">Password Recovery</a> -->
+                                            <!-- </li> -->
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu end -->
+
+     <div ng-view></div>
+    <script src="../app/app.js"></script>
+    <script src="../app/services/mainService.js"></script>
+    <script src="../app/services/customerService.js"></script>
+    <script src="../app/services/addClusterManagerService.js"></script>
+    <script src="../app/services/addRegionManagerService.js"></script>
+    <script src="../app/services/homeCareRegistrationService.js"></script>
+    <script src="../app/services/managerService.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.js"></script>
+    <script src="../app/home/services/loginService.js"></script>
+    <script src="../app/services/zoneService.js"></script>
+    <script src="../app/services/addCommunityManagerService.js"></script>
+    <script src="../app/services/addNurseService.js"></script>
+    <script src="../app/services/addAttendentService.js"></script>
+    <script src="../app/services/addResponderService.js"></script>
+    <script src="../app/services/addCareManagerService.js"></script>
+    <script src="../app/services/addCareManagerService.js"></script>
+    <script src="../app/services/addCareCoordinatorService.js"></script>
+    <script src="../app/services/careManagerService.js"></script>
+    <script src="../app/services/responderService.js"></script>
+    <script src="../app/services/nurseService.js"></script>
+    <script src="../app/services/attendentService.js"></script>
+    <script src="../app/services/assignDutyService.js"></script>
+    <script src="../app/services/emergencyCasesService.js"></script>
+    <script src="../app/services/sensorConfigService.js"></script>
+    <script src="../app/services/addDataAdminService.js"></script>
+    <script src="../app/services/editCustomerDetailsService.js"></script>
+    <script src="../app/services/addCustomerService.js"></script>
+    <script src="../app/services/editclusterManagerService.js"></script>
+    <!-- <script src="../app/services/editCommunityManagerService.js"></script> -->
+    <script src="../app/services/editCommunityManagerService.js"></script>
+    <script src="../app/services/editCareManagerService.js"></script>
+    <script src="../app/services/homeLogoutMapService.js"></script>
+    <script src="../app/services/assignResponderService.js"></script>
+    
+    <script src="../app/home/controllers/login.js"></script>
+    <script src="../common/services/LocalStorageService.js" defer></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <!-- <script src="node_modules/socket.io-client/dist/socket.io.js"></script> -->
+
+    <script src="../app/controllers/mainController.js"></script>
+    <script src="../app/controllers/homeCareRegistration.js"></script>
+    <script src="../app/controllers/comprehensivePackageRegistration.js"></script>
+    <script src="../app/controllers/customer.js"></script>
+   <script src="../app/controllers/customerDetail.js"></script>
+    <script src="../app/controllers/customerRecord.js"></script>
+    <script src="../app/controllers/careManager.js"></script>
+    <script src="../app/controllers/careManagerDetails.js"></script>
+    <script src="../app/controllers/monitoring.js"></script>
+    <script src="../app/services/monitoringService.js"></script>
+    <script src="../app/controllers/editRegionManager.js"></script>
+    <script src="../app/services/editRegionManagerService.js"></script>
+    <script src="../app/services/editResponderService.js"></script>
+
+    <!-- <script src="../app/controllers/careManagerRecord.js"></script> -->
+    <script src="../app/controllers/addCareManager.js"></script>
+    <script src="../app/controllers/summaryAddCareManager.js"></script>
+    <script src="../app/controllers/responder.js"></script>
+    <script src="../app/controllers/responderDetails.js"></script>
+    <script src="../app/controllers/addResponder.js"></script>
+    <script src="../app/controllers/summaryAddResponder.js"></script>
+    <script src="../app/controllers/nurse.js"></script>
+    <script src="../app/controllers/nurseDetails.js"></script>
+    <script src="../app/controllers/addNurse.js"></script>
+    <script src="../app/controllers/editCareManagerDetail.js"></script>
+    <!-- <script src="../app/controllers/summaryAddNurse.js"></script> -->
+    <script src="../app/controllers/attendent.js"></script>
+    <script src="../app/controllers/attendentDetails.js"></script>
+    <script src="../app/controllers/addAttendent.js"></script>
+    <script src="../app/controllers/summaryAddAttendent.js"></script>
+    <script src="../app/controllers/duallist.js"></script>
+    <script src="../app/controllers/zone.js"></script>
+    <script src="../app/controllers/dataAdmin.js"></script>
+    <script src="../app/controllers/manager.js"></script>
+    <script src="../app/controllers/addDataAdmin.js"></script>
+    <script src="../app/controllers/dataAdminDetails.js"></script>
+    <script src="../app/controllers/dataAdminSettings.js"></script>
+    <script src="../app/controllers/addRegionManager.js"></script>
+    <script src="../app/controllers/addClusterManager.js"></script>
+    <script src="../app/controllers/managerDetails.js"></script>
+    <script src="../app/controllers/editCustomerDetails.js"></script>
+    <script src="../app/controllers/assignDuty.js"></script>
+    <script src="../app/controllers/careGiver.js"></script>
+    <script src="../app/controllers/clusterManagerDetail.js"></script>
+    <script src="../app/controllers/addCommunityManager.js"></script>
+    <script src="../app/controllers/regionManagerDetail.js"></script>
+    <script src="../app/controllers/communityManagerDetail.js"></script>
+    <script src="../app/controllers/addCareCoordinator.js"></script>
+    <script src="../app/controllers/emergencyCases.js"></script>
+    <script src="../app/controllers/sensorConfig.js"></script>
+    <script src="../app/controllers/emergencycaseDetail.js"></script>
+    <script src="../app/controllers/addCustomer.js"></script>
+    <script src="../app/controllers/addCustomer.js"></script>
+    <script src="../app/controllers/editclusterManager.js"></script>
+   <script src="../app/controllers/re.js"></script>
+    <script src="../app/controllers/editCommunityManager.js"></script>
+    <script src="../app/controllers/homeLogoutMap.js"></script>
+    <script src="../app/controllers/assignResponder.js"></script>
+    <script src="../app/core/version/version.js"></script>
+    <script src="../app/core/version/version-directive.js"></script>
+    <script src="../app/core/version/interpolate-filter.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsjnx-nBWQ9KMBxgP4WW3_nRBYdLDwllo">
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-md5/0.1.10/angular-md5.js"></script>
+    <script>
+      function opentheSwal() {
+          swal(
+              'Good job!',
+              'You clicked the button!',
+              'success'
+          );
+          $(".swal2-modal").css('background-color', '#000');//Optional changes the color of the sweetalert 
+          $(".swal2-container.in").css('background-color', 'rgba(43, 165, 137, 0.45)');//changes the color of the overlay
+      }
+      
+  </script>
+    <!-- <script>
+    
+    </script> -->
+    <!-- <div id="map"></div>
+    <script>
+      
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 28.4250, lng: 150.644},
+          zoom: 17
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+      
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+         
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script> -->
+ 
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ4VyzvMW3zIc1TXKQRcJuo-rfVxN8UJ4&callback=initMap"></script> -->
+
+ <!-- <div class="footer" ng-include="'templates/common/footer.tpl.html'"></div> -->
+ <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ4VyzvMW3zIc1TXKQRcJuo-rfVxN8UJ4&callback=initMap"></script> --> -->
+
+    <!-- jquery
+        ============================================ -->
+    <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="assets/js/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="assets/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="assets/js/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+        ============================================ -->
+    <script src="assets/js/metisMenu/metisMenu.min.js"></script>
+    <script src="assets/js/metisMenu/metisMenu-active.js"></script>
+    <!-- morrisjs JS
+        ============================================ -->
+    <!-- <script src="assets/js/morrisjs/raphael-min.js"></script>
+    <script src="assets/js/morrisjs/morris.js"></script>
+    <script src="assets/js/morrisjs/morris-active.js"></script>
+    <script src="assets/js/morrisjs/morris-active-pro.js"></script> -->
+    <!-- morrisjs JS
+        ============================================ -->
+    <script src="assets/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="assets/js/sparkline/jquery.charts-sparkline.js"></script>
+    <script src="assets/js/sparkline/sparkline-active.js"></script>
+    <!-- <script src="assets/js/google.maps/google.maps-active.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiNUO68DkrsFKFz744_LWMqCNI_GqYciQ&callback=initMap"></script> -->
+    <!-- calendar JS
+        ============================================ -->
+    <!-- <script src="assets/js/data-map/d3.min.js"></script>
+    <script src="assets/js/data-map/topojson.js"></script>
+    <script src="assets/js/data-map/datamaps.all.min.js"></script>
+    <script src="assets/js/data-map/data-maps-active.js"></script> -->
+
+    <script src="assets/js/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="assets/js/touchspin/touchspin-active.js"></script>
+    <!-- colorpicker JS
+	============================================ -->
+    <script src="assets/js/colorpicker/jquery.spectrum.min.js"></script>
+    <script src="assets/js/colorpicker/color-picker-active.js"></script>
+    <!-- datapicker JS
+    ============================================ -->
+    <script src="assets/js/datapicker/bootstrap-datepicker.js"></script>
+    <script src="assets/js/datapicker/datepicker-active.js"></script>
+    <!-- input-mask JS
+    ============================================ -->
+    <script src="assets/js/input-mask/jasny-bootstrap.min.js"></script>
+    <!-- chosen JS
+    ============================================ -->
+    <script src="assets/js/chosen/chosen.jquery.js"></script>
+    <script src="assets/js/chosen/chosen-active.js"></script>
+    <!-- select2 JS
+    ============================================ -->
+    <script src="assets/js/select2/select2.full.min.js"></script>
+    <script src="assets/js/select2/select2-active.js"></script>
+    <!-- data table JS
+	============================================ -->
+    <script src="assets/js/data-table/bootstrap-table.js"></script>
+    <script src="assets/js/data-table/tableExport.js"></script>
+    <script src="assets/js/data-table/data-table-active.js"></script>
+    <script src="assets/js/data-table/bootstrap-table-editable.js"></script>
+    <script src="assets/js/data-table/bootstrap-editable.js"></script>
+    <script src="assets/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="assets/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="assets/js/data-table/bootstrap-table-export.js"></script>
+    <!--  editable JS
+		============================================ -->
+    <script src="assets/js/editable/jquery.mockjax.js"></script>
+    <script src="assets/js/editable/mock-active.js"></script>
+    <script src="assets/js/editable/select2.js"></script>
+    <script src="assets/js/editable/moment.min.js"></script>
+    <script src="assets/js/editable/bootstrap-datetimepicker.js"></script>
+    <script src="assets/js/editable/bootstrap-editable.js"></script>
+    <script src="assets/js/editable/xediable-active.js"></script>
+    
+    <!-- ionRangeSlider JS
+    ============================================ -->
+    <script src="assets/js/ionRangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/ionRangeSlider/ion.rangeSlider.active.js"></script>
+    <!-- rangle-slider JS
+    ============================================ -->
+    <script src="assets/js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="assets/js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
+    <script src="assets/js/rangle-slider/rangle-active.js"></script>
+    <!-- knob JS
+    ============================================ -->
+    <script src="assets/js/knob/jquery.knob.js"></script>
+    <script src="assets/js/knob/knob-active.js"></script>
+    <!-- tab JS
+    ============================================ -->
+    <script src="assets/js/tab.js"></script>
+    <!-- icheck JS
+	============================================ -->
+    <script src="assets/js/icheck/icheck.min.js"></script>
+    <script src="assets/js/icheck/icheck-active.js"></script>
+
+    <script src="assets/js/calendar/moment.min.js"></script>
+    <script src="assets/js/calendar/fullcalendar.min.js"></script>
+    <script src="assets/js/calendar/fullcalendar-active.js"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- notification JS
+	============================================ -->
+    <script src="assets/js/notifications/Lobibox.js"></script>
+    <script src="assets/js/notifications/notification-active.js"></script>
+    <!-- main JS
+    ============================================ -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

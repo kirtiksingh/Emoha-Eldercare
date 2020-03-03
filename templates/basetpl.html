@@ -1,0 +1,414 @@
+<div class="all-content-wrapper" ng-controller="mainController">
+    <br>
+<div class="widget-program-bg" >
+    <br>
+    <div id="Assign" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-login-form-inner">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="basic-login-inner modal-basic-inner">
+                                                                      
+                                        <form name="form">
+                                           
+                                                <div class="form-group-inner" ng-init="customerData();">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                <label class="login2">Customer</label>
+                                                            </div>
+                                                            
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <!-- <input type="text" class="form-control" ng-model="addRegion.region_name"/> -->
+                                                                            <select ng-model="emrgCaseData.customerId" class="form-control"  ng-options="customerData.cust_name for customerData in customerDataDetails" >
+                                                                                <option value="" >Select Customer</option>   
+                                                                                
+                                                                           </select>
+                                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                    <label class="login2">Customer Code</label>
+                                                                </div>
+                                                                
+                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                <input type="text" class="form-control" ng-model="emrgCaseData.customerId.cust_code" readonly/>
+                                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                        <label class="login2">Address</label>
+                                                                    </div>
+                                                                    
+                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                    <textarea class="form-control" type="text" ng-model="emrgCaseData.customerId.cust_address" readonly></textarea>
+                                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                            <label class="login2">Emergency Type</label>
+                                                                        </div>
+                                                                        
+                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                    <select ng-model="selectedemrgtype" class="form-control" ng-options="emrgTypedata.name for emrgTypedata in emrgType"  >
+                                                                                        <!-- <option value="">Select Emergency Type</option> -->
+                                                                                    </select>
+                                                                                  </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group-inner">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                <label class="login2">Emergency Description</label>
+                                                                            </div>
+                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                <textarea class="form-control" name="eDesc" type="text" ng-model="emrgCaseData.emg_desc"  ng-minlength=3 ng-maxlength=30 ng-pattern="/^[a-zA-Z]+$/" required></textarea>
+                                                                                <span ng-show="form.eDesc.$error.required && form.eDesc.$touched" class="help-block" style="font-size: 13px">Emergency Description is required.</span>
+                                                                                <span ng-show="form.eDesc.$error.minlength" class="help-block" style="font-size: 13px">Your Description must be greater than 3 characters.</span>
+                                                                                <span ng-show="form.eDesc.$error.maxlength" class="help-block" style="font-size: 13px">Your Description be less than 30 characters.</span>
+                                                                             
+                                                                            </div>            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group-inner" >
+                                                                            <div class="row">
+                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                    <label class="login2">Emergency Location</label>
+                                                                                </div>
+                                                                                
+                                                                                <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                        <input type="text" class="form-control" placeholder="91"/>
+                                                                                    </div> -->
+                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                            <input type="text" name="location" class="form-control" placeholder="Address" ng-model="e" ng-minlength=3 ng-maxlength=30 ng-pattern="/^[a-zA-Z]+$/" required/>
+                                                                                            <span ng-show="form.location.$error.required && form.location.$touched" class="help-block" style="font-size: 13px">Emergency Location is required.</span>
+                                                                                <span ng-show="form.location.$error.minlength" class="help-block" style="font-size: 13px">Your Emergency Location must be greater than 3 characters.</span>
+                                                                                <span ng-show="form.location.$error.maxlength" class="help-block" style="font-size: 13px">Your Emergency Location be less than 30 characters.</span>
+                                                                                            <!-- {{mobile.rm_id}} -->
+                                                                                        </div>
+                                                                                       
+                                                                            </div>
+                                                                        </div>
+                                            <div class="login-btn-inner">
+                                               
+                                                <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                        <div class="login-horizental">
+                                                            <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                            <a class="btn btn-primary next-step" class="close" data-dismiss="modal" ng-click="assignEmergencyData();"  ng-disabled="form.location.$error.required||form.location.$error.minlength||form.location.$error.maxlength||form.eDesc.$error.required||form.eDesc.$error.minlength||form.eDesc.$error.maxlength" >Submit</a>
+                                                            <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                            <!-- <a class="btn btn-default prev-step" style="color:black;">Cancel</a> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="widget-program-bg">
+            <div class="container-fluid" ng-init="emergencyDetailsData();">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <!-- <div class="hpanel hbgred responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>EMERGENCY NEW</h3>
+                                    <p class="text-big font-light" style="color:white;" >
+                                       {{total}}
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="hpanel hbgred responsive-mg-b-30">
+                                <div class="panel-body">
+                                    <div class="stats-title pull-left">
+                                        <h4>EMERGENCY NEW</h4>
+                                    </div>
+                                    <div class="stats-icon pull-right">
+                                        <i class="fa fa-user-md" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="m-t-xl">
+                                            <p class="text-big font-light" style="color:white;font-size: 30px;" >
+                                                    {{total}}
+                                                 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="hpanel responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div  style="overflow-x:auto; height: 305px;">
+                                    <table class="table table" ng-init="emergencyDetailsData();">
+                                        <!-- <thead>
+                                            <tr>
+                                                <center style="font-size:15px;background-color: rgb(255, 125, 92);">NEW</center>
+                                            </tr>
+                                        </thead> -->
+                                        <tbody>
+                                            <tr ng-repeat="emergency in emergencyDetails">
+                                                     <td><center><a href="/tracking/" style="color:black">{{emergency.cust_name}}-{{emergency.emg_type}}</a></center></td></a>
+                                            </tr>
+                                            <tr ng-if="(total == 0)">
+                                                <td><center><a href="/tracking/" style="color:red;">No Emeregency Case</a></center></td></a>
+                                       </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <br>
+                       <center>
+                            <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:white;border-color:white;">
+                                    <a class="btn btn-primary next-step button" href="#NewEmergency" data-toggle="modal" data-target="#Assign" style="background-color:red;border-color:red;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Emergency Cases</a>
+                                          
+                                </div>
+                        </center>
+                 
+                       <!-- <button type="button" onclick="opentheSwal();">OK</button>                                        -->
+                       <!-- <button type="button" style="background-color:#ff470d;border-color:#ff470d;" class="btn btn-primary next-step" ng-click="add();">Add</button> -->
+                      <br>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                        <!-- <div class="hpanel hbgyellow responsive-mg-b-30" >
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>EMRG UNDERGOING</h3>
+                                    <p class="text-big font-light" ng-init="monitoringdata();" style="color:white;" >
+                                      {{totalProcessing}}
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="hpanel hbgyellow responsive-mg-b-30">
+                                <div class="panel-body">
+                                    <div class="stats-title pull-left">
+                                        <h4>EMRG UNDERGOING</h4>
+                                    </div>
+                                    <div class="stats-icon pull-right">
+                                        <i class="fa fa-ambulance" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="m-t-xl">
+                                            <p class="text-big font-light" ng-init="monitoringdata();" style="color:white;font-size: 30px;" >
+                                                    {{totalProcessing}}
+                                                  </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="hpanel responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="table-responsive" style="height:305px;">
+                                    <table class="table ">
+                                        <!-- <thead>
+                                            <tr>
+                                                <center style="font-size:15px;background-color: rgba(255, 202, 27, 0.76);">Processing</center>
+                                            </tr>
+                                        </thead> -->
+                                        <tbody>
+                                                <tr ng-repeat="monitoringname in monitoring" ng-if="(monitoringname.emg_status == 'processing')">
+                                                         <td><center><a href="/tracking/" style="color:black">{{monitoringname.cust_name}}-{{monitoringname.emg_type}}</a></center></td></a>
+                                                </tr>
+                                                <tr ng-if="(totalProcessing == 0)">
+                                                    <td><center><a href="/tracking/" style="color:red;">No Emeregency Case UnderGoing</a></center></td></a>
+                                           </tr>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <br>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" ng-init="custmerDetails();">
+                        <!-- <div class="hpanel hbggreen responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>CUSTOMER</h3>
+                                    <p class="text-big font-light" style="color:white;">
+                                        {{totalCustomer}}
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="hpanel hbggreen responsive-mg-b-30">
+                                <div class="panel-body">
+                                    <div class="stats-title pull-left">
+                                        <h4>CUSTOMER</h4>
+                                    </div>
+                                    <div class="stats-icon pull-right">
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="m-t-xl">
+                                            <p class="text-big font-light" style="color:white;font-size: 30px;">
+                                                    {{totalCustomer}}
+                                                </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="hpanel responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="table-responsive" style="height:305px;">
+                                    <table class="table">
+                                        <!-- <thead>
+                                            <tr>
+                                                <center style="font-size:15px;background-color: lightgreen;">NAME</center>
+                                            </tr>
+                                        </thead> -->
+                                        <tbody ng-init="custmerDetails();">
+                                            <tr ng-repeat="customer in customerDetails">
+                                                <td><center><a href="/customer/" style="color:black">{{customer.cust_name}}</a></center></td>
+                                               
+                                            </tr>
+                                            <tr ng-if="(totalCustomer == 0)">
+                                                <td><center><a href="/tracking/" style="color:red;">No Customer</a></center></td></a>
+                                       </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <!-- <div class="hpanel hbgblue">
+                            <div class="panel-body">
+                                <div class="text-center content-bg-pro">
+                                    <h3>RESPONDER</h3>
+                                    <p class="text-big font-light" ng-init="getResponderData();" style="color:white;">
+                                     {{totalResponder}}
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="hpanel hbgblue responsive-mg-b-30">
+                                <div class="panel-body">
+                                    <div class="stats-title pull-left">
+                                        <h4>RESPONDER</h4>
+                                    </div>
+                                    <div class="stats-icon pull-right">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="m-t-xl">
+                                            <p class="text-big font-light" ng-init="getResponderData();" style="color:white;font-size: 30px;">
+                                                    {{totalResponder}}
+                                                   </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="hpanel responsive-mg-b-30">
+                            <div class="panel-body">
+                                <div class="table-responsive" style="height:305px;">
+                                    <table class="table">
+                                        <thead >
+                                            <!-- <tr >
+                                                   
+                                                <center style="font-size:15px;background-color: lightblue;">ON DUTY</center>
+                                            </tr> -->
+                                        </thead>
+                                        <tbody ng-init="getResponderData();">
+                                                <tr ng-repeat="res in responderDetailsData">
+                                                    <td><center><a href="/responder/" style="color:black">{{res.rsp_name}}-<span style="color:red;">On Duty</span>-</a></center></td>
+                                                   
+                                                </tr>
+                                                <tr ng-if="(totalResponder == 0)">
+                                                    <td><center><a href="/tracking/" style="color:red;">No Responder</a></center></td></a>
+                                           </tr>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                       
+                <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+<!-- <div class="alert alert-danger" ng-init="myFunction();">
+    <strong>Emergency!</strong> {{datavalue}}
+  </div> -->
+    <!-- <div class="container-fluid" ng-init="loginByAdmin()">
+        <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="hpanel hbgred">
+                            <div class="panel-body" style="padding-bottom: 0px;">
+                                    <center><h4>EMERGENCY</h4></center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="hpanel hbgblue responsive-mg-b-30">
+                                <div class="panel-body" style="padding-bottom: 0px;">
+                                        <center><h4>DUTY ROSTER</h4></center> 
+                                       
+                                       
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="hpanel hbgyellow responsive-mg-b-30">
+                                <div class="panel-body" style="padding-bottom: 0px;">
+                                        <center><h4>SERVICE REQUEST</h4></center>
+                                </div>
+                            </div>
+                        </div>
+           
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="hpanel hbggreen responsive-mg-b-30">
+                    <div class="panel-body" style="padding-bottom: 0px;">
+                            <center><h4>CUSTOMER</h4></center>
+                          
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+    </div> -->
+</div>
+<br>
+
+    
+   
+    
+        
+        
+</div>
+
+<script>
+    function opentheSwal() {
+        swal(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+        );
+        $(".swal2-modal").css('background-color', '#000');//Optional changes the color of the sweetalert 
+        $(".swal2-container.in").css('background-color', 'rgba(43, 165, 137, 0.45)');//changes the color of the overlay
+    }
+</script>

@@ -1,0 +1,564 @@
+
+<div class="all-content-wrapper">
+  <div class="data-table-area mg-tb-15" >
+    <!-- <div class="alert alert-danger">
+        <strong>Danger!</strong> {{name}}
+      </div> -->
+    <!---Data Admin Settings-->
+    <div id="DataAdminSettings"  class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+                <div class="modal-body" >
+                    <div class="modal-login-form-inner">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                               
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="basic-login-inner modal-basic-inner">
+                                                                  
+                                    <form action="#">
+                              
+                                      <div class="form-group-inner">
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width: 170px;">
+                                                    <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                </div>
+                                                
+                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <label class="login2" style="font-weight:normal">Tiger Nixon</label>
+                                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                                        <label class="login2 pull-right pull-right-pro">Email*</label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <label class="login2" style="font-weight:normal">abcd@gmail.com</label>
+                                                    </div>
+                                                    
+                                                           
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                                            <label class="login2 pull-right pull-right-pro">User Name</label>
+                                                        </div>
+                                                        
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                <label class="login2" style="font-weight:normal">Tiger Nixon 234</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                      <div class="form-group-inner">
+                                          <div class="row">
+                                              <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                  <label class="login2 pull-right pull-right-pro">Password</label>
+                                              </div>
+                                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                   <input type="password" class="form-control"/>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                    <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Change</button>
+                                                       
+                                             </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group-inner">
+                                            <div class="row">
+                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                    <label class="login2 pull-right pull-right-pro">Status</label>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                                                    <div class="form-select-list">
+                                                            <select class="form-control custom-select-value" name="account">
+                                                                    <option>Active</option>
+                                                                    <option>Inactive</option>
+                                                                   
+                                                                </select>
+                                                        </div>
+                                            </div>    
+                                            </div>
+                                        </div>
+                                        <div class="login-btn-inner">
+                                                                           
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="login-horizental">
+                                                        <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                        <a class="btn btn-primary next-step">Save</a>
+                                                        <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                        <a class="btn btn-default prev-step" style="color:black;">Cancel</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                                                        
+                                       
+                                  </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!---Data Admin Settings-->
+
+          <div class="container-fluid" ng-init="testdata();">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="sparkline13-list">
+                          <div class="sparkline13-hd">
+                              <div class="main-sparkline13-hd">
+                                  <h5>Admin >> <span class="table-project-n">Data Admin</span></h5>
+                                      <!-- <div class="columns columns-right btn-group pull-right">
+                                              <button class="btn btn-default" type="button" name="toggle" aria-label="toggle" title="Toggle"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i></button><div class="keep-open btn-group" title="Columns">
+                                              <button type="button" aria-label="columns" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button>
+                                              <ul class="dropdown-menu" role="menu">
+                                                  <li role="menuitem">
+                                                      <label>
+                                                          <input type="checkbox" data-field="id" value="1" checked="checked">
+                                                           ID
+                                                       </label>
+                                                   </li>
+                                                   <li role="menuitem"><label>
+                                                       <input type="checkbox" data-field="name" value="2" checked="checked"> Product Title</label>
+                                                   </li>
+                                                   <li role="menuitem">
+                                                       <label>
+                                                           <input type="checkbox" data-field="company" value="3" checked="checked"> Stock</label>
+                                                   </li>
+                                                   <li role="menuitem">
+                                                       <label><input type="checkbox" data-field="price" value="4" checked="checked"> Price</label>
+                                                   </li><li role="menuitem">
+                                                       <label><input type="checkbox" data-field="date" value="5" checked="checked"> Date</label>
+                                                   </li>
+                                                   <li role="menuitem">
+                                                       <label><input type="checkbox" data-field="task" value="6" checked="checked"> Status</label>
+                                                   </li>
+                                                   <li role="menuitem">
+                                                       <label><input type="checkbox" data-field="email" value="7" checked="checked"> Total Sales</label>
+                                                   </li>
+                                                   <li role="menuitem"><label><input type="checkbox" data-field="action" value="8" checked="checked"> Action</label>
+                                                   </li>
+                                               </ul>
+                                           </div>
+                                           <div class="export btn-group">
+                                               <button class="btn btn-default dropdown-toggle" aria-label="export type" title="Export data" data-toggle="dropdown" type="button" aria-expanded="false">
+                                                   <i class="glyphicon glyphicon-export icon-share"></i> <span class="caret"></span>
+                                               </button>
+                                               <ul class="dropdown-menu" role="menu">
+                                                   <li role="menuitem" data-type="json">
+                                                       <a href="javascript:void(0)">JSON</a></li><li role="menuitem" data-type="xml">
+                                                           <a href="javascript:void(0)">XML</a></li><li role="menuitem" data-type="csv">
+                                                               <a href="javascript:void(0)">CSV</a></li><li role="menuitem" data-type="txt">
+                                                                   <a href="javascript:void(0)">TXT</a></li><li role="menuitem" data-type="sql">
+                                                                       <a href="javascript:void(0)">SQL</a></li><li role="menuitem" data-type="excel">
+                                                                           <a href="javascript:void(0)">MS-Excel</a>
+                                                                       </li>
+                                                                   </ul>
+                                                               </div>
+                                                           </div> -->
+                                                           <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right search">
+                                                                  <input class="form-control" type="text" placeholder="Search">
+                                                              </div> -->
+                                                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                                                                <!-- <label for="search">Search:</label> -->
+                                                                <input ng-model="q" id="search" class="form-control" placeholder="Search">
+                                                              </div>
+                                                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+                                                                <!-- <label for="search">items per page:</label> -->
+                                                                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                                                              </div>
+                                 
+                                  
+                              </div>
+                          </div>
+                          <div class="sparkline13-graph">
+                              <div class="datatable-dashv1-list custom-datatable-overright">
+                                  <div class="row">
+                                          <ul class="list-inline">
+                                                  <li></li>
+                                                  
+                                                  <li>
+                                                          <a href="/data_admin/adddata_admin" class="btn btn-primary next-step" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Data Admin</a>
+                                                      </li>
+                                                 
+                                                  
+                                                </ul>     
+                                  </div>
+                                  <br>
+                                 <div class="container-fluid">
+                                      
+                                      <table id="customerTable" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                              <thead>
+                                                <tr>     
+                                                  <th class="th-sm" onclick="sortTable(0)"><center>Emp ID</center>
+                                                  </th>
+                                                  <th class="th-sm" onclick="sortTable(1)"><center>Name</center>
+                                                  </th>
+                                                  <th class="th-sm" ><center>Mobile No.</center>
+                                                  </th>
+                                                  <th class="th-sm" ><center>Status</center>
+                                                  </th>
+                                                  <!-- <th class="th-sm"><center>Emergency Contact(Name)</center>
+                                                  </th>
+                                                  <th class="th-sm"><center>Emergency Contact(Mobile No.)</center>
+                                                  </th> -->
+                                                  <th class="th-sm" ><center>Details</center>
+                                                  </th>
+                                                  <th class="th-sm"><center>Settings</center>
+                                                  </th>
+                                                 
+                                                </tr>
+                                              </thead>
+                                              <tbody >
+                                                <tr dir-paginate="meal in meals | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+                                                  {{ meal }}
+                                                  <!-- <td><center>
+                                                    <ul>
+                                                      <li dir-paginate="meal in meals | filter:q | itemsPerPage: pageSize" current-page="currentPage">{{ meal }}</li>     
+                                                    </ul>
+                                                  </center></td>
+                                                  <td><center>Tiger Nixon</center></td>
+                                                  <td><center>789456123</center></td>
+                                                  <td><center>Active</center></td> -->
+                                                  <!-- <td><center>Tiger Nixon</center></td>
+                                                  <td><center>789456123</center></td> -->
+                                                  <!-- <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                  <td>
+                                                      <center>
+                                                          <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                  <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                          </div>
+                                                      </center>   
+                                                  </td> -->
+                                               
+                                                </tr>
+                                                <tr>
+                                                  <td><center>5467</center></td>
+                                                  <td><center>Garrett Winters</center></td>
+                                                  <td><center>874561223</center></td>
+                                                  <td><center>Active</center></td>
+                                                  <!-- <td><center>Garrett Winters</center></td>
+                                                  <td><center>874561223</center></td> -->
+                                                  <td><a href=""><center><button type="button" >Details</button></center></a></td>
+                                                  <td>
+                                                      <center>
+                                                          <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                  <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                          </div>
+                                                      </center> 
+                                                  </td>
+                                              
+                                                </tr>
+                                                <tr>
+                                                  <td><center>2345</center></td>
+                                                  <td><center>Ashton Cox</center></td>
+                                                  <td><center>12369854</center></td>
+                                                  <td><center>Pending</center></td>
+                                                  <!-- <td><center>Ashton Cox</center></td>
+                                                  <td><center>12369854</center></td>
+                                                  -->
+                                                  <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                  <td>
+                                                      <center>
+                                                          <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                  <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                          </div>
+                                                      </center> 
+                                                  </td>
+                                                 
+                                                </tr>
+                                                <tr>
+                                                      
+                                                      <td><center>7899</center></td>
+                                                      <td><center>Howard Hatfield</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Active</center></td>
+                                                      <!-- <td><center>Howard Hatfield</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                 
+                                                </tr>
+                                                <tr>
+                                                     
+                                                      <td><center>5467</center></td>
+                                                      <td><center>Jackson Bradshaw</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Active</center></td>
+                                                      <!-- <td><center>Jackson Bradshaw</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                      
+                                                </tr>
+                                                <tr>
+                                                      
+                                                      <td><center>1789</center></td>
+                                                      <td><center>Jena Gaines</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Active</center></td>
+                                                      <!-- <td><center>Jena Gaines</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                      
+                                                </tr>
+                                                <tr>
+                                                      
+                                                      <td><center>9865</center></td>
+                                                      <td><center>Jenette Caldwell</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Pending</center></td>
+                                                      <!-- <td><center>Jenette Caldwell</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                      
+                                                </tr>
+                                                <tr>
+                                                     
+                                                      <td><center>2389</center></td>
+                                                      <td><center>Ashton Cox</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Pending</center></td>
+                                                      <!-- <td><center>Ashton Cox</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                      
+                                                </tr>
+                                                <tr>
+                                                      
+                                                      <td><center>3423</center></td>
+                                                      <td><center>Ashton Cox</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Pending</center></td>
+                                                      <!-- <td><center>Ashton Cox</center></td>
+                                                      <td><center>456321789</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                      
+                                                      <td><center>7912</center></td>
+                                                      <td><center>Jennifer Acosta</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Active</center></td>
+                                                      <!-- <td><center>Tiger Nixon</center></td>
+                                                      <td><center>456321789</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                      
+                                                </tr>
+                                                <tr>
+                                                      
+                                                      <td><center>1178</center></td>
+                                                      <td><center>Ashton Cox</center></td>
+                                                      <td><center>12369854</center></td>
+                                                      <td><center>Active</center></td>
+                                                      <!-- <td><center>Tiger Nixon</center></td>
+                                                      <td><center>456321789</center></td>
+                                                      -->
+                                                      <td><a href="/data_admin/data_admin_details"><center><button type="button">Details</button></center></a></td>
+                                                      <td>
+                                                          <center>
+                                                              <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                      <button type="button"><a style="color:black;" href="/data_admin" data-toggle="modal" data-target="#DataAdminSettings">Settings</a></button>  
+                                                              </div>
+                                                          </center> 
+                                                      </td>
+                                                      
+                                                </tr>
+                                               
+                                              </tbody>
+                                              <tfoot>
+                                                <tr>
+                                                  <th><center>Emp ID</center>
+                                                  </th>
+                                                  <th><center>Name</center>
+                                                  </th>
+                                                  <th><center>Mobile No.</center>
+                                                  </th>
+                                                  <th><center>Status</center>
+                                                  </th>
+                                                  <!-- <th><center>Emergency Contact(Name)</center>
+                                                  </th>
+                                                  <th><center>Emergency Contact(Mobile No.)</center>
+                                                  </th> -->
+                                                  <th><center>Details</center>
+                                                  </th>
+                                                  <th><center>Settings</center>
+                                                  </th>
+                                                </tr>
+                                              </tfoot>
+
+                                            </table>
+
+                                            <div class="row">
+                                                <h4>Total count : 50
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right">
+                                                  <div ng-init="test();" class="other-controller">
+                                                    <div class="text-center">
+                                                    <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)">
+                                      
+                                                      <ul class="pagination" ng-if="1 < pages.length || !autoHide">
+                                                          <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
+                                                              <a href="" ng-click="setCurrent(1)">&laquo;</a>
+                                                          </li>
+                                                          <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }">
+                                                              <a href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+                                                          </li>
+                                                          <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+                                                              <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+                                                          </li>
+                                                      
+                                                          <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">
+                                                              <a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+                                                          </li>
+                                                          <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+                                                              <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+                                                          </li>
+                                                      </ul>
+                                                      
+                                                    </dir-pagination-controls>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                </h4>
+                                              </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+<script>
+function sortTable(n) {
+var table,
+rows,
+switching,
+i,
+x,
+y,
+shouldSwitch,
+dir,
+switchcount = 0;
+table = document.getElementById("customerTable");
+switching = true;
+//Set the sorting direction to ascending:
+dir = "asc";
+/*Make a loop that will continue until
+no switching has been done:*/
+while (switching) {
+//start by saying: no switching is done:
+switching = false;
+rows = table.getElementsByTagName("TR");
+/*Loop through all table rows (except the
+first, which contains table headers):*/
+for (i = 1; i < rows.length - 1; i++) { //Change i=0 if you have the header th a separate table.
+//start by saying there should be no switching:
+shouldSwitch = false;
+/*Get the two elements you want to compare,
+one from current row and one from the next:*/
+x = rows[i].getElementsByTagName("TD")[n];
+y = rows[i + 1].getElementsByTagName("TD")[n];
+/*check if the two rows should switch place,
+based on the direction, asc or desc:*/
+if (dir == "asc") {
+  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+    //if so, mark as a switch and break the loop:
+    shouldSwitch = true;
+    break;
+  }
+} else if (dir == "desc") {
+  if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+    //if so, mark as a switch and break the loop:
+    shouldSwitch = true;
+    break;
+  }
+}
+}
+if (shouldSwitch) {
+/*If a switch has been marked, make the switch
+and mark that a switch has been done:*/
+rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+switching = true;
+//Each time a switch is done, increase this count by 1:
+switchcount++;
+} else {
+/*If no switching has been done AND the direction is "asc",
+set the direction to "desc" and run the while loop again.*/
+if (switchcount == 0 && dir == "asc") {
+  dir = "desc";
+  switching = true;
+}
+}
+}
+}
+
+</script>

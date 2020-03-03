@@ -1,0 +1,440 @@
+<div class="all-content-wrapper">
+        <div class="container-fluid">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                      <!-- <form role="form"> -->
+                        <div class="tab-content">
+                          <div class="tab-pane fade in active" role="tabpanel">    
+                              <br>
+                              
+                              <h5><a ng-href="/attendent/" style="color: #747474">Attendent >> </a>Add New Attendent</h5>   
+                            <div class="sparkline12-graph">
+                              <div class="basic-login-form-ad">  
+                                  <div class="row">    
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                          <div class="all-form-element-inner">  
+                                              <form action="#">
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="width:150px;">
+                                                                    <label class="login2" style="font-size:15px;color:#ff470d;">Personal Details</label>
+                                                                </div>
+                                                              <hr style="width:82%;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                        <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                                    </div>
+                                                                    
+                                                                            <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.attd_name"/>
+                                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                  <!-- <div class="form-group-inner">
+                                                      <div class="row">
+                                                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                              <label class="login2 pull-right pull-right-pro">Profile Picture</label>
+                                                          </div>
+                                                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                              <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                  <div class="input append-small-btn">
+                                                                      <div class="file-button">
+                                                                          Upload
+                                                                          <input type="file" >
+                                                                      </div>
+                                                                      <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div> -->
+                                                  
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                    <label class="login2 pull-right pull-right-pro">Mobile No.*</label>
+                                                                </div>
+                                                                
+                                                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                        <input type="text" class="form-control" value="+91" readonly/>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                            <input type="text" class="form-control" placeholder="123456789" ng-model="addAttendentdata.attd_mob"/>
+                                                                        </div>
+                                                                       
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                        <label class="login2 pull-right pull-right-pro">Alternate Mobile</label>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                            <input type="text" class="form-control" value="+91" readonly/>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                                <input type="text" class="form-control" placeholder="123456789" ng-model="addAttendentdata.attd_alt_mob_no"/>
+                                                                            </div>
+                                                                           
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                            <label class="login2 pull-right pull-right-pro">Email-ID</label>
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                <input type="text" class="form-control" placeholder="abcd@gmail.com" ng-model="addAttendentdata.attd_email"/>
+                                                                            </div>
+                                                                    </div>
+                                                                </div>
+                                                  <div class="form-group-inner">
+                                                      <div class="row">
+                                                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                              <label class="login2 pull-right pull-right-pro">Address</label>
+                                                          </div>
+                                                          <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                <textarea class="form-control" type="text" placeholder="Address1" ng-model="addAttendentdata.attd_address"></textarea>
+                                                            </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group-inner">
+                                                      <div class="row">
+                                                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                              <!-- <label class="login2 pull-right pull-right-pro">Address*</label> -->
+                                                          </div>
+                                                          <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                <textarea class="form-control" type="text" placeholder="Address1" ng-model="addAttendentdata.attd_address1"></textarea>
+                                                            </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="date-picker-inner">
+                                                        <div class="row">
+    
+                                                         <div class="form-group data-custon-pick" id="data_1">
+                                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                           
+                                                             <label class="login2 pull-right pull-right-pro"><b>Date Of Birth</b></label>
+                                                             </div>
+                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                    <div class="input-group" style="width:200px"  ng-init="init()">
+                                                                            <input type="text" class="form-control" uib-datepicker-popup="dd.MM.yyyy" ng-model="addAttendentdata.attd_dob" is-open="isDatepickerOpen" datepicker-options="datepickerOptions"  close-text="Close" alt-input-formats="altInputFormats"/>
+                                                                            <span class="input-group-btn">
+                                                                              <button type="button" class="btn btn-default" ng-click="isDatepickerOpen = !isDatepickerOpen">
+                                                                                <i class="glyphicon glyphicon-calendar"></i>
+                                                                              </button>
+                                                                            </span>
+                                                                          </div>
+                                                             </div>
+                                                            </div> 
+                                                             
+                                                         </div>
+                                                     </div> 
+                                                     <br>
+                                                     <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                    <label class="login2 pull-right pull-right-pro">Gender</label>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                    <!-- <div class="form-select-list">
+                                                                            <select class="form-control custom-select-value" name="account">
+                                                                                    <option>Male</option>
+                                                                                    <option>Female</option>
+                                                                                   
+                                                                                </select>
+                                                                        </div> -->
+                                                                        <select ng-model="selectedgender"  class="form-control" ng-options="gender.name for gender in gender"  >
+                                                                            </select>
+                                                            </div>    
+                                                            </div>
+                                                        </div>
+                                                      <div class="form-group-inner">
+                                                          <div class="row">
+                                                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                  <label class="login2 pull-right pull-right-pro">Language Proficiency</label>
+                                                              </div>
+                                                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                                                    <div class="bt-df-checkbox pull-left">
+                                                                     
+                                                                            <label style="margin-right: 15px;" ng-repeat="lan in languages">
+                                                                                <input type="checkbox" ng-model="lan.selected" value={{lan.name}} /> {{lan.name}}
+                                                                                <!-- {{albumNameArray}} -->
+                                                                            </label>
+                                                                         <input type="checkbox" name="language" id="proficiency" ng-model="languageproficiency">
+                                                                                <label for="proficiency">Other</label>
+                                                                                
+                                                                                <label for="usePortal"></label>
+                                                                                <input type="text" id="usePortal" class="form-control" ng-model="languageOther" ng-show="languageproficiency"/>
+                                                              </div>
+                                                                </div>
+                                                               
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group-inner" ng-init="getClusterData();">
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <label class="login2 pull-right pull-right-pro">Cluster*</label>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                    <!-- <div class="form-select-list">
+                                                                            <select class="form-control custom-select-value" name="account">
+                                                                                    <option>Responder</option>
+                                                                                    <option>Paramedic</option>
+                                                                                    <option>Physiotherapist</option>
+                                                                                   
+                                                                                </select>
+                                                                        </div> -->
+                                                                        <select ng-model="addAttendentdata.clusterData"  class="form-control" ng-options="getCluster.cluster_name for getCluster in getClusterManagerdata"  >
+                                                                                <option value="">Select Cluster</option>
+                                                                            </select>
+                                                            </div>    
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                        <label class="login2 pull-right pull-right-pro">Duty Hours*</label>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                        <!-- <div class="form-select-list">
+                                                                                <select class="form-control custom-select-value" name="account">
+                                                                                        <option>4 hrs</option>
+                                                                                        <option>6 hrs</option>
+                                                                                        <option>8 hrs</option>
+                                                                                       
+                                                                                    </select>
+                                                                            </div> -->
+                                                                            <select ng-model="selecteddutyhour"  class="form-control" ng-options="dutyhour.name for dutyhour in dutyhours"  >
+                                                                                </select>
+                                                                </div>    
+                                                                </div>
+                                                            </div>
+                                                     
+                                                      <div class="form-group-inner">
+                                                          <div class="row">
+                                                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                  <label class="login2 pull-right pull-right-pro">Shift</label>
+                                                              </div>
+                                                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12" >
+                                                                    <div class="bt-df-checkbox pull-left">
+                                                                            <label style="margin-right: 15px;" ng-repeat="shift in shifts">
+                                                                                    <input type="checkbox" ng-model="shift.selected" value={{shift.name}} /> {{shift.name}}
+                                                                                    <!-- {{albumNameArray}} -->
+                                                                                </label>
+                                                                    </div>
+                                                          </div>    
+                                                          </div>
+                                                      </div>
+                                                      <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:200px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">KYC Document Upload
+                                                                    </label>
+                                                                    
+                                                                </div>
+                                                                <hr style="width:78%;">
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Aadhar Card</label>
+                                                                </div>
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                        <div class="input append-small-btn">
+                                                                            <div class="file-button">
+                                                                                Upload
+                                                                                <input type="file" >
+                                                                            </div>
+                                                                            <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;">PAN Card</label>
+                                                                </div>
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                        <div class="input append-small-btn">
+                                                                            <div class="file-button">
+                                                                                Upload
+                                                                                <input type="file" >
+                                                                            </div>
+                                                                            <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Driving Licence</label>
+                                                                </div>
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                        <div class="input append-small-btn">
+                                                                            <div class="file-button">
+                                                                                Upload
+                                                                                <input type="file" >
+                                                                            </div>
+                                                                            <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Voter ID</label>
+                                                                </div>
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                        <div class="input append-small-btn">
+                                                                            <div class="file-button">
+                                                                                Upload
+                                                                                <input type="file" >
+                                                                            </div>
+                                                                            <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Passport</label>
+                                                                </div>
+                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                        <div class="input append-small-btn">
+                                                                            <div class="file-button">
+                                                                                Upload
+                                                                                <input type="file" >
+                                                                            </div>
+                                                                            <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                     
+                                                       <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:200px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">Educational Qualication</label>
+                                                                </div>
+                                                              <hr style="width:78%;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro"></label>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" value="Degree/Diploma" readonly/>
+                                                                </div> 
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <input type="text" class="form-control" Value="Year of Passing" readonly/>
+                                                                </div> 
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" Value="University" readonly/>
+                                                                </div> 
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro"></label>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.attd_education_1"/>
+                                                                </div> 
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.year1"/>
+                                                                </div> 
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.university1"/>
+                                                                </div> 
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro"></label>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.attd_education_2"/>
+                                                                </div> 
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.year2"/>
+                                                                </div> 
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.university2"/>
+                                                                </div> 
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                    <label class="login2 pull-right pull-right-pro"></label>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.attd_education_3"/>
+                                                                </div> 
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.year3"/>
+                                                                </div> 
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                    <input type="text" class="form-control" ng-model="addAttendentdata.university3"/>
+                                                                </div> 
+                                                              
+                                                            </div>
+                                                        </div>
+                                                 
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      
+                            <ul class="list-inline pull-right">
+                              <li>
+                                 <a class="btn btn-primary next-step" ng-click="addAttendent();" >Add</a>
+                              </li>
+                              <li>
+                                <a class="btn btn-default prev-step" style="color:black;" href="/attendent/">Cancel</a>
+                              </li>
+                             
+                            </ul>
+                          </div>
+                          
+                          
+                          
+                        </div>
+                      <!-- </form> -->
+                    
+              
+              
+                  </div>
+                </div>
+              </div>
+    </div>
+    

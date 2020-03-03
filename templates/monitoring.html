@@ -1,0 +1,879 @@
+
+<div class="all-content-wrapper">
+    <div class="data-table-area mg-tb-15" style="font-family: Calibri, Helvetica, sans-serif;">
+      <!---Care Manager Settings-->
+      <div id="ViewResponder" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-login-form-inner">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="basic-login-inner modal-basic-inner">
+                                                                      
+                                        <form action="#">
+                                           
+                                                <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                                                                <label class="login2">Responder Name*</label>
+                                                            </div>
+                                                            
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <label>{{viewResponderDetails[0].rsp_name}}</label>
+                                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                                                                    <label class="login2">Responder Mobile No</label>
+                                                                </div>
+                                                                
+                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <label>{{viewResponderDetails[0].res_mob}}</label>
+                                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div id="Assigndata" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" ng-click="pagerefresh();"><i class="fa fa-close"></i></a>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-login-form-inner">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                               
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="basic-login-inner modal-basic-inner">
+                                                                  
+                                    <form action="#">
+                                       
+                                            <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                            <label class="login2">Emg. Case No</label>
+                                                        </div>
+                                                        
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                        <input type="text" class="form-control" value="{{assigndataDetails[0].emg_case_no}}" readonly/>
+                                                                        <!-- <select ng-model="emrgCaseData.customerId" class="form-control"  ng-options="customerData.cust_name for customerData in customerDataDetails" >
+                                                                            <option value="" >Select Customer</option>   
+                                                                            
+                                                                       </select> -->
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                <label class="login2">Emg. Date & Time</label>
+                                                            </div>
+                                                            
+                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <input type="text" class="form-control"  value="{{assigndataDetails[0].emg_date_time.slice(0,10) }}" readonly/>
+                                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                    <label class="login2">Customer Name</label>
+                                                                </div>
+                                                                
+                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <input type="text" class="form-control"  value="{{assigndataDetails[0].cust_name}}" readonly/>
+                                                                        </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                        <label class="login2">Emergency Location</label>
+                                                                    </div>
+                                                                    
+                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                <input type="text" class="form-control"  value="{{assigndataDetails[0].emg_location}}" readonly/>
+                                                                   
+                                                                              </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                            <label class="login2">Customer Mobile No.</label>
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <input type="text" class="form-control"  value="{{assigndataDetails[0].cust_mob}}" readonly/>
+                                                                   
+                                                                        </div>            
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group-inner" >
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                <label class="login2">Emergency Type</label>
+                                                                            </div>
+                                                                            
+                                                                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                    <input type="text" class="form-control" placeholder="91"/>
+                                                                                </div> -->
+                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                        <input type="text" class="form-control" value="{{assigndataDetails[0].emg_type}}" readonly/>
+                                                                                        <!-- {{mobile.rm_id}} -->
+                                                                                    </div>
+                                                                                   
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group-inner" >
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                <label class="login2">Emergency Description</label>
+                                                                            </div>
+                                                                            
+                                                                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                    <input type="text" class="form-control" placeholder="91"/>
+                                                                                </div> -->
+                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                        <input type="text" class="form-control" value="{{assigndataDetails[0].emg_desc}}" readonly/>
+                                                                                        <!-- {{mobile.rm_id}} -->
+                                                                                    </div>
+                                                                                   
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group-inner" ng-init="getResponderData();" >
+                                                                        <div class="row">
+                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                <label class="login2">Assign To</label>
+                                                                            </div>
+                                                                            
+                                                                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                    <input type="text" class="form-control" placeholder="91"/>
+                                                                                </div> -->
+                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                         <select ng-model="responderdata.responderId" class="form-control"  ng-options="responder.rsp_name for responder in responderDetails" >
+                                                                                <option value="" >Select Responder</option>   
+                                                                                
+                                                                           </select>
+                                                                                    </div>
+                                                                        </div>
+                                                                    </div>
+                                        <div class="login-btn-inner">
+                                           
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="login-horizental">
+                                                        <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                        <a class="btn btn-primary next-step" class="close" data-dismiss="modal" ng-click="assignResponderData();">Submit</a>
+                                                        <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                        <!-- <a class="btn btn-default prev-step" style="color:black;">Cancel</a> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="View" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-close-area modal-close-df">
+                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-login-form-inner">
+                            <div class="row">
+                                <div class="container-fluid">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="basic-login-inner modal-basic-inner">
+                                              <div class="table-responsive">
+                                                      <table class="table table-striped table-bordered">
+                                                       
+                                                          <tbody style="font-size:10px;">
+                                                              <tr>
+                                                                 <td colspan="2">Basic Details</td>
+                                                              </tr>
+                                                            <tr>
+                                                              <td>Name</td>
+                                                              <td>{{viewdataDetails[0].cust_name}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Address</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].cust_address}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Mobile No</td>
+                                                              <td>{{viewdataDetails[0].cust_mob}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Emergency Type</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].emg_type}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Emergency Location</td>
+                                                              <td>{{viewdataDetails[0].emg_location}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Date & Time</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].emg_date_time |date: "MM/dd/yyyy hh:mm:ss a"}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Geolocation</td>
+                                                              <td>{{viewdataDetails[0].emg_location}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Source Of Info</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].emg_source}}</td>
+                                                            </tr>
+                                                            
+                                                          </tbody>
+                                                        </table>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                                        <div class="basic-login-inner modal-basic-inner">
+                                              <table class="table table-striped table-bordered" >
+                                                   
+                                                        <tbody style="font-size:10px;">
+                                                            <tr>
+                                                               <td colspan="2">Emergency Contact</td>
+                                                            </tr>
+                                                          
+                                                          <tr>
+                                                            <td>Primary Contact </td>
+                                                            <td>{{viewdataDetails[0].pri_emg_name}}</td>
+                                                           
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Mobile(Primary Contact)</td>
+                                                            <!-- <td>Moe</td> -->
+                                                            <td>{{viewdataDetails[0].pri_emg_mob}}</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Availability</td>
+                                                            <td>{{viewdataDetails[0].pri_emg_availability}}</td>
+                                                           
+                                                          </tr>
+                                                          <tr>
+                                                              <td colspan="2">
+                                                                      Secondary Contact
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Mobile(Secondary Contact)</td>
+                                                            <!-- <td>Moe</td> -->
+                                                            <td>{{viewdataDetails[0].secd_emg_mob}}</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Availability</td>
+                                                            <td>{{viewdataDetails[0].secd_emg_availability}}</td>
+                                                           
+                                                          </tr>
+                                                          <tr>
+                                                              <td colspan="2">
+                                                                      Next To Kin
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Mobile</td>
+                                                            <!-- <td>Moe</td> -->
+                                                            <td>{{viewdataDetails[0].nok_emg_mob}}</td>
+                                                          </tr>
+                                                          
+                                                        </tbody>
+                                                      </table>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                            <!-- <div class="row"> -->
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="hpanel hbgredmonitoring responsive" >
+                                                            <div class="panel-body" style="border-radius:10px;height:40px;font-family: Calibri, Helvetica, sans-serif;color:black;">
+                                                                   
+                                                                    <!-- <p class="text-big font-light pull-right"> -->
+                                                                      <!-- <div class="container-fluid"> -->
+                                                                            <h5><i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:20px;"></i>
+                                                                                &nbsp;&nbsp;Emergency Call / Alarm Received</h5>
+                                                                          <!-- </div> -->
+                                                                    <!-- </p> -->
+                                                                        
+                                                                </div>
+                                                            </div><br>
+                                                    </div>
+                                                <!-- </div> -->
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="hpanel hbgredmonitoring responsive" >
+                                                            <div class="panel-body" style="border-radius:10px;height:40px;font-family: Calibri, Helvetica, sans-serif;color:black;">
+                                                                            <h5><i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:20px;"></i>
+                                                                                <!-- <span ng-if="(flagValue1 == 1)"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:red;font-size:20px;"></i></span> -->
+                                                                                &nbsp;&nbsp;Responder On the Way</h5>
+                                                                </div>
+                                                            </div> <br>
+                                                    </div>
+                                      
+                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="hpanel hbgredmonitoring responsive" >
+                                                <div class="panel-body" style="border-radius:10px;height:40px;font-family: Calibri, Helvetica, sans-serif;color:black;">
+                                                                <h5><i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:20px;"></i>
+                                                                    <!-- <span ng-if="((flagValue1 == 2) || (flagValue1 < 2 ))"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:red;font-size:20px;"></i></span> -->
+                                                                    &nbsp;&nbsp; Responder Reached</h5>
+                                                    </div>
+                                                </div><br>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="hpanel hbgredmonitoring responsive" >
+                                                    <div class="panel-body" style="border-radius:10px;height:40px;font-family: Calibri, Helvetica, sans-serif;color:black;">
+                                                                    <h5><i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:20px;"></i>
+                                                                        <!-- <span ng-if="((flagValue1 == 3) || (flagValue1 < 3 ))"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:red;font-size:20px;"></i></span> -->
+                                                                        &nbsp;&nbsp;Emergency Support UnderWay</h5>
+                                                        </div>
+                                                    </div><br>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="hpanel hbgredmonitoring responsive" >
+                                                        <div class="panel-body" style="border-radius:10px;height:40px;font-family: Calibri, Helvetica, sans-serif;color:black;">
+                                                                        <h5><i class="fa fa-check-circle" aria-hidden="true" style="color:green;font-size:20px;"></i>
+                                                                            <!-- <span ng-if="((flagValue1 == 4) || (flagValue1 < 4 ))"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:red;font-size:20px;"></i></span> -->
+                                                                            &nbsp;&nbsp;Emergency Closed</h5>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                    </div>
+                                </div>
+                                <br>
+                               
+                              </div>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <div id="Remark" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-close-area modal-close-df">
+                  <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+              </div>
+              <div class="modal-body">
+                  <div class="modal-login-form-inner">
+                      
+                      <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="basic-login-inner modal-basic-inner">
+                                                                
+                                  <form name="" >
+                                     
+                                      <div class="outerbg" >
+                                          <div class
+                                            <div class="chatboxout">
+                                                    <div class="chatboxin" ng-if="(RemarkdataDetails == '')">
+                                                            <div class="chat-container">
+                                                              <div class="chat-respond msg" >
+                                                                <div class="flippd" >
+                                                                  <strong></strong>
+                                                                  <div class="chatmsg" style="margin-left:50px;">No Remarks
+                                                                  </div>
+                                                                  <br>
+                                                                  <div class="pull-right"><small></small>
+                                                                </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                              <div class="chatboxin" ng-if="(RemarkdataDetails != '')">
+                                                <div class="chat-container" ng-repeat="Remark in RemarkdataDetails">
+                                                  <div class="chat-respond msg" >
+                                                    <div class="flippd" >
+                                                      <strong>{{Remark.r_user}}</strong>
+                                                      <div class="chatmsg" style="margin-left:50px;">{{Remark.remark}}
+                                                      </div>
+                                                      <br>
+                                                      <div class="pull-right"><small>{{Remark.r_datetime | date:'dd MMMM yyyy hh:mm:ss a'}}</small>
+                                                    </div>
+                                                    </div>
+                                                  </div>
+                                                  <!-- <div class="chat-respond img"><img src="https://s24.postimg.org/j4ruz10hh/chat_avatar_09.png"></div> -->
+                                                </div>
+                                          
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <br>
+                                          <div class="form-group-inner" >
+                                              <div class="row">
+                                                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" >
+                                                      <input type="text" class="form-control" placeholder="Type Message" ng-model="addRemarkvalue.remark">
+                                                  </div>
+                                                  
+                                                  
+                                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:80px;">
+                                                          <a class="btn btn-primary next-step" ng-click="addRemark();">Send</a>
+                                                          <!-- <a class="btn btn-primary next-step" ng-click="addRegion();">Cancel</a> -->
+                                                      </div>
+                                                      <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:80px;">
+                                                          <a class="btn btn-primary next-step" >Cancel</a>
+                                                      </div> -->
+                                                      
+                                              </div>
+                                          </div>
+                                      <div class="login-btn-inner">
+                                         
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="Update" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-close-area modal-close-df">
+                  <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+              </div>
+              <div class="modal-body">
+                  <div class="modal-login-form-inner">
+                      <div class="row">
+                            <div class="container-fluid">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="basic-login-inner modal-basic-inner">
+                                              <div class="table-responsive">
+                                                      <table class="table table-striped table-bordered">
+                                                          <tbody style="font-size:10px;">
+                                                              <tr>
+                                                                 <td colspan="2">Basic Details</td>
+                                                              </tr>
+                                                            <tr>
+                                                              <td>Name</td>
+                                                              <td>{{viewdataDetails[0].cust_name}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Address</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].cust_address}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Mobile No</td>
+                                                              <td>{{viewdataDetails[0].cust_mob}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Emergency Type</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].emg_type}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Emergency Location</td>
+                                                              <td>{{viewdataDetails[0].emg_location}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Date & Time</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].emg_date_time |date: "MM/dd/yyyy hh:mm:ss a"}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Geolocation</td>
+                                                              <td>{{viewdataDetails[0].emg_location}}</td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td>Source Of Info</td>
+                                                              <!-- <td>Moe</td> -->
+                                                              <td>{{viewdataDetails[0].emg_source}}</td>
+                                                            </tr>
+                                                            
+                                                          </tbody>
+                                                        </table>
+                                                  </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="basic-login-inner modal-basic-inner">
+                                              <table class="table table-striped table-bordered">
+                                                      <!-- <thead>
+                                                    <tr>
+                                                    <th>Firstname</th>
+                                                    <th></th>
+                                                    
+                                                    </tr>
+                                                    </thead> -->
+                                                        <tbody style="font-size:10px;">
+                                                            <tr>
+                                                               <td colspan="2">Emergency Contact</td>
+                                                            </tr>
+                                                          <tr>
+                                                            <td>Primary Contact </td>
+                                                            <td>{{viewdataDetails[0].pri_emg_name}}</td>
+                                                           
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Mobile(Primary Contact)</td>
+                                                            <!-- <td>Moe</td> -->
+                                                            <td>{{viewdataDetails[0].pri_emg_mob}}</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Availability</td>
+                                                            <td>{{viewdataDetails[0].pri_emg_availability}}</td>
+                                                           
+                                                          </tr>
+                                                          <tr>
+                                                              <td colspan="2">
+                                                                      Secondary Contact
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Mobile(Secondary Contact)</td>
+                                                            <!-- <td>Moe</td> -->
+                                                            <td>{{viewdataDetails[0].secd_emg_mob}}</td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Availability</td>
+                                                            <td>{{viewdataDetails[0].secd_emg_availability}}</td>
+                                                           
+                                                          </tr>
+                                                          <tr>
+                                                              <td colspan="2">
+                                                                      Next To Kin
+                                                              </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Mobile</td>
+                                                            <!-- <td>Moe</td> -->
+                                                            <td>{{viewdataDetails[0].nok_emg_mob}}</td>
+                                                          </tr>
+                                                          
+                                                        </tbody>
+                                                      </table>
+                                        </div>
+                                    </div>
+                                </div>
+                          <br>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="hpanel hbggreen responsive">
+                                <div class="panel-body" style="border-radius:10px;height:50px;font-family: Calibri, Helvetica, sans-serif;">
+                                    <!-- <div class="content-bg-pro"> -->
+                                       
+                                        <p class="text font-light pull-right">
+                                          <div class="container-fluid">
+                                            <h5>1. Emergency Call / Alarm Received
+                                                  <button class="btn btn-sm btn-primary login-submit-cs btn-disabled pull-right" type="submit" style="color:white;" ng-if="(flagValue1 >= 1)" style="color:white;" disabled="disabled" >Done</button>
+                                              </h5> 
+                                              </div>
+                                        </p>
+                                                  <!-- </div> -->
+                                       
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                                <div class="hpanel hbgredmonitoring responsive" > 
+                                <div class="panel-body" id="responderactivated" style="border-radius:10px;height:50px;font-family: Calibri, Helvetica, sans-serif;" >
+                                    <!-- <div class="content-bg-pro"> -->
+                                       
+                                        <p class="text-big font-light pull-right">
+                                          <div class="container-fluid">
+                                            <h5> 2. Responder Activated
+                                                <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="((flagValue1 < 2) || (flagValue1 >= 2))" style="color:white;"  ng-click="buttonActivation2();" ng-disabled="disabled1">{{flagValue1}}{{disabled1}}</button> -->
+                                                <button onclick="responderactivated()" class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="(flagValue1 == 1)" style="color:white;"  ng-click="buttonActivation2();">Activated</button>
+                                                <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="((flagValue1 == 2) || (flagValue1 >= 2 ))" style="color:white;"  class="btn-disabled" disabled="disabled" >Done</button>
+                                         
+                                                <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;"ng-if="(flagValue1 >= 2)" ng-click="on();buttonActivation3();" ng-hide="show"  >Activated</button> -->
+                                      
+                                                  <!-- <button class="btn btn-sm btn-primary login-submit-cs btn-disabled pull-right" type="submit" ng-click="off()" ng-show="show"  disabled="disabled"  ng-if="((flagValue1 < 2) || (flagValue1 >= 2))" ng-click="buttonActivation2();">{{flagValue1}}Done</button> -->
+                                                </h5>
+                                              </div>
+                                        </p>
+                                                  </div>
+                                       
+                                    </div>
+                                </div>
+                        </div>
+                    <!-- </div> -->
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="hpanel hbgredmonitoring responsive" >
+                                <div class="panel-body" id="responderontheway" style="border-radius:10px;height:50px;font-family: Calibri, Helvetica, sans-serif;">
+                                       
+                                        <p class="text-big font-light pull-right">
+                                          <div class="container-fluid">
+                                            <h5> 3. Responder On the Way
+                                                    <button onclick="responderontheway()" class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" ng-if="(flagValue1 == 2)" style="color:white;" ng-click="buttonActivation3();" >Activated</button>
+                                                    <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="((flagValue1 == 3) || (flagValue1 >= 3 ))" style="color:white;"  class="btn-disabled" disabled="disabled" >Done</button>
+                                         
+                                                <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" ng-if="((flagValue1 < 3) || (flagValue1 >= 3))" style="color:white;" ng-click="buttonActivation3();" ng-disabled="disabled2">{{flagValue1}}</button> -->
+                                                </h5>
+                                              </div>
+                                        </p>
+                                            
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="hpanel hbgredmonitoring responsive-mg-b-30" >
+                                <div class="panel-body" id="responderreached" style="border-radius:10px;height:50px;font-family: Calibri, Helvetica, sans-serif;">
+                                    <!-- <div class="content-bg-pro"> -->
+                                       
+                                        <p class="text-big font-light pull-right">
+                                          <div class="container-fluid">
+                                            <h5> 4. Responder Reached
+                                                    <button onclick="responderreached()" class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" ng-if="(flagValue1 == 3)" style="color:white;" ng-click="buttonActivation4();" >Activated</button>
+                                                    <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="((flagValue1 == 4) || (flagValue1 >= 4))" style="color:white;"  class="btn-disabled" disabled="disabled" >Done</button>
+                                         
+                                                    <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit">Activate</button> -->
+                                                </h5>
+                                              </div>
+                                        </p>
+                                                  <!-- </div> -->
+                                       
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="hpanel hbgredmonitoring responsive-mg-b-30" >
+                                <div class="panel-body" id="emergencysupport" style="border-radius:10px;height:50px;font-family: Calibri, Helvetica, sans-serif;">
+                                    <!-- <div class="content-bg-pro"> -->
+                                       
+                                        <p class="text-big font-light pull-right">
+                                          <div class="container-fluid">
+                                            <h5> 5. Emergency Support UnderWay
+                                                    <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" ng-if="((flagValue1 < 5) || (flagValue1 >= 5))" style="color:white;"  ng-click="buttonActivation5();" ng-disabled="disabled4">{{flagValue1}}</button> -->
+                                                    <button onclick="emergencysupport()" class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" style="color:white;"  ng-click="buttonActivation5();" ng-if="(flagValue1 == 4)">Activated</button>
+                                                    <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="((flagValue1 == 5) || (flagValue1 >= 5 ))" style="color:white;"  class="btn-disabled" disabled="disabled" >Done</button>
+                                         
+                                                <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit">Activate</button> -->
+                                                </h5>
+                                              </div>
+                                        </p>
+                                                  <!-- </div> -->
+                                       
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="hpanel hbgredmonitoring responsive-mg-b-30" >
+                                <div class="panel-body" id="emergencyclosed" style="border-radius:10px;height:50px;font-family: Calibri, Helvetica, sans-serif;">
+                                    <!-- <div class="content-bg-pro"> -->
+                                       
+                                        <p class="text-big font-light pull-right">
+                                          <div class="container-fluid">
+                                            <h5> 6. Emergency Closed
+                                                    <!-- <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" ng-if="((flagValue1 < 6) || (flagValue1 >= 6))" style="color:white;" ng-click="buttonActivation6();" ng-disabled="disabled5">{{flagValue1}}</button> -->
+                                                    <button onclick="emergencyclosed()" class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" style="color:white;" ng-if="(flagValue1 == 5)" style="color:white;" ng-click="buttonActivation6();" >Activated</button>
+                                                    <button class="btn btn-sm btn-primary login-submit-cs pull-right" type="submit" ng-if="((flagValue1 == 6) || (flagValue1 >= 6))" style="color:white;"  class="btn-disabled" disabled="disabled">Done</button>
+                                                </h5>
+                                              </div>
+                                        </p>
+                                                  <!-- </div> -->
+                                       
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                      <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <div class="basic-login-inner modal-basic-inner">
+                                                                
+                                  <!-- <form name="">
+                                     
+                                      <div class="login-btn-inner">
+                                         
+                                          <div class="row">
+                                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                  <div class="login-horizental">
+                                                      <a class="btn btn-primary next-step" ng-click="addRegion();">Add</a>
+                                                      <a class="btn btn-default prev-step" style="color:black;">Cancel</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </form> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!---Care Manager Settings-->
+            <!-- <div class="container-fluid"> -->
+                <!-- <div class="row"> -->
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+                        <div class="sparkline13-list">
+                            <!-- <div class="sparkline13-hd"> -->
+                                <!-- <div class="main-sparkline13-hd"> -->
+                                    <h5><span class="table-project-n">History >></span></h5>
+                                    <!-- <div class="columns columns-right btn-group pull-right">
+                                                <button class="btn btn-default" type="button" name="toggle" aria-label="toggle" title="Toggle"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i></button><div class="keep-open btn-group" title="Columns">
+                                                <button type="button" aria-label="columns" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li role="menuitem">
+                                                        <label>
+                                                            <input type="checkbox" data-field="id" value="1" checked="checked">
+                                                             ID
+                                                         </label>
+                                                     </li>
+                                                     <li role="menuitem"><label>
+                                                         <input type="checkbox" data-field="name" value="2" checked="checked"> Product Title</label>
+                                                     </li>
+                                                     <li role="menuitem">
+                                                         <label>
+                                                             <input type="checkbox" data-field="company" value="3" checked="checked"> Stock</label>
+                                                     </li>
+                                                     <li role="menuitem">
+                                                         <label><input type="checkbox" data-field="price" value="4" checked="checked"> Price</label>
+                                                     </li><li role="menuitem">
+                                                         <label><input type="checkbox" data-field="date" value="5" checked="checked"> Date</label>
+                                                     </li>
+                                                     <li role="menuitem">
+                                                         <label><input type="checkbox" data-field="task" value="6" checked="checked"> Status</label>
+                                                     </li>
+                                                     <li role="menuitem">
+                                                         <label><input type="checkbox" data-field="email" value="7" checked="checked"> Total Sales</label>
+                                                     </li>
+                                                     <li role="menuitem"><label><input type="checkbox" data-field="action" value="8" checked="checked"> Action</label>
+                                                     </li>
+                                                 </ul>
+                                             </div>
+                                             <div class="export btn-group">
+                                                 <button class="btn btn-default dropdown-toggle" aria-label="export type" title="Export data" data-toggle="dropdown" type="button" aria-expanded="false">
+                                                     <i class="glyphicon glyphicon-export icon-share"></i> <span class="caret"></span>
+                                                 </button>
+                                                 <ul class="dropdown-menu" role="menu">
+                                                     <li role="menuitem" data-type="json">
+                                                         <a href="javascript:void(0)">JSON</a></li><li role="menuitem" data-type="xml">
+                                                             <a href="javascript:void(0)">XML</a></li><li role="menuitem" data-type="csv">
+                                                                 <a href="javascript:void(0)">CSV</a></li><li role="menuitem" data-type="txt">
+                                                                     <a href="javascript:void(0)">TXT</a></li><li role="menuitem" data-type="sql">
+                                                                         <a href="javascript:void(0)">SQL</a></li><li role="menuitem" data-type="excel">
+                                                                             <a href="javascript:void(0)">MS-Excel</a>
+                                                                         </li>
+                                                                     </ul>
+                                                                 </div>
+                                                             </div> -->
+                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right search">
+                                                                    <input class="form-control" type="text" placeholder="Customer Name/Emg Case No" ng-model="query">
+                                                                </div>
+                                                                <br><br>
+                                    
+                                   <div class="container-fluid"  >
+                                       <!-- <div > -->
+                                       
+                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-init="monitoringdata();" >
+                                            <!-- <div class="hpanel responsive"> -->
+                                                <div class="panel-body" ng-repeat="monitoring in monitoringDetails | filter: search" ng-if="((monitoring.emg_status == 'closed') || (monitoring.emg_status == 'suspend'))" style="background-color:rgb(238, 238, 238);border-radius:10px;margin-bottom:10px;" >
+                                                    <!-- <div class="content"> -->
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:75px;">
+                                                            <div class="hpanel responsive" >
+                                                                <div class="panel-body" style="height:45px;margin-top:20px;border-radius:50%;background-color:grey;">
+                                                                    <div class="text-center content-bg-pro">
+                                                                       
+                                                                        <p class="text-center font-light" style="color:white;font-size:25px;text-align: center;">
+                                                                            C
+                                                                        </p>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-1 col-xs-12" style="height:100px;font-family: Calibri, Helvetica, sans-serif;">
+                                                              <p style="font-size:14px;">
+                                                                    <span style="color:grey;">Emergency Case No</span>:&nbsp;{{monitoring.emg_case_no}} 
+                                                                    <br>
+                                                                      <span style="color:grey;">Customer Name</span>:&nbsp;{{monitoring.cust_name}} | &nbsp;{{monitoring.cust_mob}}
+                                                                      <br>
+                                                                    <span style="color:grey;">Emergency Message</span>:&nbsp;{{monitoring.emg_msg}}
+                                                                    <br>
+                                                                    <span style="color:grey;" >Date & Time</span>:&nbsp; {{monitoring.emg_date_time |date: "MM/dd/yyyy hh:mm:ss a"}}
+                                                                    <br>
+                                                                    <!-- <span style="color:grey;">Responder:</span>&nbsp;{{monitoring.rsp_name}}
+                                                                    <br> -->
+                                                                    <span style="color:grey;">Responder Feedback:</span>&nbsp;{{monitoring.responder_acpt_status}}
+                                                                  </p>
+                                                        </div>
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" style="font-family: Calibri, Helvetica, sans-serif;">
+                                                              <div class="modal-bootstrap modal-login-form pull-right" style="background-color:rgb(238, 238, 238);border-color:rgb(238, 238, 238);">
+                                                                      <!-- <a class="btn btn-primary next-step" href="/monitoring/#Assign{{monitoring.emg_id}}"data-toggle="modal" data-target="#Assigndata" ng-click="assigndatavalue(monitoring.emg_case_no);" style="background-color:#ff470d;border-color:#ff470d;font-size:13px;">Assign Duty</a> -->
+                                                                      <a class="btn btn-primary next-step" href="/history/#View{{monitoring.emg_id}}" data-toggle="modal" ng-click="viewdata(monitoring.emg_id);getFlagValue(monitoring.emg_id);" data-target="#View" style="background-color:#ff470d;border-color:#ff470d;font-size:13px;">Details</a>
+                                                                      <!-- <a class="btn btn-primary next-step" href="/history/#Remark{{monitoring.emg_id}}" data-toggle="modal" data-target="#Remark" ng-click="viewdata(monitoring.emg_id);getRemark(monitoring.emg_id);" style="font-size:13px;background-color:#ff470d;border-color:#ff470d;">Pic/Video</a> -->
+                                                                      <!-- <a class="btn btn-primary next-step" href="/monitoring/#Update{{monitoring.emg_id}}" data-toggle="modal" data-target="#Update" ng-click="viewdata(monitoring.emg_id);getFlagValue(monitoring.emg_id);" style="font-size:13px;background-color:#ff470d;border-color:#ff470d;">Update</a> -->
+                                                                 
+                                                                  </div>
+                                                        </div>
+                                                 
+                                                </div><br>
+                                                
+                                              
+                                            <!-- </div> -->
+                                        </div>
+                                       <!-- </div> -->
+                                    </div>
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        </div>
+  </div>
+ 
+ 

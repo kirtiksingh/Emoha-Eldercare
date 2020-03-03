@@ -1,0 +1,1074 @@
+<div class="all-content-wrapper" >
+    <div class="data-table-area mg-tb-15">
+        <div class="container-fluid" ng-controller="addDataAdminController">
+            <div class="row" ng-init="customerIdData()">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <h5><a ng-href="/customer/">Customer >></a><span class="table-project-n" >Customer Details</span></h5>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="admintab-wrap mg-t-30">
+                                        <ul class="nav nav-tabs custom-menu-wrap custon-tab-menu-style1">
+                                            <li class="active"><a data-toggle="tab" data-target="#Personal"><span class="adminpro-icon tab-custon-ic"></span>Personal</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Emergency"><span class="adminpro-icon"></span>Emergency</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Medical"><span class="adminpro-icon"></span>Medical</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Functional"><span class="adminpro-icon"></span>Functional Ability</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Cognitive"><span class="adminpro-icon"></span>Cognitive Status</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Social"><span class="adminpro-icon"></span>Social Background</a>
+                                            </li>
+                                            
+                                            <li><a data-toggle="tab" data-target="#Medication"><span class="adminpro-icon"></span>Medication</a>
+                                            </li>
+                                            
+                                            <li><a data-toggle="tab" data-target="#Record"><span class="adminpro-icon"></span>Record</a>
+                                            </li>
+                                            
+                                        </ul>
+                                       <div class="tab-content">
+                                            <div id="Personal" class="tab-pane in active  custon-tab-style1">
+                                                <form role="form"></form>
+                                                                                                                            <div class="panel-body" style="overflow-x:auto;">
+                                                                                                                                <!-- <div class="table-responsive"> -->
+                                                                                                                                    <table class="table table-striped table-bordered">
+                                                                                                                                        <!-- <thead>
+                                                                                                                                          <tr>
+                                                                                                                                            <th>Firstname</th>
+                                                                                                                                            <th>Lastname</th>
+                                                                                                                                            <th>Email</th>
+                                                                                                                                          </tr>
+                                                                                                                                        </thead> -->
+                                                                                                                                        <tbody>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Email</b></td>
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_email}}</td>
+                                                                                                                                           
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Address</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_address}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Community</b></td>
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_community}}</td>
+                                                                                                                                           
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Geolocation</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_geolocation}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Customer Category</b></td>
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_category}}</td>
+                                                                                                                                           
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Preferred Language</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_language}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Date Of Birth</b></td>
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_dob | date :  "dd/MM/yyyy"}}</td>
+                                                                                                                                           
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Gender</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_gender}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Marital Status</b></td>
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_marital_status}}</td>
+                                                                                                                                           
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Date Of Marriage</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_dom | date :  "dd/MM/yyyy"}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Religious Preferrence</b></td>
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_religion}}</td>
+                                                                                                                                           
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Living Place</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_living_place}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Living Situation</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_living_situation}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Staying With</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_statying_with}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Family Members</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_family_member_1}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>&nbsp;</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_family_member_2}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>&nbsp;</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_family_member_3}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Does the home have mobile coverage .</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_risk_assessment_1}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Does the home have a guest washroom that family will allow staff to use .</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_risk_assessment_2}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Is the home located in a safe area.</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_risk_assessment_3}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Is home easily accessible via public transport .</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_risk_assessment_4}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Are there any potential safety concerns for staff.</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{custvalue.cust_risk_assessment_5}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>Educational Qualication.</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_education_1}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>&nbsp;</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_education_2}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr>
+                                                                                                                                            <td><b>&nbsp;</b></td>
+                                                                                                                                            <!-- <td>Moe</td> -->
+                                                                                                                                            <td>{{customerIdDetailsData[0].cust_education_3}}</td>
+                                                                                                                                          </tr>
+                                                                                                                                        </tbody>
+                                                                                                                                      </table>
+                                                                                                                                <!-- </div> -->
+                                                                                                                            </div>
+                                                <ul class="list-inline pull-right">
+                                                    <li>
+                                                        <a class="btn btn-primary next-step" href="/customer/customerdetails/editCustomerDetails">Edit</a>
+                                                    </li>
+                                                   <!--- <li>
+                                                        <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                                    </li>-->
+                                                    
+                                                  </ul>
+                                                 </form>
+  
+                                            </div>
+                                            <div id="Emergency" class="tab-pane custon-tab-style1">
+  
+                                              <div class="panel-body " style="overflow-x:auto;">
+                                                  
+                                                      <table class="table table-striped table-bordered">
+                                                          <thead style="color:white;background:#ff470d;">
+                                                            <tr>
+                                                              <th style="width:500px" colspan="2">Primary Emergency Contact</th>
+                                                               
+                                                              </tr>
+                                                            
+                                                          </thead>
+                                                          <tbody>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Name</b></td>
+                                                                        <td style="width:500px">
+                                                                          {{ customerIdDetailsData[0].pri_emg_name}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Gender</b></td>
+                                                                        <td style="width:500px">{{ customerIdDetailsData[0].pri_emg_gender}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Date Of Birth</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].pri_emg_dob | date :  "dd/MM/yyyy"}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                          <td style="width:500px"><b>Email</b></td>
+                                                                          <td style="width:500px">{{customerIdDetailsData[0].pri_emg_email}}</td>
+                                                                        
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Address</b></td>
+                                                                        <td style="width:500px">{{customerIdsData[0].pri_emg_address}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Mobile No.*</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].pri_emg_mob}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>WhatsApp No.</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].pri_emg_whatsapp}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Phone No.</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].pri_emg_phone}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Relationship</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].pri_emg_relationship}}</td>
+                                                                      
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Availability</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].pri_emg_availability}}</td>
+                                                                      
+                                                                    </tr>
+                                                          </tbody>
+                                                       </table>
+                                                      </div>
+  
+                                                      <div class="panel-body " style="overflow-x:auto;">
+                                                        ͏<table class="table table-striped table-bordered col-md-6">
+                                                            <thead style="color:white;background:#ff470d;">
+                                                              <tr>
+                                                                <th style="width:500px" colspan="2">Secondary Emergency Contact</th>
+                                                                
+                                                              </tr>  
+                                                              
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Name</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_name}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Gender</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_gender}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b> Date Of Birth</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_dob | date :  "dd/MM/yyyy"}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Email</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_email}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Adress</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_address}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Mobile No.</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_mob}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b> WhatsApp No.</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_whatsapp}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Phone No.</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_phone}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Relationship</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_relationship}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Availability</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].secd_emg_availability}}</td>
+                                                                  
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                      </div>
+  
+                                                      <div class="panel-body " style="overflow-x:auto;">
+                                                        ͏<table class="table table-striped table-bordered">
+                                                            <thead style="color:white;background:#ff470d;">
+                                                              <tr>
+                                                                <th style="width:500px" colspan="2">Next to Kin</th>
+                                                                
+                                                              </tr>  
+                                                              
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Name</b></td>
+                                                                    <td style="width:500px">
+                                                                        {{customerIdDetailsData[0].nok_emg_name}}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Gender</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_gender}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Date Of Birth</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_dob | date :  "dd/MM/yyyy"}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                      <td style="width:500px"><b>Email</b></td>
+                                                                      <td style="width:500px">{{customerIdDetailsData[0].nok_emg_email}}</td>
+                                                                    
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Address</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_address}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Mobile No.*</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_mob}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>WhatsApp No.</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_whatsapp}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Phone No.</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_phone}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Relationship</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_relationship}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Availability</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].nok_emg_availability}}</td>
+                                                                  
+                                                                </tr>
+  
+                                                                
+                                                            </tbody>
+                                                         </table>
+                                                        </div>
+                                                        
+                                                        <div class="panel-body " style="overflow-x:auto;">
+                                                         <table  class="table table-striped table-bordered">
+                                                            <thead style="color:white;background:#ff470d;text-align: center;">
+                                                              <tr>
+                                                                <th style="width:500px" colspan="2">Primaary Physician</th>
+                                                                
+                                                              </tr>  
+                                                              
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Name</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_name}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Mobile No</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_mob}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Speciality</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_speciality}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>WhatsApp No</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_whatsapp}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Hospital Phone</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_hospital_phone}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr >
+                                                                    <td style="width:500px"><b>Hospital/Clinic</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_hospital}}</td>
+                                                                  
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Adress</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].doc_address}}</td>
+                                                                  
+                                                                </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </div>
+                                                        
+                                                        <div class="panel-body " style="overflow-x:auto;">
+                                                         <table  class="table table-striped table-bordered">
+                                                            <thead style="color:white;background:#ff470d;">
+                                                              <tr>
+                                                                <th style="width:500px" colspan="2">Preferred Hospital</th>
+                                                                
+                                                              </tr>  
+                                                              
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr >
+                                                                    <td style="width:500px"><b>Hospital Name</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].hospital_name}}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Hospital Phone No.</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].hospital_address}}</td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Adress</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].hospital_phone}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        </div>
+                                                        
+                                               
+                                              <ul class="list-inline pull-right">
+                                                <li>
+                                                    <a class="btn btn-primary next-step" href="">Edit</a>
+                                                </li>
+                                               <!--- <li>
+                                                    <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                                </li>-->
+                                                
+                                              </ul>
+                                            
+  
+                                          </div>
+  
+                                          <div id="Medical" class="tab-pane custon-tab-style1">
+                                              <div class="panel-body " style="overflow-x:auto;">
+                                            ͏<table class="table table-striped table-bordered">
+                                                <thead style="color:white;background:#ff470d;">
+                                                    <tr>
+                                                      <th style="width:500px" colspan="2">Basic Detail</th>
+                                                      
+                                                    </tr>  
+                                                    
+                                                </thead>
+                                                  <tbody>
+                                                        <tr>
+                                                          <td style="width:500px"><b>Blood Group</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_blood_grp}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b>Pulse Rate</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_pulse_rate}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b> Does the elder have any Communicable Diseases?</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].communicable_disease}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b>Blood Pressure (S/D)</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_blood_pressure}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b>Has elder used home healthcare in the past?</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_prev_care}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b>Previous home health duration(month)</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_prev_care_duration}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b>How many falls has the elder had in the last 1 year?</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_nos_falls}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td style="width:500px"><b>Has the elder has any fall that resulted in injury?</b></td>
+                                                          <td style="width:500px">{{customerIdDetailsData[0].cust_fall_injury}}</td>
+                                                        </tr>
+                                                  
+                                                        
+                                                  </tbody>
+                                            </table>
+                                            </div>
+                                            <div class="panel-body " style="overflow-x:auto;">
+                                            <table class="table table-striped table-bordered">
+                                              <thead style="color:white;background:#ff470d;">
+                                                  <tr>
+                                                    <th style="width:500px" colspan="2">Medical background</th>
+                                                    
+                                                  </tr>  
+                                                  
+                                              </thead>
+                                                <tbody>
+                                                      <tr>
+                                                        <td style="width:500px"><b>Allergen Reaction-1</b></td>
+                                                        <td style="width:500px">{{customerIdDetailsData[0].cust_allergy_reaction_1}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="width:500px"><b>Allergen Reaction-2</b></td>
+                                                        <td style="width:500px">{{customerIdDetailsData[0].cust_allergy_reaction_2}}</td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td style="width:500px"><b>Allergen Reaction-3</b></td>
+                                                        <td style="width:500px">{{customerIdDetailsData[0].cust_allergy_reaction_3}}</td>
+                                                      </tr>
+                                                     
+  
+                                                </tbody>
+                                          </table>
+                                          </div>
+  
+                                          <div class="panel-body " style="overflow-x:auto;">
+                                          <table class="table table-striped table-bordered">
+                                            <thead style="color:white;background:#ff470d;">
+                                                <tr>
+                                                  <th style="width:500px" colspan="2">Medical Diagnosis</th>
+                                                  
+                                                </tr>  
+                                                
+                                            </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td style="width:500px"><b>Medical Diagnosis</b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].cust_med_diagnosis}}{{customerIdDetailsData[0].other_diagnosis}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:500px"><b>Surgery-1</b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].cust_surgery_and_date_1}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:500px"><b>Surgery-2</b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].cust_surgery_and_date_2}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:500px"><b>Surgery-3</b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].cust_surgery_and_date_3}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:500px"><b>Mobility Device</b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].other_mobility_device}} {{customerIdDetailsData[0].cust_mobility_device}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:500px"><b>Medical Equipment Currently </b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].cust_current_mobility_equip}}{{customerIdDetailsData[0].other_current_equipment}}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td style="width:500px"><b>Need Mobility Equipment </b></td>
+                                                  <td style="width:500px">{{customerIdDetailsData[0].cust_need_mobility_equip}}{{customerIdDetailsData[0].other_need_mobility_equip}}</td>
+                                                </tr>
+                                                   
+  
+                                              </tbody>
+                                           </table>
+                                           </div>
+                                            
+  
+                                           <ul class="list-inline pull-right">
+                                            <li>
+                                                <a class="btn btn-primary next-step" href="">Edit</a>
+                                            </li>
+                                           <!--- <li>
+                                                <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                            </li>-->
+                                            
+                                          </ul>
+                                          
+                                        </div>
+  
+  
+                                        <div id="Functional" class="tab-pane custon-tab-style1">
+                                          <div class="panel-body " style="overflow-x:auto;">
+                                            
+                                                <table class="table table-striped table-bordered" style="padding:5px;">
+                                                    <thead style="color:white;background:#ff470d;">
+                                                      <tr>
+                                                        <th style="width:500px" colspan="2">Activities of daily living(ADL)</th>
+                                                        
+                                                      </tr>  
+                                                      
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <td><b>Eating</b></td>
+                                                        <td>
+                                                          {{ adl}}
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Grooming</b></td>
+                                                        <td>{{groom}}</td>
+                                                          
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Bathing</b></td>
+                                                        <td>{{bathing}}</td>
+                                                          
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Dressing-Upper Body</b></td>
+                                                        <td>{{dressup}}</td>
+                                                                
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Dressing-Lower Body</b></td>
+                                                        <td>{{dresslow}}</td>
+                                                              
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Toileting</b></td>
+                                                        <td>{{toileting}}</td>
+                                                                
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Blader Management</b></td>
+                                                        <td>{{bladder}}</td>
+                                                                
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Bowel Management</b></td>
+                                                      <td>{{bowel}}</td>
+                                                                
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Transferring Bed, Wheelchair, Chair</b></td>
+                                                        <td>{{transfering}}</td>
+                                                                
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Transferring Toilet</b></td>
+                                                        <td>{{ToiletTransfering}}</td>
+                                                              
+                                                      </tr>
+                                                      <tr>
+                                                       <td><b>Transferring Tub, Shower</b></td>
+                                                       <td>{{showerTransfer}}</td>
+                                                              
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Walking or using wheelchair</b></td>
+                                                        <td>{{wheelchair}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Walking on stairs</b></td>
+                                                        <td>{{stairsWalking}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Comprehension</b></td>
+                                                        <td>{{comprehension}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Expression</b></td>
+                                                        <td>{{expression}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Social Interaction</b></td>
+                                                        <td>{{socialIntraction}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Problem Solving</b></td>
+                                                        <td>{{problem_solving}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Memory</b></td>
+                                                        <td>{{memoryAsst}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Hearing impairments</b></td>
+                                                        <td>{{customerIdDetailsData[0].hearing_impairments}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Use of hearing aids</b></td>
+                                                        <td>{{customerIdDetailsData[0].hearing_aid}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Visual impairments</b></td>
+                                                        <td>{{customerIdDetailsData[0].visual_impairments}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Swallowing difficulties</b></td>
+                                                        <td>{{customerIdDetailsData[0].swallowing_difficulties}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Visual Aid</b></td>
+                                                        <td>{{customerIdDetailsData[0].visual_aids}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Special Diet</b></td>
+                                                        <td>{{customerIdDetailsData[0].special_diet}}</td>
+                                                            
+                                                      </tr>
+                                                      <tr>
+                                                        <td><b>Special Diet other</b></td>
+                                                        <td>{{customerIdDetailsData[0].other_special_diet}}</td>
+                                                            
+                                                      </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                          
+                                          <ul class="list-inline pull-right">
+                                            <li>
+                                                <a class="btn btn-primary next-step" href="">Edit</a>
+                                            </li>
+                                           <!--- <li>
+                                                <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                            </li>-->
+                                            
+                                          </ul>
+  
+                                        </div>
+                                      <div id="Cognitive" class="tab-pane custon-tab-style1">
+                                             
+                                          <div class="panel-body " style="overflow-x:auto;">
+                                              
+  
+                                                  ͏<table class="table table-striped table-bordered">
+                                                      <thead style="color:white;background:#ff470d;">
+                                                          <tr>
+                                                              <td style="width: 500px;" colspan="2"> Presistence Vegetative State</td>
+                                                              
+  
+                                                          </tr>  
+                                                        </thead>
+                                                          
+                                                        
+                                                      
+                                                      <tbody>
+  
+                                                          <tr>
+                                                              <td style="width:500px"><b>Understand clearly without cues or repetitions</b></td>
+                                                              <td style="width:500px">{{presistentWithout}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Usually Understand with some cues and repetitions</b></td>
+                                                              <td style="width:500px">{{presistentwith}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Sometime understands only basic conversation or simple,direct phrases need frequent cues</b></td>
+                                                              <td style="width:500px">{{presistentSometime}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Rarely or never understand</b></td>
+                                                              <td style="width:500px">{{presistentrarely}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Unable to access</b></td>
+                                                              <td style="width:500px">{{presistentUnableAccess}}</td>
+                                                            </tr>
+                                                            
+                                                          
+                                                      </tbody>
+                                                   </table>
+                                                  </div>
+  
+                                                  <div class="panel-body " style="overflow-x:auto;">
+                                                   ͏<table class="table table-striped table-bordered">
+                                                      <thead style="color:white;background:#ff470d;">
+                                                          <tr>
+                                                              <td style="width:500px" colspan="2"> Mini-Congitive Assessment</td>
+                                                              
+  
+                                                          </tr>  
+                                                        </thead>
+                                                          
+                                                        
+                                                      
+                                                      <tbody>
+  
+                                                          <tr>
+                                                              <td style="width:500px"><b>Three words test</b></td>
+                                                              <td style="width:500px">{{customerIdDetailsData[0].three_word_test}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Clock Test</b></td>
+                                                              <td style="width:500px">{{customerIdDetailsData[0].clock_test}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Remembering Test</b></td>
+                                                              <td style="width:500px">{{customerIdDetailsData[0].remembering_test}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Is The elder oriented to the time of day?</b></td>
+                                                              <td style="width:500px">{{customerIdDetailsData[0].oriented_to_time}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width:500px"><b>Is the elder oriented to his/her location?</b></td>
+                                                              <td style="width:500px">{{customerIdDetailsData[0].oriented_to_location}}</td>
+                                                            </tr>
+                                                           
+                                                            
+                                                          
+                                                      </tbody>
+                                                   </table>
+                                                  </div>
+  
+                                                  <div class="panel-body " style="overflow-x:auto;">
+                                                   ͏<table class="table table-striped table-bordered">
+                                                      <thead style="color:white;background:#ff470d;">
+                                                          <tr>
+                                                              <td colspan="2" colspan="2">Behavioural Expression</td>
+                                                              
+  
+                                                          </tr>  
+                                                        </thead>
+                                                          
+                                                        
+                                                      
+                                                      <tbody>
+  
+                                                        
+                                                                <tr>
+                                                                    <td style="width:500px"><b>Withdrawal</b></td>
+                                                                    <td style="width:500px">{{customerIdDetailsData[0].Withdrawal}} </td>
+                                                                  </tr>
+                                                                  <tr>
+                                                                      <td style="width:500px"><b>Refusing Medication</b></td>
+                                                                      <td style="width:500px">{{customerIdDetailsData[0].refusing_medication_comments}} </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:500px"><b>Easily agigated</b></td>
+                                                                        <td style="width:500px">{{customerIdDetailsData[0].easily_agitated_comments}}</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                          <td style="width:500px"><b>Verbal Agrigation</b></td>
+                                                                          <td style="width:500px">{{customerIdDetailsData[0].verbal_aggression_comments}}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:500px"><b>Sleeplessness</b></td>
+                                                                            <td style="width:500px">{{customerIdDetailsData[0].sleeplessness_comments}}</td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                              <td style="width:500px"><b>Refuse Hygiens</b></td>
+                                                                              <td style="width:500px">{{customerIdDetailsData[0].refuses_hygiene_comments}}</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="width:500px"><b>Physical Aggression</b></td>
+                                                                                <td style="width:500px">{{customerIdDetailsData[0].physical_aggression_comments}}</td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                  <td style="width:500px"><b>Wandering</b></td>
+                                                                                  <td style="width:500px">{{customerIdDetailsData[0].wandering_comments}}</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="width:500px"><b>Self Harm</b></td>
+                                                                                    <td style="width:500px">{{customerIdDetailsData[0].self_harm_comments}}</td>
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                      <td style="width:500px"><b>Repetitive Statements</b></td>
+                                                                                      <td style="width:500px">{{customerIdDetailsData[0].repetitive_statements_comments}}</td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td style="width:500px"><b>Paranoia</b></td>
+                                                                                        <td style="width:500px">{{customerIdDetailsData[0].paranoia_comments}}</td>
+                                                                                      </tr>
+            
+          
+        
+      
+    
+  
+  
+                                                                
+                                                                  
+                                                            
+                                                          
+                                                      </tbody>
+                                                   </table>
+                                              </div>
+                                             
+                                                 
+                                             <ul class="list-inline pull-right">
+                                              <li>
+                                                  <a class="btn btn-primary next-step" href="">Edit</a>
+                                              </li>
+                                             <!--- <li>
+                                                  <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                              </li>-->
+                                              
+                                            </ul>
+                                      </div>
+  
+  
+                                         <div id="Social" class="tab-pane custon-tab-style1">
+                                            <div class="panel-body " style="overflow-x:auto;">
+                                                
+                                                    <table class="table table-striped table-bordered" style="padding:5px;">
+                                                        <thead style="color:white;background:#ff470d;">
+                                                          <tr>
+                                                            <th style="width: 500px" colspan="2">Social Background</th>
+                                                            
+                                                          </tr>  
+                                                          
+                                                        </thead>
+                                                        <tbody>
+                                                          <tr>
+                                                            <td><b>School</b></td>
+                                                            <td>
+                                                              {{ customerIdDetailsData[0].cust_school}}
+                                                  
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Last Employment</b></td>
+                                                            <td>{{ customerIdDetailsData[0].cust_last_employment}}</td>
+                                                              
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Wake-up time</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_wakeup_time.split(",")[0]}}</td>
+                                                              
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Bed Time</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_bed_time.split(",")[0]}}</td>
+                                                                    
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Shower Time</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_shower_time.split(",")[0]}}</td>
+                                                                  
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Shower/Bucket</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_shower}}</td>
+                                                                    
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Favourite Food</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_fav_food}}</td>
+                                                                    
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Favourite Music</b></td> 
+                                                           <td>{{customerIdDetailsData[0].cust_fav_music}}</td>
+                                                                    
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Favourite Musician</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_fav_musician}}</td>
+                                                                    
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Favourite Sports</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_fav_sports}}</td>
+                                                                  
+                                                          </tr>
+                                                          <tr>
+                                                           <td><b>Favourite Athletes</b></td>
+                                                           <td>{{customerIdDetailsData[0].cust_fav_athletes}}</td>
+                                                                  
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Favourite Book</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_fav_book}}</td>
+                                                                
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Enjoy Spiritual</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_enjoy_spiritual}}</td>
+                                                                
+                                                          </tr>
+                                                          <tr>
+                                                            <td><b>Any Special</b></td>
+                                                            <td>{{customerIdDetailsData[0].cust_special_note}}</td>
+                                                                
+                                                          </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                              
+                                                   
+                                              <ul class="list-inline pull-right">
+                                                <li>
+                                                    <a class="btn btn-primary next-step" href="">Edit</a>
+                                                </li>
+                                               <!-- <li>
+                                                    <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                                </li>-->
+                                                
+                                              </ul>
+                                         </div>
+                                         <div id="Medication" class="tab-pane custon-tab-style1">
+                                          Medication
+                                          <ul class="list-inline pull-right">
+                                           <li>
+                                               <a class="btn btn-primary next-step" href="">Edit</a>
+                                           </li>
+                                          <!--- <li>
+                                               <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                           </li>-->
+                                           
+                                         </ul>
+                                      </div>
+                                      <div id="Record" class="tab-pane custon-tab-style1">
+                                        Record
+  
+                                        <ul class="list-inline pull-right">
+                                         <li>
+                                             <a class="btn btn-primary next-step" href="">Edit</a>
+                                         </li>
+                                        <!--- <li>
+                                             <a class="btn btn-default prev-step" style="color:black;">Print</a>
+                                         </li> -->
+                                         
+                                       </ul>
+                                      </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

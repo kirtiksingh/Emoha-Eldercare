@@ -1,0 +1,1413 @@
+<!----Home Care Registration----->
+<div class="all-content-wrapper">
+    
+        <div class="data-table-area mg-tb-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                    <!----Breadcrumb----->
+                                    <h5>Customer >> <span class="table-project-n">Home Care Registration</span></h5>
+                                    <!----Breadcrumb----->
+                                </div><br>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " ng-init="custmerDetails();">
+                                        <select ng-model="customerId" class="form-control"  ng-options="customerData.cust_name for customerData in customerDetails" >
+                                              <option value="" >Select Customer</option>                                
+                                       </select>
+                                     </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="admintab-wrap mg-t-30">
+                                            <!----Tabs----->
+                                            <ul class="nav nav-tabs custom-menu-wrap custon-tab-menu-style1">
+                                                <li class="active"><a data-toggle="tab" href="#Personal"><span class="adminpro-icon adminpro-analytics"></span>Personal</a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#Emergency"><span class="adminpro-icon adminpro-analytics-arrow ">Emergency</span></a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#Medical"><span class="adminpro-icon adminpro-analytics-bridge">Medical</span></a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#FunctionalAbility"><span class="adminpro-icon adminpro-analytics-bridge">Functional Ability</span></a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#CognitiveStatus"><span class="adminpro-icon adminpro-analytics-arrow">Cognitive Status</span></a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#SocialBackground"><span class="adminpro-icon adminpro-analytics-bridge">Social Background</span></a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#Medication"><span class="adminpro-icon adminpro-analytics-bridge">Medication</span></a>
+                                                </li>
+                                                <li><a data-toggle="tab" href="#Record"><span class="adminpro-icon adminpro-analytics-bridge">Record</span></a>
+                                                </li>
+                                            </ul>
+                                            <!----Tabs----->
+    
+                                            <!---Tabs Content-->
+                                            <div class="tab-content">
+                                                <!--Personal-->
+                                                <div id="Personal" class="tab-pane in active custon-tab-style1" >
+                                                    <div class="row">
+                                                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+                                                            <div class="sparkline13-list">
+                                                                
+                                                                <div class="sparkline13-graph">
+                                                                    <div class="datatable-dashv1-list custom-datatable-overright">     
+                                                                        <br>
+                                                                       <div class="container-fluid"> 
+                                                                            <form name="form" >
+                                                                                    <div class="form-group-inner">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                                    <label class="login2" style="font-size:15px;color:#ff470d;">Basic Information
+                                                                                                    </label>
+                                                                                                    
+                                                                                                </div>
+                                                                                                <hr style="width:77%;">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    <div class="form-group-inner" ng-class="{ 'has-error' : form.name.$invalid && !form.name.$pristine }">
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 inputlabel">
+                                                                                                <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                                                            </div>
+                                                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 inputselect">
+                                                                                                    <!-- <div class="form-select-list">
+                                                                                                            <select class="form-control custom-select-value" name="account">
+                                                                                                                    <option>Mr.</option>
+                                                                                                                    <option>Mrs.</option>
+                                                                                                                    <option>Ms.</option>
+                                                                                                                    <option>Dr.</option>
+                                                                                                                </select>
+                                                                                                        </div> -->
+                                                                                                        <select ng-model="selectedusernamedata" class="form-control" ng-options="username.name for username in usernamedata"  >
+                                                                                                            </select>
+                                                                                            </div>
+                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 inputdata">
+                                                                                                    <!-- <input type="text" class="form-control" placeholder="Name"/> -->
+                                                                                                    <input type="text" class="form-control" ng-model="homecare_reg.user_name" name="name" 
+                                                                                                    required ng-minlength=3 ng-maxlength=20 ng-pattern="/^[a-zA-Z]+$/">
+                                                                                            
+                                                                                                </div>
+                                                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 inputdata">
+                                                                                                <div ng-show="form.name.$dirty && form.name.$invalid">
+                                                                                                        <!-- <p ng-show="form.name.$error.required" class="help-block">Your name is required.</p> -->
+                                                                                                        <p ng-show="form.name.$error.minlength" class="help-block">Your name must be greater than 3 characters.</p>
+                                                                                                        <p ng-show="form.name.$error.maxlength" class="help-block">Your name be less than 20 characters.</p>
+                                                                                                        <p ng-show="form.name.$error.pattern" class="help-block">Only alphabets please.</p>
+                                                                                                </div>
+                                                                                                <div ng-show="form.name.$invalid">
+                                                                                                        <p ng-show="form.name.$error.required" class="help-block">Your name is required.</p>
+                                                                                                       
+                                                                                                </div>
+                                                                                               </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group-inner" ng-class="{ 'has-error' : form.preferredname.$invalid && !form.preferredname.$pristine }">
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 inputlabel">
+                                                                                                <label class="login2 pull-right pull-right-pro">Preferred Name*</label>
+                                                                                            </div>
+                                                                                           
+                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 inputdata">
+                                                                                                    <!-- <input type="text" class="form-control" placeholder="Name"/> -->
+                                                                                                    <input type="text" class="form-control" ng-model="homecare_reg.prefered_name" name="preferredname" 
+                                                                                                    required ng-minlength=3 ng-maxlength=20 ng-pattern="/^[a-zA-Z]+$/">
+                                                                                            
+                                                                                                </div>
+                                                                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 inputdata">
+                                                                                                <div ng-show="form.preferredname.$dirty && form.preferredname.$invalid">
+                                                                                                        <!-- <p ng-show="form.preferredname.$error.required" class="help-block">Your name is required.</p> -->
+                                                                                                        <p ng-show="form.preferredname.$error.minlength" class="help-block">Your name must be greater than 3 characters.</p>
+                                                                                                        <p ng-show="form.preferredname.$error.maxlength" class="help-block">Your name be less than 20 characters.</p>
+                                                                                                        <p ng-show="form.preferredname.$error.pattern" class="help-block">Only alphabets please.</p>
+                                                                                                      </div>
+                                                                                                      <div ng-show="form.preferredname.$invalid">
+                                                                                                            <p ng-show="form.preferredname.$error.required" class="help-block">Your name is required.</p>
+                                                                                                           
+                                                                                                          </div>
+                                                                                               </div>
+                                                                                               
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group-inner" ng-class="{ 'has-error' : form.phonenumber.$invalid && !form.phonenumber.$pristine }">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-7 inputmobile">
+                                                                                                    <label class="login2 pull-right pull-right-pro">Mobile No.*</label>
+                                                                                                </div>
+                                                                                                
+                                                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 inputnumber">
+                                                                                                        <input type="text" class="form-control" value="+91" readonly/>
+                                                                                                    </div>
+                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 inputdata">
+                                                                                                            <!-- <input type="text" class="form-control" placeholder="Name"/> -->
+                                                                                                            <input type="text" class="form-control" ng-model="mobile_number" name="phonenumber" 
+                                                                                                            required ng-minlength="10" ng-maxlength=10 ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+                                                                                                    
+                                                                                                        </div>
+                                                                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 inputdata">
+                                                                                                        <div ng-show="form.phonenumber.$dirty && form.phonenumber.$invalid">
+                                                                                                                <!-- <p ng-show="form.preferredname.$error.required" class="help-block">Mobile Number is required.</p> -->
+                                                                                                                <!-- <p ng-show="form.phonenumber.$error.minlength" class="help-block">Your mobile number only 10 digits.</p> -->
+                                                                                                                <p ng-show="form.phonenumber.$error.maxlength" class="help-block">Your mobile number only 10 digits.</p>
+                                                                                                                <!-- <p ng-show="form.phonenumber.$error.pattern" class="help-block">Only numbers please.</p> -->
+                                                                                                              </div>
+                                                                                                              <div ng-show="form.phonenumber.$invalid">
+                                                                                                                    <p ng-show="form.phonenumber.$error.required" class="help-block">Mobile Number is required.</p>
+                                                                                                                   
+                                                                                                                  </div>
+                                                                                                       </div>
+                                                                                                       
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                                                                                        <label class="login2 pull-right pull-right-pro">Address*</label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                                        <textarea type="text" class="form-control" placeholder="Address1"></textarea>
+                                                                                                        </div>
+                                                                                                       
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                                                                                            <label class="login2 pull-right pull-right-pro"></label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                                            <textarea type="text" class="form-control" placeholder="Address2"></textarea>
+                                                                                                            </div>
+                                                                                                             
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                <label class="login2 pull-right pull-right-pro">Country*</label>
+                                                                                                            </div>
+                                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                                                <div class="form-select-list">
+                                                                                                                        <!-- <select class="form-control custom-select-value" name="account" ng-model="$scope.personal_details.country">
+                                                                                                                                <option>India</option>
+                                                                                                                                <option>US</option>
+                                                                                                                                
+                                                                                                                            </select> -->
+                                                                                                                            <select ng-model="selectedcountry" class="form-control" ng-options="country.name for country in countries"  >
+                                                                                                                                </select>
+                                                                                                                    </div>
+                                                                                                        </div>
+                                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group-inner">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                    <label class="login2 pull-right pull-right-pro">State*</label>
+                                                                                                                </div>
+                                                                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                                                    <!-- <div class="form-select-list">
+                                                                                                                            <select class="form-control custom-select-value" name="account" ng-model="$scope.personal_details.state">
+                                                                                                                                   
+                                                                                                                                </select>
+                                                                                                                        </div> -->
+                                                                                                                        <select ng-model="selectedstate" class="form-control" ng-options="state.name for state in states"  >
+                                                                                                                        </select>
+                                                                                                            </div>
+                                                                                                                       
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="form-group-inner">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                        <label class="login2 pull-right pull-right-pro">City*</label>
+                                                                                                                    </div>
+                                                                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                <input type="text" class="form-control" placeholder="City" ng-model="personal_details.city"/>
+                                                                                                                            </div>
+                                                                                                                           
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="form-group-inner" ng-class="{ 'has-error' : form1.pincode.$invalid && !form1.pincode.$pristine }">
+                                                                                                                    <div class="row">
+                                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;" >
+                                                                                                                            <label class="login2 pull-right pull-right-pro">Pincode*</label>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                                                                              <!-- <input type="text" class="form-control" placeholder="Name"/> -->
+                                                                                                                              <input type="text" class="form-control" ng-model="personal_details.pincode" name="pincode" 
+                                                                                                                               ng-minlength="6" ng-maxlength="6" ng-pattern="/^[0-9]{3}[)]?[-\s\.[0-9]{4,6}$/" required>
+                                                                                                                      
+                                                                                                                          </div>
+                                                                                                                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 inputdata">
+                                                                                                                          <div ng-show="form1.pincode.$dirty && form1.pincode.$invalid">
+                                                                                                                                  <!-- <p ng-show="form.preferredname.$error.required" class="help-block">Your name is required.</p> -->
+                                                                                                                                  <!-- <p ng-show="form.phonenumber.$error.minlength" class="help-block">Your mobile number only 10 digits.</p> -->
+                                                                                                                                  <p ng-show="form1.pincode.$error.maxlength" class="help-block">Your pincode only 6 digits.</p>
+                                                                                                                                  <!-- <p ng-show="form1.pincode.$error.pattern" class="help-block">Only numbers please.</p> -->
+                                                                                                                                </div>
+                                                                                                                                <div ng-show="form1.pincode.$invalid">
+                                                                                                                                      <p ng-show="form1.pincode.$error.required" class="help-block">Your pincode is required.</p>
+                                                                                                                                      <!-- <p ng-show="form.phonenumber.$error.minlength" class="help-block">Your mobile number only 10 digits.</p> -->
+                                                                                                                                      <!-- <p ng-show="form1.pincode.$error.maxlength" class="help-block">Your pincode only 6 digits.</p> -->
+                                                                                                                                      <!-- <p ng-show="form1.pincode.$error.pattern" class="help-block">Only numbers please.</p> -->
+                                                                                                                                    </div>     
+                                                                                                                         </div>  
+                                                                                                                    </div>
+                                                                                                                </div>                                                          
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                        <label class="login2 pull-right pull-right-pro">Email*</label>
+                                                                                                    </div>
+                                                                                                   
+                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                        <input type="text" class="form-control" placeholder="abcd@gmail.com" />
+                                                                                                    </div> 
+                                                                                                    
+                                                                                                  
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                            <label class="login2 pull-right pull-right-pro">Community Zone</label>
+                                                                                                        </div>
+                                                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                                            <!-- <div class="form-select-list">
+                                                                                                                    <select class="form-control custom-select-value" name="account">
+                                                                                                                            <option>select1</option>
+                                                                                                                            <option>select2</option>
+                                                                                                                            <option>select3</option>
+                                                                                                                            <option>select4</option>
+                                                                                                                        </select>
+                                                                                                                </div> -->
+                                                                                                                <select ng-model="community" class="form-control" ng-options="community.name for community in communities"  >
+                                                                                                                  </select>
+                                                                                                    </div>    
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                            <label class="login2 pull-right pull-right-pro">Geolocation</label>
+                                                                                                        </div>
+                                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                    <input type="text" class="form-control" ng-model=""/>
+                                                                                                                </div>    
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                <label class="login2 pull-right pull-right-pro">Language Spoken</label>
+                                                                                                            </div>
+                                                                                                            <div class="col-lg-10 col-md-6 col-sm-4 col-xs-7">
+                                                                                                              <div class="bt-df-checkbox pull-left">
+                                                                                                                       
+                                                                                                                  <label style="margin-right: 15px;" ng-repeat="language in preferredlanguage">
+                                                                                                                      <input type="checkbox" ng-model="language.selected" value={{language.name}} /> {{language.name}}
+                                                                                                                      <!-- {{albumNameArray}} -->
+                                                                                                                  </label>
+                                                                                                               <input type="checkbox" name="preferredlanguage" id="preferredlanguage" ng-model="portalIdEnabled">
+                                                                                                                      <label for="preferredlanguage">Other</label>
+                                                                                                                      
+                                                                                                                      <label for="usepreferredlanguage"></label>
+                                                                                                                      <input type="text" id="usepreferredlanguage" class="form-control" ng-model="preferredlanguageOther" ng-show="portalIdEnabled" style="width:200px;"/>
+                                                                                                                  
+                                                                           
+                                                                                                    </div>
+                                                                                                          </div>    
+                                                                                                    
+                                                                                                        </div>
+                                                                                                        
+                                                                                                    </div> 
+                                                                                                    <div class="form-group-inner">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                    <label class="login2 pull-right pull-right-pro">Date of Birth</label>
+                                                                                                                </div>
+                                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                            <div class="input-group" style="width:200px"  ng-init="init()">
+                                                                                                                                    <input type="text" class="form-control" uib-datepicker-popup="dd.MM.yyyy" ng-model="cust_dob" is-open="isDatepickerOpen" datepicker-options="datepickerOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"/>
+                                                                                                                                    <span class="input-group-btn">
+                                                                                                                                      <button type="button" class="btn btn-default" ng-click="isDatepickerOpen = !isDatepickerOpen">
+                                                                                                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                                                                                                      </button>
+                                                                                                                                    </span>
+                                                                                                                                  </div>
+                                                                                                                        </div>
+                                                                                                                       
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="form-group-inner">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                        <label class="login2 pull-right pull-right-pro">Gender</label>
+                                                                                                                    </div>
+                                                                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                                                        <!-- <div class="form-select-list">
+                                                                                                                                <select class="form-control custom-select-value" name="account">
+                                                                                                                                        <option>Male</option>
+                                                                                                                                        <option>Female</option>
+                                                                                                                                        <option>Others</option>
+                                                                                                                                    </select>
+                                                                                                                            </div> -->
+                                                                                                                            <select ng-model="selectedgender" class="form-control" ng-options="gender.name for gender in gender"  >
+                                                                                                                              </select>
+                                                                                                                </div>    
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="form-group-inner">
+                                                                                                                    <div class="row">
+                                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                            <label class="login2 pull-right pull-right-pro">Marital Status</label>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                                                            <!-- <div class="form-select-list">
+                                                                                                                                    <select class="form-control custom-select-value" name="account">
+                                                                                                                                            <option>Married</option>
+                                                                                                                                            <option>Single</option>
+                                                                                                                                            <option>Widow</option>
+                                                                                                                                            <option>Widower</option>
+                                                                                                                                            <option>Divorced</option>
+                                                                                                                                            <option>Seperated</option>
+                                                                                                                                        </select>
+                                                                                                                                </div> -->
+                                                                                                                                <select ng-model="selectedmaritalstatus" class="form-control" ng-options="maritalstatus.name for maritalstatus in maritalstatus"  >
+                                                                                                                                  </select>
+                                                                                                                    </div>    
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="date-picker-inner">
+                                                                                                                        <div class="row">
+                                                                  
+                                                                                                                         <div class="form-group data-custon-pick" id="data_1">
+                                                                                                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                           
+                                                                                                                             <label class="login2 pull-right pull-right-pro"><b>Date Of Marriage</b></label>
+                                                                                                                             </div>
+                                                                                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                  <div class="input-group" style="width:200px"  ng-init="init()">
+                                                                                                                                          <input type="text" class="form-control"  uib-datepicker-popup="dd.MM.yyyy" ng-model="cust_dom" is-open="isDatepickerOpen1" datepicker-options="datepickerOptions1" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"/>
+                                                                                                                                          <span class="input-group-btn">
+                                                                                                                                            <button type="button" class="btn btn-default" ng-click="isDatepickerOpen1 = !isDatepickerOpen1">
+                                                                                                                                              <i class="glyphicon glyphicon-calendar"></i>
+                                                                                                                                            </button>
+                                                                                                                                          </span>
+                                                                                                                                        </div>
+                                                                                                                              </div>
+                                                                                                                            </div> 
+                                                                                                                             
+                                                                                                                         </div>
+                                                                                                                     </div>
+                                                                                                                     <br>
+                                                                                                                     <div class="form-group-inner">
+                                                                                                                            <div class="row">
+                                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                                    <label class="login2 pull-right pull-right-pro">Religious Preference</label>
+                                                                                                                                </div>
+                                                                                                                                <div class="col-lg-10 col-md-6 col-sm-4 col-xs-7">
+                                                                                                                                    <div class="bt-df-checkbox pull-left">
+                                                                                                                                             
+                                                                                                                                        <label style="margin-right: 15px;" ng-repeat="religious in religiouspreference">
+                                                                                                                                            <input type="checkbox" ng-model="religious.selected" value={{religious.name}} /> {{religious.name}}
+                                                                                                                                            <!-- {{albumNameArray}} -->
+                                                                                                                                        </label>
+                                                                                                                                     <input type="checkbox" name="religiouspreference" id="religiouspreference" ng-model="religiouspreferencedata">
+                                                                                                                                            <label for="religiouspreference">Other</label>
+                                                                                                                                            
+                                                                                                                                            <label for="usereligiouspreference"></label>
+                                                                                                                                            <input type="text" id="usereligiouspreference" class="form-control" ng-model="religiouspreferenceeOther" ng-show="religiouspreferencedata" style="width:200px;"/>
+                                                                                                                                        
+                                                                                                                                          
+                                                                                                                          </div>
+                                                                                                                                </div>   
+                                                                                                                                  
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="form-group-inner">
+                                                                                                                                <div class="row">
+                                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                                        <label class="login2 pull-right pull-right-pro">Living situation*</label>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-7">
+                                                                                                                                      <div class="bt-df-checkbox pull-left">
+                                                                                                                                               
+                                                                                                                                          <label style="margin-right: 15px;" ng-repeat="living in livingsituation">
+                                                                                                                                              <input type="checkbox" ng-model="living.selected" value={{living.name}} /> {{living.name}}
+                                                                                                                                              <!-- {{albumNameArray}} -->
+                                                                                                                                          </label>
+                                                                                                                                       <input type="checkbox" name="livingsituation" id="livingsituation" ng-model="livingsituationdata">
+                                                                                                                                              <label for="livingsituation">Other</label>
+                                                                                                                                              
+                                                                                                                                              <label for="uselivingsituation"></label>
+                                                                                                                                              <input type="text" id="uselivingsituation" class="form-control" ng-model="livingsituationOther" ng-show="livingsituationdata" style="width:200px;"/>
+                                                                                                                                   
+                                                                                                                            </div>
+                                                                                                                                  </div>     
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                            <div class="form-group-inner">
+                                                                                                                                    <div class="row">
+                                                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                                            <label class="login2 pull-right pull-right-pro">Staying with</label>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                                                                            <!-- <div class="form-select-list">
+                                                                                                                                                    <select class="form-control custom-select-value" name="account">
+                                                                                                                                                            <option>0</option>
+                                                                                                                                                            <option>1</option>
+                                                                                                                                                            <option>2</option>
+                                                                                                                                                            <option>3</option>
+                                                                                                                                                            <option>4</option>
+                                                                                                                                                            <option>5</option>
+                                                                                                                                                            <option>6</option>
+                                                                                                                                                            <option>7</option>
+                                                                                                                                                            <option>8</option>
+                                                                                                                                                            <option>9</option>
+                                                                                                                                                          
+                                                                                                                                                        </select>
+                                                                                                                                                </div> -->
+                                                                                                                                                <select ng-model="selectedstayingwith" class="form-control" ng-options="stayingwith.name for stayingwith in stayingwith"  >
+                                                                                                                                                  </select>
+                                                                                                                                    </div> 
+                                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                                      <label class="login2 pull-right pull-right-pro">(# of people)</label>
+                                                                                                                                  </div>    
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                <div class="form-group-inner">
+                                                                                                                                        <div class="row">
+                                                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                                                <label class="login2 pull-right pull-right-pro">Family Members</label>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                                <input type="text" class="form-control" value="Name" readonly/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="cust_family_member_1"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="cust_family_member_2"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="cust_family_member_3"/>
+                                                                                                                                                <br>
+                                                                                                                                            </div> 
+                                                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                                                                                                <input type="text" class="form-control" Value="Age" readonly/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="age1"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="age2"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="age3"/>
+                                                                                                                                                <br>
+                                                                                                                                            </div> 
+                                                                                                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                                                                                                <input type="text" class="form-control" Value="Relationship" readonly/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="relationship1"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="relationship2"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="relationship3"/>
+                                                                                                                                                <br>
+                                                                                    
+                                                                                                                                            </div> 
+                                                                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                                <input type="text" class="form-control" value="Remarks and Contact No." readonly/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="remarks1"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="remarks2"/>
+                                                                                                                                                <br>
+                                                                                                                                                <input type="text" class="form-control" ng-model="remarks3"/>
+                                                                                                                                            </div> 
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="form-group-inner">
+                                                                                                                                            <div class="row">
+                                                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:215px;">
+                                                                                                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">Risk Assessment for Staff
+                                                                                                                                                    </label>
+                                                                                                                                                    
+                                                                                                                                                </div>
+                                                                                                                                                <hr style="width:77%;">
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12" >
+                                                                                                                                                        <label class="login2">Q. Does the home have mobile coverage ?</label>
+                                                                                                                                                    </div>
+                                                                                                                                                    
+                                                                                                                                                    <div class="col-lg-6 col-md-3 col-sm-3 col-xs-3">
+                                                                                                                                                        <div class="bt-df-checkbox">
+                                                                                                                                                            <label><input class="pull-left radio-checked" checked="checked" value="Yes" type="radio" ng-model="personal_details.cust_risk_assessment_1" id="optionsRadios1" name="optionsRadios">Yes</label>
+                                                                                                                                                            &nbsp;&nbsp;
+                                                                                                                                                            <label><input class="pull-left" type="radio" id="optionsRadios2" value="No" name="optionsRadios" ng-model="personal_details.cust_risk_assessment_1">&nbsp;No</label>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12" >
+                                                                                                                                                        <label class="login2">Q. Does the home have a guest washroom that family will allow staff to use ?</label>
+                                                                                                                                                    </div>
+                                                                                                                                                    
+                                                                                                                                                    <div class="col-lg-6 col-md-3 col-sm-3 col-xs-3">
+                                                                                                                                                        <div class="bt-df-checkbox">
+                                                                                                                                                            
+                                                                                                                                                            <label><input class="pull-left" type="radio" checked="checked" value="Yes" id="optionsRadios1" ng-model="personal_details.cust_risk_assessment_2" name="optionsRadios1">Yes</label>
+                                                                                                                                                            &nbsp;&nbsp;
+                                                                                                                                                            <label><input class="pull-left" type="radio" value="No" id="optionsRadios2" ng-model="personal_details.cust_risk_assessment_2" name="optionsRadios1">&nbsp;No</label>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12" >
+                                                                                                                                                        <label class="login2">Q. Is the home located in a safe area ?</label>
+                                                                                                                                                    </div>
+                                                                                                                                                    
+                                                                                                                                                    <div class="col-lg-6 col-md-3 col-sm-3 col-xs-3">
+                                                                                                                                                        <div class="bt-df-checkbox">
+                                                                                                                                                            <label><input class="pull-left" type="radio" checked="" value="Yes" id="optionsRadios1" name="optionsRadios2" ng-model="personal_details.cust_risk_assessment_3">Yes</label>
+                                                                                                                                                            &nbsp;&nbsp;
+                                                                                                                                                            <label><input class="pull-left" type="radio" value="No" id="optionsRadios2" name="optionsRadios2" ng-model="personal_details.cust_risk_assessment_3">&nbsp;No</label>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12" >
+                                                                                                                                                        <label class="login2">Q. Is home easily accessible via public transport ?</label>
+                                                                                                                                                    </div>
+                                                                                                                                                    
+                                                                                                                                                    <div class="col-lg-6 col-md-3 col-sm-3 col-xs-3">
+                                                                                                                                                        <div class="bt-df-checkbox">
+                                                                                                                                                            <label><input class="pull-left" type="radio" checked="checked" value="Yes" id="optionsRadios1" name="optionsRadios3" ng-model="personal_details.cust_risk_assessment_4">Yes</label>
+                                                                                                                                                            &nbsp;&nbsp;
+                                                                                                                                                            <label><input class="pull-left" type="radio" value="No" id="optionsRadios2" name="optionsRadios3" ng-model="personal_details.cust_risk_assessment_4">&nbsp;No</label>
+                                                                                                                                                        </div>
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12" >
+                                                                                                                                                        <label class="login2">Q. Are there any potential safety concerns for staff ?</label>
+                                                                                                                                                    </div>
+                                                                                                                                                    
+                                                                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                                                                                                                                        <input type="text" class="form-control" ng-model="personal_details.cust_risk_assessment_5" />
+                                                                                                                                                       
+                                                                                                                                                    </div>
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:200px;">
+                                                                                                                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">Educational Qualication</label>
+                                                                                                                                                    </div>
+                                                                                                                                                  <hr style="width:78%;">
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                                                                                                       
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                                        <input type="text" class="form-control" value="Degree/Diploma" readonly/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="cust_education_1"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="cust_education_2"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="cust_education_3"/>
+                                                                                                                                                        <br>
+                                                                                                                                                    </div> 
+                                                                                                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                                                                                                        <input type="text" class="form-control" Value="Year of Passing" readonly/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="year1"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="year2"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="year3"/>
+                                                                                                                                                        <br>
+                                                                                                                                                    </div> 
+                                                                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                                        <input type="text" class="form-control" Value="University" readonly/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="University1"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="University2"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="University3"/>
+                                                                                                                                                        <br>
+                                                                                                                                                    </div> 
+                                                                                                                                                  
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                           
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:100px;">
+                                                                                                                                                        <label class="login2" style="font-size:15px;color:#ff470d;">Assets</label>
+                                                                                                                                                    </div>
+                                                                                                                                                  <hr style="width:86%;">
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <div class="form-group-inner">
+                                                                                                                                                <div class="row">
+                                                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                                                                                                    </div>
+                                                                                                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                                                                                                        <input type="text" class="form-control" value="Type" readonly/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <!-- <div class="form-select-list">
+                                                                                                                                                                <select class="form-control custom-select-value" name="account">
+                                                                                                                                                                        <option>House</option>
+                                                                                                                                                                        <option>Car</option>
+                                                                                                                                                                        <option>Land</option>
+                                                                                                                                                                      
+                                                                                                                                                                    </select>
+                                                                                                                                                        </div> -->
+                                                                                                                                                        <select ng-model="selectedassets1" class="form-control" ng-options="assets1.name for assets1 in assets1"  >
+                                                                                                                                                            </select>
+                                                                                                                                                        <br>
+                                                                                                                                                        <!-- <div class="form-select-list">
+                                                                                                                                                                <select class="form-control custom-select-value" name="account">
+                                                                                                                                                                        <option>House</option>
+                                                                                                                                                                        <option>Car</option>
+                                                                                                                                                                        <option>Land</option>
+                                                                                                                                                                      
+                                                                                                                                                                    </select>
+                                                                                                                                                        </div> -->
+                                                                                                                                                        <select ng-model="selectedassets2" class="form-control" ng-options="assets2.name for assets2 in assets2"  >
+                                                                                                                                                            </select>
+                                                                                                                                                        <br>
+                                                                                                                                                        <!-- <div class="form-select-list">
+                                                                                                                                                                <select class="form-control custom-select-value" name="account">
+                                                                                                                                                                        <option>House</option>
+                                                                                                                                                                        <option>Car</option>
+                                                                                                                                                                        <option>Land</option>
+                                                                                                                                                                      
+                                                                                                                                                                    </select>
+                                                                                                                                                        </div> -->
+                                                                                                                                                        <select ng-model="selectedassets3" class="form-control" ng-options="assets3.name for assets3 in assets3"  >
+                                                                                                                                                            </select>
+                                                                                                                                                        <br>
+                                                                                            
+                                                                                                                                                    </div> 
+                                                                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                                        <input type="text" class="form-control" Value="Details" readonly/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="detailsassets1" />
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="detailsassets2"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="detailsassets3"/>
+                                                                                                                                                        <br>
+                                                                                                                                                    </div> 
+                                                                                                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                                                                                                        <input type="text" class="form-control" Value="Value" readonly/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="valueassets1" />
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="valueassets2"/>
+                                                                                                                                                        <br>
+                                                                                                                                                        <input type="text" class="form-control" ng-model="valueassets3"/>
+                                                                                                                                                        <br>
+                                                                                                                                                    </div> 
+                                                                                                                                                  
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                            <ul class="list-inline pull-right" >
+                                                                                                                                                    <li>
+                                                                                                                                                      <a ng-click="addRegionManager();"  ><button type="submit" class="btn btn-primary next-step" >Add</button></a>
+                                                                                                                                                    </li>
+                                                                                                                                                   <li>
+                                                                                                                                                     <a  style="color:black;"><button class="btn btn-default prev-step" type="submit">Cancel</button></a>
+                                                                                                                                                   </li>
+                                                                                                                                                  
+                                                                                                                                                 </ul>
+                                                                                </form>
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        <!-- </div> -->
+                                                    </div>
+    
+                                                </div>
+                                                <!--Personal-->
+    
+                                                <!--All Region Data-->
+    
+                                                <div id="Emergency" class="tab-pane custon-tab-style1">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="sparkline13-list">
+                                                               
+                                                                <div class="sparkline13-graph">
+                                                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                       
+                                                                        <br>
+                                                                       <div class="container-fluid"> 
+                                                                            <table id="customerTable" class="table table-bordered table-sm" ng-init="getRegionData();" cellspacing="0" width="100%">
+                                                                                    <thead>
+                                                                                      <tr>
+                                                                                        <th class="th-sm" onclick="sortTable(0)"><center>Region</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Location</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Address</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" onclick="sortTable(1)"><center>Region Manager</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Phone no.</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Action</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                      <tr ng-repeat="getregiondata in getregionManagerdata | filter:region">    
+                                                                                        <td><center>{{getregiondata.region_name}}</center></td>
+                                                                                        <td><center>{{getregiondata.region_location}}</center></td>
+                                                                                        <td><center>{{getregiondata.region_address}}</center></td>
+                                                                                        <td><center>{{getregiondata.rm_name}}</center></td>
+                                                                                        <td><center>{{getregiondata.region_phone}}</center></td> 
+                                                                                        <td>
+                                                                                            <center>
+                                                                                                <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                        <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                </div>
+                                                                                            </center>
+                                                                                        </td>
+                                                                                      </tr>
+                                                                                     
+                                                                                    </tbody>
+                                                                                    <tfoot>
+                                                                                      <tr>
+                                                                                        <th><center>Region</center>
+                                                                                        </th>
+                                                                                        <th><center>Location</center>
+                                                                                        </th>
+                                                                                        <th><center>Address</center>
+                                                                                        </th>
+                                                                                        <th><center>Region Manager</center>
+                                                                                        </th>
+                                                                                        <th><center>Phone No.</center>
+                                                                                        </th>
+                                                                                        <th><center>Action</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                    </tfoot>
+                                                                                  </table>
+                                                                                  <div class="row">
+                                                                                    <h4>Total count :
+                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                    <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                          </ul>
+                                                                                            </div>
+                                                                                    </h4>
+                                                                                  </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--All Region Data-->
+    
+                                                <!--All Cluster Data-->
+    
+                                                <div id="Medical" class="tab-pane custon-tab-style1" >
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="sparkline13-list">
+                                                               
+                                                                <div class="sparkline13-graph">
+                                                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                       
+                                                                        <br>
+                                                                       <div class="container-fluid"> 
+                                                                            <table id="customerTable" ng-init="getClusterData();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                    <thead>
+                                                                                      <tr>
+                                                                                        <th class="th-sm"><center>Cluster</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Location</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Address</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Cluster Manager</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Phone no.</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Region</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Action</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr ng-repeat="getclusterdata in getClusterManagerdata | filter:cluster">    
+                                                                                            <td><center>{{getclusterdata.cluster_name}}</center></td>
+                                                                                            <td><center>{{getclusterdata.cluster_location}}</center></td>
+                                                                                            <td><center>{{getclusterdata.cluster_address}}</center></td>
+                                                                                            <td><center>{{getclusterdata.clm_name}}</center></td>
+                                                                                            <td><center>{{getclusterdata.cluster_phone}}</center></td> 
+                                                                                            <td><center>{{getclusterdata.region_name}}</center></td>
+                                                                                            <td>
+                                                                                                <center>
+                                                                                                    <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                            <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                    </div>
+                                                                                                </center>
+                                                                                            </td>
+                                                                                          </tr>
+                                                                                         
+                                                                                    </tbody>
+                                                                                    <tfoot>
+                                                                                      <tr>
+                                                                                        <th><center>Cluster</center>
+                                                                                        </th>
+                                                                                        <th><center>Location</center>
+                                                                                        </th>
+                                                                                        <th><center>Address</center>
+                                                                                        </th>
+                                                                                        <th><center>Cluster Manager</center>
+                                                                                        </th>
+                                                                                        <th><center>Phone No.</center>
+                                                                                        </th>
+                                                                                        <th><center>Region</center>
+                                                                                        </th>
+                                                                                        <th><center>Action</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                    </tfoot>
+                                                                                  </table>
+                                                                                  <div class="row">
+                                                                                    <h4>Total count : 
+                                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                            <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                  </ul>
+                                                                                    </div>
+                                                                                    </h4>
+                                                                                  </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--All Cluster Data-->
+    
+                                                <!--All Community Data-->
+    
+                                                
+                                                <div id="FunctionalAbility" class="tab-pane custon-tab-style1">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="sparkline13-list">
+                                                               
+                                                                <div class="sparkline13-graph">
+                                                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                       
+                                                                        <br>
+                                                                       <div class="container-fluid"> 
+                                                                            <table id="customerTable" ng-init="getCommunityData();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                    <thead>
+                                                                                      <tr>
+                                                                                        <th class="th-sm"><center>Community</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Location</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Address</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Community Manager</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Phone no.</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Cluster</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Region</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm" ><center>Action</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr ng-repeat="getCommunitydata in getCommunityManagerdata | filter:Community">    
+                                                                                            <td><center>{{getCommunitydata.comm_name}}</center></td>
+                                                                                            <td><center>{{getCommunitydata.comm_location}}</center></td>
+                                                                                            <td><center>{{getCommunitydata.comm_address}}</center></td>
+                                                                                            <td><center>{{getCommunitydata.cm_name}}</center></td>
+                                                                                          
+                                                                                            <td><center>{{getCommunitydata.comm_phone}}</center></td> 
+                                                                                            <td><center>{{getCommunitydata.cluster_name}}</center></td>
+                                                                                            <td><center>{{getCommunitydata.region_name}}</center></td>
+                                                                                            <td>
+                                                                                                <center>
+                                                                                                    <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                            <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                    </div>
+                                                                                                </center>
+                                                                                            </td>
+                                                                                          </tr>
+                                                                                       
+                                                                                    </tbody>
+                                                                                    <tfoot>
+                                                                                      <tr>
+                                                                                        <th><center>Community</center>
+                                                                                        </th>
+                                                                                        <th><center>Location</center>
+                                                                                        </th>
+                                                                                        <th><center>Address</center>
+                                                                                        </th>
+                                                                                        <th><center>Community Manager</center>
+                                                                                        </th>
+                                                                                        <th><center>Phone No.</center>
+                                                                                        </th>
+                                                                                        <th><center>Cluster</center>
+                                                                                        </th>
+                                                                                        <th><center>Region</center>
+                                                                                        </th>
+                                                                                        <th><center>Action</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                    </tfoot>
+                                                                                  </table>
+                                                                                  <div class="row">
+                                                                                    <h4>Total count : 50
+                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                    <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                          </ul>
+                                                                                            </div>
+                                                                                    </h4>
+                                                                                  </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="CognitiveStatus" class="tab-pane custon-tab-style1">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="sparkline13-list">
+                                                                   
+                                                                    <div class="sparkline13-graph">
+                                                                        <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                           
+                                                                            <br>
+                                                                           <div class="container-fluid"> 
+                                                                                <table id="customerTable" ng-init="getCommunityData();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                        <thead>
+                                                                                          <tr>
+                                                                                            <th class="th-sm"><center>Community</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm" ><center>Location</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm" ><center>Address</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm"><center>Community Manager</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm"><center>Phone no.</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm"><center>Cluster</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm"><center>Region</center>
+                                                                                            </th>
+                                                                                            <th class="th-sm" ><center>Action</center>
+                                                                                            </th>
+                                                                                          </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr ng-repeat="getCommunitydata in getCommunityManagerdata | filter:Community">    
+                                                                                                <td><center>{{getCommunitydata.comm_name}}</center></td>
+                                                                                                <td><center>{{getCommunitydata.comm_location}}</center></td>
+                                                                                                <td><center>{{getCommunitydata.comm_address}}</center></td>
+                                                                                                <td><center>{{getCommunitydata.cm_name}}</center></td>
+                                                                                              
+                                                                                                <td><center>{{getCommunitydata.comm_phone}}</center></td> 
+                                                                                                <td><center>{{getCommunitydata.cluster_name}}</center></td>
+                                                                                                <td><center>{{getCommunitydata.region_name}}</center></td>
+                                                                                                <td>
+                                                                                                    <center>
+                                                                                                        <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                                <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                        </div>
+                                                                                                    </center>
+                                                                                                </td>
+                                                                                              </tr>
+                                                                                           
+                                                                                        </tbody>
+                                                                                        <tfoot>
+                                                                                          <tr>
+                                                                                            <th><center>Community</center>
+                                                                                            </th>
+                                                                                            <th><center>Location</center>
+                                                                                            </th>
+                                                                                            <th><center>Address</center>
+                                                                                            </th>
+                                                                                            <th><center>Community Manager</center>
+                                                                                            </th>
+                                                                                            <th><center>Phone No.</center>
+                                                                                            </th>
+                                                                                            <th><center>Cluster</center>
+                                                                                            </th>
+                                                                                            <th><center>Region</center>
+                                                                                            </th>
+                                                                                            <th><center>Action</center>
+                                                                                            </th>
+                                                                                          </tr>
+                                                                                        </tfoot>
+                                                                                      </table>
+                                                                                      <div class="row">
+                                                                                        <h4>Total count : 50
+                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                        <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                                <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                                <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                              </ul>
+                                                                                                </div>
+                                                                                        </h4>
+                                                                                      </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="SocialBackground" class="tab-pane custon-tab-style1">
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="sparkline13-list">
+                                                                       
+                                                                        <div class="sparkline13-graph">
+                                                                            <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                               
+                                                                                <br>
+                                                                               <div class="container-fluid"> 
+                                                                                    <table id="customerTable" ng-init="getCommunityData();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                            <thead>
+                                                                                              <tr>
+                                                                                                <th class="th-sm"><center>Community</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm" ><center>Location</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm" ><center>Address</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm"><center>Community Manager</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm"><center>Phone no.</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm"><center>Cluster</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm"><center>Region</center>
+                                                                                                </th>
+                                                                                                <th class="th-sm" ><center>Action</center>
+                                                                                                </th>
+                                                                                              </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr ng-repeat="getCommunitydata in getCommunityManagerdata | filter:Community">    
+                                                                                                    <td><center>{{getCommunitydata.comm_name}}</center></td>
+                                                                                                    <td><center>{{getCommunitydata.comm_location}}</center></td>
+                                                                                                    <td><center>{{getCommunitydata.comm_address}}</center></td>
+                                                                                                    <td><center>{{getCommunitydata.cm_name}}</center></td>
+                                                                                                  
+                                                                                                    <td><center>{{getCommunitydata.comm_phone}}</center></td> 
+                                                                                                    <td><center>{{getCommunitydata.cluster_name}}</center></td>
+                                                                                                    <td><center>{{getCommunitydata.region_name}}</center></td>
+                                                                                                    <td>
+                                                                                                        <center>
+                                                                                                            <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                                    <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                            </div>
+                                                                                                        </center>
+                                                                                                    </td>
+                                                                                                  </tr>
+                                                                                               
+                                                                                            </tbody>
+                                                                                            <tfoot>
+                                                                                              <tr>
+                                                                                                <th><center>Community</center>
+                                                                                                </th>
+                                                                                                <th><center>Location</center>
+                                                                                                </th>
+                                                                                                <th><center>Address</center>
+                                                                                                </th>
+                                                                                                <th><center>Community Manager</center>
+                                                                                                </th>
+                                                                                                <th><center>Phone No.</center>
+                                                                                                </th>
+                                                                                                <th><center>Cluster</center>
+                                                                                                </th>
+                                                                                                <th><center>Region</center>
+                                                                                                </th>
+                                                                                                <th><center>Action</center>
+                                                                                                </th>
+                                                                                              </tr>
+                                                                                            </tfoot>
+                                                                                          </table>
+                                                                                          <div class="row">
+                                                                                            <h4>Total count : 50
+                                                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                            <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                                    <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                                  </ul>
+                                                                                                    </div>
+                                                                                            </h4>
+                                                                                          </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div id="Medication" class="tab-pane custon-tab-style1">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="sparkline13-list">
+                                                                           
+                                                                            <div class="sparkline13-graph">
+                                                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                                  
+                                                                                    <br>
+                                                                                   <div class="container-fluid"> 
+                                                                                        <table id="customerTable" ng-init="getCommunityData();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                                <thead>
+                                                                                                  <tr>
+                                                                                                    <th class="th-sm"><center>Community</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm" ><center>Location</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm" ><center>Address</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm"><center>Community Manager</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm"><center>Phone no.</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm"><center>Cluster</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm"><center>Region</center>
+                                                                                                    </th>
+                                                                                                    <th class="th-sm" ><center>Action</center>
+                                                                                                    </th>
+                                                                                                  </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr ng-repeat="getCommunitydata in getCommunityManagerdata | filter:Community">    
+                                                                                                        <td><center>{{getCommunitydata.comm_name}}</center></td>
+                                                                                                        <td><center>{{getCommunitydata.comm_location}}</center></td>
+                                                                                                        <td><center>{{getCommunitydata.comm_address}}</center></td>
+                                                                                                        <td><center>{{getCommunitydata.cm_name}}</center></td>
+                                                                                                      
+                                                                                                        <td><center>{{getCommunitydata.comm_phone}}</center></td> 
+                                                                                                        <td><center>{{getCommunitydata.cluster_name}}</center></td>
+                                                                                                        <td><center>{{getCommunitydata.region_name}}</center></td>
+                                                                                                        <td>
+                                                                                                            <center>
+                                                                                                                <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                                        <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                                </div>
+                                                                                                            </center>
+                                                                                                        </td>
+                                                                                                      </tr>
+                                                                                                   
+                                                                                                </tbody>
+                                                                                                <tfoot>
+                                                                                                  <tr>
+                                                                                                    <th><center>Community</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Location</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Address</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Community Manager</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Phone No.</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Cluster</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Region</center>
+                                                                                                    </th>
+                                                                                                    <th><center>Action</center>
+                                                                                                    </th>
+                                                                                                  </tr>
+                                                                                                </tfoot>
+                                                                                              </table>
+                                                                                              <div class="row">
+                                                                                                <h4>Total count : 50
+                                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                                <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                                      </ul>
+                                                                                                        </div>
+                                                                                                </h4>
+                                                                                              </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div id="Record" class="tab-pane custon-tab-style1">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="sparkline13-list">
+                                                                               
+                                                                                <div class="sparkline13-graph">
+                                                                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                                       
+                                                                                        <br>
+                                                                                       <div class="container-fluid"> 
+                                                                                            <table id="customerTable" ng-init="getCommunityData();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                                    <thead>
+                                                                                                      <tr>
+                                                                                                        <th class="th-sm"><center>Community</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm" ><center>Location</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm" ><center>Address</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm"><center>Community Manager</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm"><center>Phone no.</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm"><center>Cluster</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm"><center>Region</center>
+                                                                                                        </th>
+                                                                                                        <th class="th-sm" ><center>Action</center>
+                                                                                                        </th>
+                                                                                                      </tr>
+                                                                                                    </thead>
+                                                                                                    <tbody>
+                                                                                                        <tr ng-repeat="getCommunitydata in getCommunityManagerdata | filter:Community">    
+                                                                                                            <td><center>{{getCommunitydata.comm_name}}</center></td>
+                                                                                                            <td><center>{{getCommunitydata.comm_location}}</center></td>
+                                                                                                            <td><center>{{getCommunitydata.comm_address}}</center></td>
+                                                                                                            <td><center>{{getCommunitydata.cm_name}}</center></td>
+                                                                                                          
+                                                                                                            <td><center>{{getCommunitydata.comm_phone}}</center></td> 
+                                                                                                            <td><center>{{getCommunitydata.cluster_name}}</center></td>
+                                                                                                            <td><center>{{getCommunitydata.region_name}}</center></td>
+                                                                                                            <td>
+                                                                                                                <center>
+                                                                                                                    <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                                            <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                                    </div>
+                                                                                                                </center>
+                                                                                                            </td>
+                                                                                                          </tr>
+                                                                                                       
+                                                                                                    </tbody>
+                                                                                                    <tfoot>
+                                                                                                      <tr>
+                                                                                                        <th><center>Community</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Location</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Address</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Community Manager</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Phone No.</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Cluster</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Region</center>
+                                                                                                        </th>
+                                                                                                        <th><center>Action</center>
+                                                                                                        </th>
+                                                                                                      </tr>
+                                                                                                    </tfoot>
+                                                                                                  </table>
+                                                                                                  <div class="row">
+                                                                                                    <h4>Total count : 50
+                                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                                    <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                                            <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                                          </ul>
+                                                                                                            </div>
+                                                                                                    </h4>
+                                                                                                  </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                <!--All Community Data-->
+                                            </div>
+                                            <!---Tabs Content-->
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---Home Care Registration------>
+   

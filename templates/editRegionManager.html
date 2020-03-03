@@ -1,0 +1,461 @@
+<div class="all-content-wrapper">
+    <div class="container-fluid" ng-init="regionIdData()">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                  <!--Form-->
+                  
+                  
+                    <div class="tab-content">
+                      <div class="tab-pane fade in active" role="tabpanel">    
+                          <br>
+                        <!---Breadcrumb-->
+                        <h5> <a ng-href="/manager/"  style="color: #747474;"> Manager >> </a> <span><a ng-href="/manager/regionManagerDetail/:rm_id"  style="color: #747474;"> regionManagerDetail >> </a></span><span class="table-project-n">Edit Region Manager</span></h5> 
+                         <!---Breadcrumb-->          
+                        <div class="sparkline12-graph" >
+                          <div class="basic-login-form-ad">  
+                              <div class="row">    
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <div class="all-form-element-inner">  
+                                          <form name="form">
+                                              <!---Personal Details-->
+                                                <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="width:150px;">
+                                                                <label class="login2" style="font-size:15px;color:#ff470d;">Personal Details</label>
+                                                            </div>
+                                                          <hr style="width:82%;">
+                                                        </div>
+                                                    </div>
+                                             
+                                              <div class="form-group-inner" ng-class="{ 'has-error' : form.name.$invalid && !form.name.$pristine }">
+                                                    <div class="row">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                            <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                        </div>
+                                                        
+                                                                <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                        <input type="text" class="form-control" ng-model="regionvalue1.rm_name" name="name1" 
+                                                                        required ng-minlength=3 ng-maxlength=20 ng-pattern="/^[a-zA-Z]+$/">
+                                                                        <span ng-show="form.name1.$error.required && form.name1.$touched" class="help-block" style="font-size: 13px">Name is required.</span>
+                                                                        <span ng-show="form.name1.$error.minlength" class="help-block" style="font-size: 13px">Your Name must be greater than 3 characters.</span>
+                                                                        <span ng-show="form.name1.$error.maxlength" class="help-block" style="font-size: 13px">Your Name be less than 20 characters.</span>
+                                                                    </div>
+                                                                    
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                            <label class="login2 pull-right pull-right-pro">Profile Picture</label>
+                                                        </div>
+                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                            <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                                <div class="input append-small-btn">
+                                                                    <div class="file-button">
+                                                                        Upload
+                                                                        <input type="file" >
+                                                                    </div>
+                                                                    <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <div class="form-group-inner" ng-class="{ 'has-error' : form.phonenumber.$invalid && !form.phonenumber.$pristine }">
+                                                        <div class="row">
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <label class="login2 pull-right pull-right-pro">Mobile No.*</label>
+                                                            </div>
+                                                            
+                                                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                    <input type="text" class="form-control" Value="+91" readonly/>
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                        <input type="text" class="form-control" placeholder="123456789" ng-model="moNumber" name="phoneNo" 
+                                                                        required ng-minlength="10" maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/">
+                                                                        <span ng-show="form.phoneNo.$error.required && form.phoneNo.$touched" class="help-block" style="font-size: 13px">Mobile Number is required.</span>
+                                                                        <span ng-show="form.phoneNo.$error.minlength" class="help-block" style="font-size: 13px">Mobile number must be of 10 digit</span>
+                                                                                                                
+                                                                        <span ng-show="form.phoneNo.$error.pattern" class="help-block" style="font-size: 13px">Only Enter Number</span>
+                                                                    </div>
+                                                                   
+                                                                   
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <label class="login2 pull-right pull-right-pro">Alternate Mobile</label>
+                                                                </div>
+                                                                
+                                                                <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                        <input type="text" class="form-control" Value="+91" readonly/>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                            <input type="text" name="alternateMobile" class="form-control" placeholder="123456789" ng-model="altNum" ng-minlength="10" maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/"/>
+                                                                            <span ng-show="form.alternateMobile.$error.minlength" class="help-block" style="font-size: 13px">Mobile number must be of 10 digit</span>
+                                                                                                                
+                                                                        <span ng-show="form.alternateMobile.$error.pattern" class="help-block" style="font-size: 13px">Only Enter Number</span>
+                                                                        </div>
+                                                                        
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner" ng-class="{ 'has-error' : form.email.$invalid && !form.email.$pristine }">
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                        <label class="login2 pull-right pull-right-pro">Email-ID</label>
+                                                                    </div>
+                                                                    <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                            <input type="email" class="form-control" placeholder="abcd@gmail.com" ng-model="regionvalue1.rm_email" name="email" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"/>
+                                                                            <span ng-show="form.email.$error.pattern " class="help-block" style="font-size: 13px">Enter A Valid Email</span>
+                                                                        </div>
+                                                                        
+                                                                </div>
+                                                            </div>
+                                                           
+                                              <div class="form-group-inner">
+                                                  <div class="row">
+                                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                          <label class="login2 pull-right pull-right-pro">Address</label>
+                                                      </div>
+                                                      <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                        <textarea class="form-control" type="text" placeholder="Address1" ng-model="adress1"></textarea>
+                                                          </div>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group-inner">
+                                                  <div class="row">
+                                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                          <!-- <label class="login2 pull-right pull-right-pro">Address*</label> -->
+                                                      </div>
+                                                      <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                            <textarea class="form-control" type="text"placeholder="Address2" ng-model="adress2"></textarea>
+                                                          </div>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                            <label class="login2 pull-right pull-right-pro">Date of Birth</label>
+                                                        </div>
+                                                            <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                    <div class="input-group" style="width:200px ">
+                                                                        <input type="date" class="form-control" ng-model="dob" ng-value="dob"   required/>
+                                                                        
+                                                                          </div>
+                                                                </div>
+                                                               
+                                                    </div>
+                                                </div>
+                                             <br>
+                                             <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                        <label class="login2 pull-right pull-right-pro">Gender</label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                        <select ng-model="regionvalue1.rm_gender"  class="form-control" >
+                                                            <option>{{regionvalue1.rm_gender}}</option>
+                                                            <option>male</option>
+                                                            <option>female</option>
+                                                        </select>
+                                                </div>    
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                            <label class="login2 pull-right pull-right-pro">Language Proficiency</label>
+                                                        </div>
+                                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                                              <div class="bt-df-checkbox pull-left">
+                                                                 
+                                                                            <label style="margin-right: 15px;" ng-repeat="(Language,enabled) in preferedlang">
+                                                                                <input type="checkbox" ng-model="preferedlang[Language]" value={{Language}} /> {{Language}}
+                                                                                <!-- {{albumNameArray}} -->
+                                                                            </label>
+                                                                         <input type="checkbox" name="currency" id="portal" ng-model="port">
+                                                                                <label for="portal">Other</label>
+                                                                                
+                                                                                <label for="usePortal"></label>
+                                                                                <input type="text" id="usePortal" class="form-control" ng-model="" ng-show=""/>
+                                                                            
+                                                                              
+                                                              </div>
+                                                          </div>
+                                                          <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6" style="width:100px;">
+                                                                  <label class="login2 ">Any Other</label>S
+                                                              </div>
+                                                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" >
+                                                                      <input type="text" class="form-control" placeholder="Any Other Language"/>
+                                                                  </div>
+                                                            -->
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro">Role</label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                <input type="text" class="form-control" placeholder="Role" ng-model="addRegionManagerdata.user_type"/>
+                                                                 
+                                                        </div>    
+                                                        </div>
+                                                    </div> -->
+                                                 
+                                             <!---Personal Details-->
+
+                                              <!---KYC Document-->
+                                            <!-- <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:200px;">
+                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">KYC Document Upload
+                                                        
+                                                        </label>
+                                                        
+                                                    </div>
+                                                    <hr style="width:78%;">
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Aadhar Card</label>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                        <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                            <div class="input append-small-btn">
+                                                                <div class="file-button">
+                                                                    Upload
+                                                                    <input type="file" >
+                                                                </div>
+                                                                <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;">PAN Card</label>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                        <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                            <div class="input append-small-btn">
+                                                                <div class="file-button">
+                                                                    Upload
+                                                                    <input type="file" >
+                                                                </div>
+                                                                <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Driving Licence</label>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                        <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                            <div class="input append-small-btn">
+                                                                <div class="file-button">
+                                                                    Upload
+                                                                    <input type="file" >
+                                                                </div>
+                                                                <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Voter ID</label>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                        <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                            <div class="input append-small-btn">
+                                                                <div class="file-button">
+                                                                    Upload
+                                                                    <input type="file" >
+                                                                </div>
+                                                                <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!-- <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                        <label class="login2 pull-right pull-right-pro" style="font-size:15px;">Passport</label>
+                                                    </div>
+                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                        <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                            <div class="input append-small-btn">
+                                                                <div class="file-button">
+                                                                    Upload
+                                                                    <input type="file" >
+                                                                </div>
+                                                                <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <!---KYC Document-->
+
+                                            <!---Educational Qualication-->
+                                                   <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:200px;">
+                                                                <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">Educational Qualication</label>
+                                                            </div>
+                                                          <hr style="width:78%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro"></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" value="Degree/Diploma" readonly/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" Value="Year of Passing" readonly/>
+                                                            </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" Value="University" readonly/>
+                                                            </div> 
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro"></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education1degree"/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education1year"/>
+                                                            </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education1Uni"/>
+                                                            </div> 
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro"></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education2degree"/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education2year"/>
+                                                            </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education2Uni"/>
+                                                            </div> 
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro"></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education3degree"/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education3year"/>
+                                                            </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" ng-model="education3Uni"/>
+                                                            </div> 
+                                                          
+                                                        </div>
+                                                    </div>
+                                                      <!---Educational Qualication-->
+                                                      
+                                                    <!---Settings-->
+                                                    <!-- <div class="form-group-inner">
+                                                        <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:100px;">
+                                                                        <label class="login2" style="font-size:15px;color:#ff470d;">Settings
+                                                                                                                    
+                                                                        </label>
+                                                                                                                    
+                                                                </div>
+                                                                 <hr style="width:86.85%;">
+                                                        </div>
+                                                    </div> -->
+                                                                                                        <!-- <div class="form-group-inner">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                        <label class="login2 pull-right pull-right-pro">User Name</label>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                    <input type="text" class="form-control"/>
+                                                                                                                                </div>
+                                                                                                                </div>
+                                                                                                            </div> -->
+                                                                                                                <!-- <div class="form-group-inner">
+                                                                                                                        <div class="row">
+                                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                                                                                <label class="login2 pull-right pull-right-pro">Password</label>
+                                                                                                                            </div>
+                                                                                                                            
+                                                                                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                                                                                            <input type="password" class="form-control"/>
+                                                                                                                                        </div>
+                                                                                                                                        
+                                                                                                                        </div>
+                                                                                                                    </div> -->
+                                                                                                                    <!---Settings-->
+                                                                                                               
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  
+                        <ul class="list-inline pull-right" >
+                           <li>
+                             <a ng-href="/manager/regionManagerDetail/:rm_id" ng-click="updateRegionManager(regionvalue1.rm_id);"><button 
+                                ng-disabled = "form.name1.$error.required || form.phoneNo.$error.required ||form.email.$error.pattern||form.name1.$error.pattern||form.name1.$error.minlength||form.name1.$error.maxlength||form.phoneNo.$error.minlength||form.phoneNo.$error.pattern"                                                                                     "
+                                type="submit" class="btn btn-primary next-step" >Update</button></a>
+                           </li>
+                          <li>
+                            <a  style="color:black;" ng-href="/manager/regionManagerDetail/:rm_id" ><button class="btn btn-default prev-step" type="submit">Cancel</button></a>
+                          </li>
+                         
+                        </ul>
+                      </div>
+                      
+                      
+                      
+                    </div>
+                 
+                <!--Form-->
+          
+          
+              </div>
+            </div>
+          </div>
+          
+</div>

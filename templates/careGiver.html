@@ -1,0 +1,251 @@
+<!--Customer-->
+<div class="all-content-wrapper">
+  <div class="data-table-area mg-tb-15">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="sparkline13-list">
+                          <div class="sparkline13-hd">
+                              <div class="main-sparkline13-hd">
+                                    <h5>Customer >> <span class="table-project-n">Customer</span></h5>
+                                  
+                                    <!-- <div class="columns columns-right btn-group pull-right">
+                                        <button class="btn btn-default" type="button" name="toggle" aria-label="toggle" title="Toggle"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i></button><div class="keep-open btn-group" title="Columns">
+                                        <button type="button" aria-label="columns" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li role="menuitem">
+                                                <label>
+                                                    <input type="checkbox" data-field="id" value="1" checked="checked">
+                                                     ID
+                                                 </label>
+                                             </li>
+                                             <li role="menuitem"><label>
+                                                 <input type="checkbox" data-field="name" value="2" checked="checked"> Product Title</label>
+                                             </li>
+                                             <li role="menuitem">
+                                                 <label>
+                                                     <input type="checkbox" data-field="company" value="3" checked="checked"> Stock</label>
+                                             </li>
+                                             <li role="menuitem">
+                                                 <label><input type="checkbox" data-field="price" value="4" checked="checked"> Price</label>
+                                             </li><li role="menuitem">
+                                                 <label><input type="checkbox" data-field="date" value="5" checked="checked"> Date</label>
+                                             </li>
+                                             <li role="menuitem">
+                                                 <label><input type="checkbox" data-field="task" value="6" checked="checked"> Status</label>
+                                             </li>
+                                             <li role="menuitem">
+                                                 <label><input type="checkbox" data-field="email" value="7" checked="checked"> Total Sales</label>
+                                             </li>
+                                             <li role="menuitem"><label><input type="checkbox" data-field="action" value="8" checked="checked"> Action</label>
+                                             </li>
+                                         </ul>
+                                     </div>
+                                     <div class="export btn-group">
+                                         <button class="btn btn-default dropdown-toggle" aria-label="export type" title="Export data" data-toggle="dropdown" type="button" aria-expanded="false">
+                                             <i class="glyphicon glyphicon-export icon-share"></i> <span class="caret"></span>
+                                         </button>
+                                         <ul class="dropdown-menu" role="menu">
+                                             <li role="menuitem" data-type="json">
+                                                 <a href="javascript:void(0)">JSON</a></li><li role="menuitem" data-type="xml">
+                                                     <a href="javascript:void(0)">XML</a></li><li role="menuitem" data-type="csv">
+                                                         <a href="javascript:void(0)">CSV</a></li><li role="menuitem" data-type="txt">
+                                                             <a href="javascript:void(0)">TXT</a></li><li role="menuitem" data-type="sql">
+                                                                 <a href="javascript:void(0)">SQL</a></li><li role="menuitem" data-type="excel">
+                                                                     <a href="javascript:void(0)">MS-Excel</a>
+                                                                 </li>
+                                                             </ul>
+                                                         </div>
+                                                     </div> -->
+                           
+                                                     <!-- <div class="col-xs-3 pull-right"> -->
+                                                      <!-- <label for="search">Search:</label> -->
+                                                      <!-- <input ng-model="q" id="search" class="form-control" placeholder="Search"> -->
+                                                    <!-- </div> -->
+                                                    <div class="col-xs-3 pull-right">
+                                                      <!-- <label for="search">items per page:</label> -->
+                                                      <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+                                                    </div>
+                                <br>
+                                <br>
+                              </div>
+                          </div>
+                          <div class="sparkline13-graph">
+                              <div class="datatable-dashv1-list custom-datatable-overright">     
+                                  <br>
+                                  <div class="container-fluid" ng-init="custmerDetails();" >
+                                        
+                                    <table id="customerTable"  class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                           
+                                      <thead>
+                                        <tr>
+                                         
+                                          <th class="th-sm"><center>Cust_Code</center>
+                                          </th>
+                                          <th class="th-sm"><center>Customer</center>
+                                          </th>
+                                          <th class="th-sm" ><center>Care_Mgr</center>
+                                          </th>
+                                          <th class="th-sm" ><center>Nurse<br>(Morning)</center>
+                                          </th>
+                                          <th class="th-sm" ><center>Nurse<br>(Evening)</center>
+                                          </th>
+                                          <th class="th-sm"><center>Nurse<br>(Night)</center>
+                                          </th>
+                                          <th class="th-sm"><center>Attendant<br>(Morning)</center>
+                                          </th>
+                                          <th class="th-sm" ><center>Attendant<br>(Evening)</center>
+                                          </th>
+                                          <th class="th-sm"><center>Attendant<br>(Night)</center>
+                                          </th> 
+                                          <th class="th-sm"><center>History</center>
+                                          </th> 
+                                        </tr>
+                                      </thead>
+                                            <tbody>
+                                              
+                                             
+                                              <tr dir-paginate="Cust in Cust_ID | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+                                                   
+                                                    <td><center>{{ Cust }}</center></td>
+                                                    <!-- <td><center>{{ meal.dish }}</center></td> -->
+                                                    
+                                              </tr>
+                                            
+                                             
+                                            </tbody>
+                                            <tfoot>
+                                              <tr>
+                                                   
+                                                <th><center>Cust_Code</center>
+                                                </th>
+                                                <th><center>Customer</center>
+                                                </th>
+                                                <th><center>Care_Mgr</center>
+                                                </th>
+                                                <th><center>Nurse<br>(Morning)</center>
+                                                </th>
+                                                <th><center>Nurse<br>(Evening)</center>
+                                                </th>
+                                                <th><center>Nurse<br>(Night)</center>
+                                                </th>
+                                                <th><center>Attendant<br>(Morning)</center>
+                                                </th>
+                                                <th><center>Attendant<br>(Evening)</center>
+                                                </th>
+                                                <th><center>Attendant<br>(Night)</center>
+                                                </th>
+                                                <th><center>History</center>
+                                                </th> 
+                                              </tr>
+                                            </tfoot>
+
+                                          </table>
+
+                                          <div class="row">
+                                              <h4>Total count : 
+                                             
+      <div ng-init="test();" class="other-controller pull-right">
+          <!-- <small>this is in "OtherController"</small> -->
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true" style="font-size:13px;" on-page-change="pageChangeHandler(newPageNumber)">
+
+            <ul class="pagination" ng-if="1 < pages.length || !autoHide">
+                <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
+                    <a href="" ng-click="setCurrent(1)">&laquo;</a>
+                </li>
+                <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }">
+                    <a href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+                </li>
+                <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+                    <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+                </li>
+            
+                <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">
+                    <a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+                </li>
+                <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+                    <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+                </li>
+            </ul>
+            
+          </dir-pagination-controls>
+          </div>
+        </div>
+                                              </h4>
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+<!--Customer-->
+<script>
+function sortTable(n) {
+var table,
+rows,
+switching,
+i,
+x,
+y,
+shouldSwitch,
+dir,
+switchcount = 0;
+table = document.getElementById("customerTable");
+switching = true;
+//Set the sorting direction to ascending:
+dir = "asc";
+/*Make a loop that will continue until
+no switching has been done:*/
+while (switching) {
+//start by saying: no switching is done:
+switching = false;
+rows = table.getElementsByTagName("TR");
+/*Loop through all table rows (except the
+first, which contains table headers):*/
+for (i = 1; i < rows.length - 1; i++) { //Change i=0 if you have the header th a separate table.
+//start by saying there should be no switching:
+shouldSwitch = false;
+/*Get the two elements you want to compare,
+one from current row and one from the next:*/
+x = rows[i].getElementsByTagName("TD")[n];
+y = rows[i + 1].getElementsByTagName("TD")[n];
+/*check if the two rows should switch place,
+based on the direction, asc or desc:*/
+if (dir == "asc") {
+  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+    //if so, mark as a switch and break the loop:
+    shouldSwitch = true;
+    break;
+  }
+} else if (dir == "desc") {
+  if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+    //if so, mark as a switch and break the loop:
+    shouldSwitch = true;
+    break;
+  }
+}
+}
+if (shouldSwitch) {
+/*If a switch has been marked, make the switch
+and mark that a switch has been done:*/
+rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+switching = true;
+//Each time a switch is done, increase this count by 1:
+switchcount++;
+} else {
+/*If no switching has been done AND the direction is "asc",
+set the direction to "desc" and run the while loop again.*/
+if (switchcount == 0 && dir == "asc") {
+  dir = "desc";
+  switching = true;
+}
+}
+}
+}
+
+</script>

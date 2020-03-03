@@ -1,0 +1,222 @@
+<!----Assign Duty----->
+<div class="all-content-wrapper">
+    
+    <div class="data-table-area mg-tb-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <!----Breadcrumb----->
+                                <h5><span class="table-project-n">Assign Duty >></span></h5>
+                                <!----Breadcrumb----->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                     
+                                            <!--All Table Data-->
+                                            <!-- <div id="caremanager" class="tab-pane in active custon-tab-style1" > -->
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="sparkline13-list">
+                                                            <div class="sparkline13-hd">
+                                                                <div class="main-sparkline13-hd">
+                                                                  
+                                                                      <div class="columns columns-right btn-group pull-right">
+                                                                      
+                                                                                       </div>
+                                                                        <!--Search-->
+                                                                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right search">
+                                                                           <input class="form-control" type="text" placeholder="Search" ng-model="caManager">
+                                                                       </div>
+                                                                       <!--Search-->
+                                                                   <br><br>
+                                                                </div>
+                                                            </div>
+                                                             <!---Add Assign duty Modal-->
+                                            <div id="assignDutyCareManager" ng-init="getCareManagerData();" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-close-area modal-close-df">
+                                                                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="modal-login-form-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="basic-login-inner modal-basic-inner">
+                                                                                                              
+                                                                                <form name="form">
+                                                                                   
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                        <label class="login2">Community</label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                    <input type="text" class="form-control" ng-model="communityName" readonly/>
+                                                                                                                     
+                                                                                                                 <!-- <select ng-model="addRegion" class="form-control"  ng-options="CareManager.comm_name for CareManager in careManagerDetails" >
+                                                                                                                    <option value="" >Select Community</option>   
+                                                                                                                    
+                                                                                                               </select> -->
+                                                                                                                </div>
+                                                                                                               
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Care Manager</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <input type="text" class="form-control" ng-model="careManagerName" readonly/>
+                                                                                                                        <!-- <select ng-model="addRegiond" class="form-control"  ng-options="CareManager.crm_name for CareManager in careManagerDetails" >
+                                                                                                                                <option value="" >Select Care Manager</option>   
+                                                                                                                                
+                                                                                                                           </select> -->
+                                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                
+                                                                                                        <div class="form-group-inner" ng-init="custmerDetails();" ng-class="{'has-error':form.cust.$invalid && !form.cust.$pristine}">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                        <label class="login2">Customer</label>
+                                                                                                                    </div>
+                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                                                                            
+                                                                                                                                <!-- <select ng-model="assigncmanagerduty.CustomerId" class="form-control"  ng-options="customerNamedata.cust_name for customerNamedata in getCustomerValue track by customerNamedata.cust_id" >
+                                                                                                                                <option value="" >Select Customer</option>   
+                                                                                                                                
+                                                                                                                           </select> -->
+                                                                                                                           <select ng-model="assigncmanagerduty" class="form-control"  ng-options="customerNamedata.cust_name for customerNamedata in customerDetails" name="cust" required >
+                                                                                                                                <option value="" >Select Customer</option>   
+                                                                                                                                
+                                                                                                                           </select>
+                                                                                                                               <!-- {{region}} -->
+                                                                                                                                
+                                                                                                                    </div> 
+                                                                                                                    <div ng-show="form.cust.$invalid">
+                                                                                                                        <p ng-show="form.cust.$error.required">Customer is required</p>
+                                                                                                                    </div>           
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            
+                                                                                    <div class="login-btn-inner">
+                                                                                       
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                                <div class="login-horizental">
+                                                                                                    <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                                                                    <a class="btn btn-primary next-step" ng-click="assignDuty();" ng-disabled ="form.cust.$error.required">Assign Duty</a>
+                                                                                                    <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                                                                    <a class="btn btn-default prev-step" style="color:black;" ng-click="clearassignDuty();">Clear</a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <!---Add Assign duty Modal-->
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">     
+                                                                    <br>
+                                                                   <div class="container-fluid" style="overflow-x:auto;"> 
+                                                                      
+                                                                        <table id="customerTable" ng-init="getCareManagerData();" class="table table-bordered table-sm" ng-init="getAlldata();" cellspacing="0" width="100%">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                    
+                                                                                    <th class="th-sm" ><center>Care Manager</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Community</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>No of Cust</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>Assign Duty</center>
+                                                                                    </th>
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                     <!-- <tr>
+                                                        
+                                                                                        <td><center>5987</center></td>
+                                                                                        <td><center>Tiger Nixon</center></td>
+                                                                                        <td><center>789456123</center></td>
+                                                                                        <td>
+                                                                                        <center>
+                                                                                            <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                    <button type="button"><a style="color:black;" href="/assignDuty/#caremanager" data-toggle="modal" data-target="#assignDuty">Assign Duty</a></button>  
+                                                                                            </div>
+                                                                                        </center> 
+                                                                                    </td>
+                                                                                    </tr>    -->
+                                                                                    <tr ng-repeat="CareManager in careManagerDetails | filter:caManager">
+                                                                                            <!-- <td>{{CareManager.emp_code}}</td> -->
+                                                                                            <td><center>{{CareManager.crm_name}}</center></td>
+                                                                                            <td><center>{{CareManager.comm_name}}</center></td>
+                                                                                            <td><center>{{CareManager.COUNT}}</center></td>
+                                                                                            <td>
+                                                                                                    <center>
+                                                                                                        <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                                <button type="button"><a style="color:black;" href="#{{CareManager.crm_id}}" data-toggle="modal" data-target="#assignDutyCareManager" ng-click="assigndutydata(CareManager.crm_id);getCustomerData(CareManager.comm_id);" >Assign</a></button>  
+                                                                                                        </div>
+                                                                                                    </center> 
+                                                                                                </td>
+                                                                                        </tr>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                  <tr>
+                                                                                    <th><center>Care Manager</center>
+                                                                                    </th>
+                                                                                    <th><center>Community</center>
+                                                                                    </th>
+                                                                                    <th><center>No of Cust</center>
+                                                                                    </th>
+                                                                                    <th><center>Assign Duty</center>
+                                                                                    </th>
+                                                                                    
+                                                                                  </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <!-- </div> -->
+                                            <!--All Table Data-->
+                                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----Zone----->

@@ -1,0 +1,175 @@
+<!--Customer-->
+<div class="all-content-wrapper">
+    <div class="data-table-area mg-tb-15">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sparkline13-list">
+                            <div class="sparkline13-hd">
+                                <div class="main-sparkline13-hd">
+                                      <h5><span class="table-project-n">Customer >></span></h5>
+                                    
+                                      <!-- <div class="columns columns-right btn-group pull-right">
+                                          <button class="btn btn-default" type="button" name="toggle" aria-label="toggle" title="Toggle"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i></button><div class="keep-open btn-group" title="Columns">
+                                          <button type="button" aria-label="columns" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button>
+                                          <ul class="dropdown-menu" role="menu">
+                                              <li role="menuitem">
+                                                  <label>
+                                                      <input type="checkbox" data-field="id" value="1" checked="checked">
+                                                       ID
+                                                   </label>
+                                               </li>
+                                               <li role="menuitem"><label>
+                                                   <input type="checkbox" data-field="name" value="2" checked="checked"> Product Title</label>
+                                               </li>
+                                               <li role="menuitem">
+                                                   <label>
+                                                       <input type="checkbox" data-field="company" value="3" checked="checked"> Stock</label>
+                                               </li>
+                                               <li role="menuitem">
+                                                   <label><input type="checkbox" data-field="price" value="4" checked="checked"> Price</label>
+                                               </li><li role="menuitem">
+                                                   <label><input type="checkbox" data-field="date" value="5" checked="checked"> Date</label>
+                                               </li>
+                                               <li role="menuitem">
+                                                   <label><input type="checkbox" data-field="task" value="6" checked="checked"> Status</label>
+                                               </li>
+                                               <li role="menuitem">
+                                                   <label><input type="checkbox" data-field="email" value="7" checked="checked"> Total Sales</label>
+                                               </li>
+                                               <li role="menuitem"><label><input type="checkbox" data-field="action" value="8" checked="checked"> Action</label>
+                                               </li>
+                                           </ul>
+                                       </div>
+                                       <div class="export btn-group">
+                                           <button class="btn btn-default dropdown-toggle" aria-label="export type" title="Export data" data-toggle="dropdown" type="button" aria-expanded="false">
+                                               <i class="glyphicon glyphicon-export icon-share"></i> <span class="caret"></span>
+                                           </button>
+                                           <ul class="dropdown-menu" role="menu">
+                                               <li role="menuitem" data-type="json">
+                                                   <a href="javascript:void(0)">JSON</a></li><li role="menuitem" data-type="xml">
+                                                       <a href="javascript:void(0)">XML</a></li><li role="menuitem" data-type="csv">
+                                                           <a href="javascript:void(0)">CSV</a></li><li role="menuitem" data-type="txt">
+                                                               <a href="javascript:void(0)">TXT</a></li><li role="menuitem" data-type="sql">
+                                                                   <a href="javascript:void(0)">SQL</a></li><li role="menuitem" data-type="excel">
+                                                                       <a href="javascript:void(0)">MS-Excel</a>
+                                                                   </li>
+                                                               </ul>
+                                                           </div>
+                                                       </div> -->
+                                                       <div class="row">
+                                                           <br>
+                                                          <div class="col-xs-7 col-sm-3 col-lg-3 pull-right">
+                                                              <!-- <label for="search">Search:</label> -->
+                                                              <input ng-model="query" id="search" class="form-control" placeholder="Search By Customer Name/Mobile No.">
+                                                              <!-- <input ng-model="query"> -->
+                                                            </div>
+                                                            <div class="col-xs-2 col-sm-2 col-lg-1">
+                                                                    <ul class="list-inline">
+                                                                      
+                                                                            
+                                                                            <li>
+                                                                                    <a href="/customer/addCustomer" class="btn btn-primary next-step" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Customer</a>
+                                                                                </li>
+                                                                           
+                                                                            
+                                                                          </ul>  
+                                                            </div>
+                                                       </div>
+                                                       
+                                  
+                                  <br>
+                                </div>
+                            </div>
+                            <div class="sparkline13-graph">
+                                <div class="datatable-dashv1-list custom-datatable-overright">  
+                                       
+                                    <br>
+                                    <div class="container-fluid" ng-init="custmerDetails();" style="overflow-x:auto;">
+                                          
+                                      <table id="customerTable"  class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                             
+                                        <thead>
+                                          <tr>
+                                           
+                                            <th class="th-sm"><center>Cust Code</center>
+                                            </th>
+                                            <th class="th-sm"><center>Name</center>
+                                            </th>
+                                            <th class="th-sm" ><center>Mobile</center>
+                                            </th>
+                                            <th class="th-sm" ><center>Address</center>
+                                            </th>
+                                            <th class="th-sm" ><center>Status</center>
+                                            </th>
+                                            <th class="th-sm"><center>EMRG Name</center>
+                                            </th>
+                                            <th class="th-sm"><center>EMRG Mobile</center>
+                                            </th>
+                                            <!-- <th class="th-sm" ><center>Details</center>
+                                            </th> -->
+                                            <!-- <th class="th-sm" style="color:lightgrey;"><center>Record</center>
+                                            </th> 
+                                            <th class="th-sm" style="color:lightgrey;"><center>Service Log</center>
+                                            </th>  -->
+                                          </tr>
+                                        </thead>
+                                              <tbody>
+                                                
+                                                
+                                              <tr ng-repeat="customer in customerDetails | filter: search ">
+                                                  <td>{{customer.cust_code}}</td>
+                                                  <td>{{customer.cust_name}}</td>
+                                                  <td>{{customer.cust_mob}}</td>
+                                                  <td>{{customer.cust_address}}</td>
+                                                  <td>{{customer.user_status}}</td>
+                                                  <td>{{customer.pri_emg_name}}</td>
+                                                  <td>{{customer.pri_emg_mob}}</td>
+                                                  <!-- <td>{{customer.cust_code}}</td> -->
+                                                  <!-- <td><a ng-href="/customer/customerDetail/{{customer.cust_id}}"><center><button type="button" value="{{customer.cust_id}}" ng-click="customerId(customer.cust_id);customerIdValue(customer.cust_id)">Details</button></center></a></td> -->
+                                                  <!-- <td><a href="/customer/customerRecord" ><center><button type="button">Record</button></center></a></td>
+                                                  <td><a href="" ><center><button type="button">Service Log</button></center></a></td>
+                                              -->
+                                              </tr>
+                                               
+                                              </tbody>
+                                              <tfoot>
+                                                <tr>
+                                                     
+                                                  <th><center>Cust Code</center>
+                                                  </th>
+                                                  <th><center>Name</center>
+                                                  </th>
+                                                  <th><center>Mobile</center>
+                                                  </th>
+                                                  <th><center>Address</center>
+                                                  </th>
+                                                  <th><center>Status</center>
+                                                  </th>
+                                                  <th><center>EMRG Name</center>
+                                                  </th>
+                                                  <th><center>EMRG Mobile</center>
+                                                  </th>
+                                                  <!-- <th><center>Details</center>
+                                                  </th> -->
+                                                  <!-- <th style="color:lightgrey;"><center>Record</center>
+                                                  </th>
+                                                  <th style="color:lightgrey;"><center>Service Log</center>
+                                                  </th>  -->
+                                                </tr>
+                                              </tfoot>
+  
+                                            </table>
+  
+                                           
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+  <!--Customer-->
+  

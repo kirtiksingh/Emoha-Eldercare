@@ -1,0 +1,392 @@
+<div class="all-content-wrapper">
+    <div class="container-fluid">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form name="form">
+                    <div class="tab-content">
+                      <div class="tab-pane fade in active" role="tabpanel">    
+                          <br>
+                          <h5><a ng-href="/customer/" style="color:grey;">Customer >></a><span class="table-project-n" >Add Customer</span></h5>
+                      
+                        <div class="sparkline12-graph">
+                          <div class="basic-login-form-ad">  
+                              <div class="row">    
+                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <div class="all-form-element-inner">  
+                                        
+                                                <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="width:150px;">
+                                                                <label class="login2" style="font-size:15px;color:#ff470d;">Personal Details</label>
+                                                            </div>
+                                                          <hr style="width:82%;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                    <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                                </div>
+                                                                
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                <input type="text" name="name1" class="form-control" ng-model="user_name" ng-pattern="/^[a-zA-Z\s]*$/" required />
+                                                                                
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                        <span ng-show="form.name1.$error.required && form.name1.$touched" class="help-block" style="font-size: 13px">name is required.</span>
+                                                                        <span ng-show="form.name1.$error.pattern" class="help-block" style="font-size: 13px">Only alphabets please.</span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner" >
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                    <label class="login2 pull-right pull-right-pro">Cust Code</label>
+                                                                </div>
+                                                                
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                <input type="text" class="form-control" ng-model="cust_code"
+                                                                                 />
+                                                                        </div>
+                                                                       
+                                                            </div>
+                                                        </div>
+                                              <!-- <div class="form-group-inner">
+                                                  <div class="row">
+                                                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                          <label class="login2 pull-right pull-right-pro">Profile Picture</label>
+                                                      </div>
+                                                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                          <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                                              <div class="input append-small-btn">
+                                                                  <div class="file-button">
+                                                                      Upload
+                                                                      <input type="file" >
+                                                                  </div>
+                                                                  <input type="text" id="append-small-btn" placeholder="no file selected">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div> -->
+                                              
+                                                <div class="form-group-inner" >
+                                                        <div class="row">
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                <label class="login2 pull-right pull-right-pro">Mobile No.*</label>
+                                                            </div>
+                                                            
+                                                            <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                    <input type="text" class="form-control" value="+91" readonly />
+                                                                </div>
+                                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                        <input type="text" name="mobileNo" class="form-control" placeholder="Enter Your mobile number" ng-model="mobile_number" required ng-minlength="10" maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/" />
+                                                                        
+                                                                </div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><span ng-show="form.mobileNo.$error.required && form.mobileNo.$touched" class="help-block" style="font-size: 13px">Mobile Number is required.</span>
+                                                                    <span ng-show="form.mobileNo.$error.minlength" class="help-block" style="font-size: 13px">Enter a valid mobile number</span>
+                                                                    <span ng-show="form.mobileNo.$error.maxlength" class="help-block" style="font-size: 13px">Enter a valid mobile number</span>
+                                                                    <span ng-show="form.mobileNo.$error.pattern" class="help-block" style="font-size: 13px">Enter Only Number</span>
+                                                                   </div>
+                                                        </div>
+                                                    </div>
+                                                  
+                                                        <div class="form-group-inner" >
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                        <label class="login2 pull-right pull-right-pro">Email-ID</label>
+                                                                    </div>
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                <input type="email" name="email" class="form-control" placeholder="Enter your Email Address" ng-model="user_email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required />
+                                                                                
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                <span ng-show="form.email.$error.required && form.email.$touched" class="help-block" style="font-size: 13px">Email is required.</span>
+
+                                                                                <span ng-show="form.email.$error.pattern" class="help-block" style="font-size: 13px">Enter a valid email </span>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="form-group-inner" ng-class="{'has-error':form.Package.$invalid && !form.Package.$pristine}">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                            <label class="login2 pull-right pull-right-pro">Package</label>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                           
+                                                                                <select ng-model="selectedgender"  class="form-control" ng-options="gender.name for gender in gender" name="Package" required >
+                                                                                    </select>
+                                                                    </div>
+                                                                           <div ng-show="form.Package.$invalid">
+                                                                                <p ng-show="form.Package.$error.required" class="help-block"> Package is required</p>
+                                                                           </div>    
+                                                                    </div>
+                                                                </div> -->
+                                              <div class="form-group-inner" >
+                                                  <div class="row">
+                                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                          <label class="login2 pull-right pull-right-pro">Address</label>
+                                                      </div>
+                                                          <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                              <!-- <input type="text" class="form-control" placeholder="Address1"/> -->
+                                                              <textarea class="form-control" type="text" placeholder="Address1" ng-model="cust_address" 
+                                                               ></textarea>
+                                                      
+                                                          </div>
+                                                          
+                                                          
+                                                  </div>
+                                              </div>
+                                              <div class="form-group-inner">
+                                                  <div class="row">
+                                                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                          <!-- <label class="login2 pull-right pull-right-pro">Address*</label> -->
+                                                      </div>
+                                                      <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                            <textarea class="form-control" type="text" placeholder="Address1" ng-model="addCareManagerdata.crm_address1"></textarea>
+                                                              <!-- <input type="text" class="form-control" placeholder="Address2"/> -->
+                                                          </div>
+                                                  </div>
+                                              </div>
+                                            
+                                              <div class="form-group-inner" ng-init="getCommunityData();" >
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                        <label class="login2 pull-right pull-right-pro">Community Zone *</label>
+                                                    </div>
+                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                        <!-- <div class="form-select-list">
+                                                                <select class="form-control custom-select-value" name="account">
+                                                                        <option>Responder</option>
+                                                                        <option>Paramedic</option>
+                                                                        <option>Physiotherapist</option>
+                                                                       
+                                                                    </select>
+                                                            </div> -->
+                                                            <select ng-model="addCareManagerdata.communitydataId"  class="form-control" ng-options="getCommunity.comm_name for getCommunity in getCommunityManagerdata"  name="commu" required >
+                                                                <option value="">Select Community</option>
+                                                            </select>
+                                                </div> 
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" ><span ng-show="form.commu.$error.required && form.commu.$touched" class="help-block" style="font-size: 13px">Community is required.</span>
+                                                    </div>
+                                                      
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                        <label class="login2 pull-right pull-right-pro">Alert Mobile No.*</label>
+                                                    </div>
+                                                    
+                                                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                            <input type="text" class="form-control" value="+91" readonly/>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                <input type="text" name="altNumber" class="form-control" placeholder="Enter Your mobile number" ng-model="alert_mob" required ng-minlength="6" maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/"/>
+                                                               
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                <span ng-show="form.altNumber.$error.minlength" class="help-block" style="font-size: 13px">Enter minimum 6-Digits Alert number</span>
+                                                                <span ng-show="form.altNumber.$error.maxlength" class="help-block" style="font-size: 13px">Enter maximum 10-Digit Alert mobile number</span>
+                                                                <span ng-show="form.altNumber.$error.pattern" class="help-block" style="font-size: 13px">Enter Only Number</span>
+                                                                </div>
+                                                           
+                                                </div>
+                                            </div>
+                                                   <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:230px;">
+                                                                <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">Primary Emergency Contact</label>
+                                                            </div>
+                                                          <hr style="width:75%;">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                    <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                                </div>
+                                                                
+                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                <input type="text" name="pName" class="form-control" ng-model="pri_emg_name" ng-pattern="/^[a-zA-Z\s]*$/" required/>
+                                                                                
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                            <p ng-show="form.pName.$error.required && form.pName.$touched" class="help-block" style="font-size: 13px">name is required.</p>
+                                                                                <p ng-show="form.pName.$error.pattern" class="help-block" style="font-size: 13px">Only alphabets please.</p>
+                                                                        </div>
+                                                                        
+                                                                      
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner" >
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                        <label class="login2 pull-right pull-right-pro">Mobile No.*</label>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                            <input type="text" class="form-control" value="+91" readonly/>
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                                <input name="mobileNo2" type="text" class="form-control" placeholder="123456789" ng-model="pri_emg_mob" required ng-minlength="10" maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/"/>
+                                                                                
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                            <p ng-show ="form.mobileNo2.$error.required && form.mobileNo2.$touched" class="help-block" style="font-size: 13px">Mobile Number is required.</p>
+                                                                            <p ng-show ="form.mobileNo2.$error.minlength" class="help-block" style="font-size: 13px">Enter a 10-Digit valid mobile number</p>
+                                                                            <p ng-show ="form.mobileNo2.$error.maxlength" class="help-block" style="font-size: 13px">Enter a 10-Digit valid mobile number</p>
+                                                                            <p ng-show ="form.mobileNo2.$error.pattern" class="help-block" style="font-size: 13px">Enter Only Number</p>
+                                                                            </div>
+                                                                        
+                                                                           
+                                                                </div>
+                                                            </div>
+                                                            <!-- <div class="form-group-inner" ng-class="{'has-error':form.Eavail.$invaldi && !form.Eavail.$pristine}">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                            <label class="login2 pull-right pull-right-pro">Availability*</label>
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                
+                                                                                    <select ng-model="selectedgender"  class="form-control" ng-options="gender.name for gender in gender"  name="Eavail" required >
+                                                                                        </select>
+                                                                        </div> 
+                                                                        <div ng-if="form.Eavail.$touched">
+                                                                                <p ng-if="form.Eavail.$error.required"  class="help-block" >Relationship is required</p>
+                                                                            </div>
+                                                                    </div>
+                                                                </div> -->
+
+                                                                <!-- <div class="form-group-inner" ng-class="{'has-error':form.Erelation.$invalid && !form.Erelation.$pristine}">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                <label class="login2 pull-right pull-right-pro">Relationship*</label>
+                                                                            </div>
+                                                                            
+                                                                                    <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                            <input type="text" class="form-control" ng-model="rtr" name="Erelation" required/>
+                                                                                    </div>
+                                                                                    <div ng-if="form.Erelation.$touched">
+                                                                                        <p ng-if="form.Erelation.$error.required"  class="help-block" >Relationship is required</p>
+                                                                                    </div>
+                                                                        </div>
+                                                                    </div> -->
+                                                    <!-- <div class="form-group-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:120px;">
+                                                                    <label class="login2 pull-right pull-right-pro" style="font-size:15px;color:#ff470d;">Next Of Kin</label>
+                                                                </div>
+                                                              <hr style="width:85%;">
+                                                            </div>
+                                                        </div> -->
+                                                        <!-- <div class="form-group-inner" ng-class="{'has-error':form.kname.$invalid && !form.kname.$pristine}">
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                        <label class="login2 pull-right pull-right-pro">Name*</label>
+                                                                    </div>
+                                                                    
+                                                                            <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                    <input type="text" class="form-control" ng-model="rtwe" name="kname" required 
+                                                                                    required  ng-minlength=3 ng-maxlength=30 ng-pattern="/^[a-zA-Z\s]*$/"/>
+                                                                           </div>
+                                                                           <div ng-show="form.kname.$dirty & form.kname.$invalid">
+                                                                                <p ng-show="form.kname.$error.pattern" class="help-block">Only alphabets </p>
+                                                                            <p ng-show="form.kname.$error.minlength" class="help-block">Your name must be greater than 3 characters.</p>
+                                                                            <p ng-show="form.kname.$error.maxlength" class="help-block">Your name must be less than 50 characters.</p>
+                                                                            
+                                                                    </div>
+                                                                    <div ng-show="form.kname.$touched">
+                                                                        <p ng-show="form.kname.$error.required" class="help-block">Your name is required.</p>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div> -->
+                                                            <!-- <div class="form-group-inner"  ng-class="{'has-error':form.kmob.$invalid && !form.kmob.$pristine}">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                            <label class="login2 pull-right pull-right-pro">Mobile No.*</label>
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4" style="width:105px;">
+                                                                                <input type="text" class="form-control" value="+91" readonly/>
+                                                                            </div>
+                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+                                                                                    <input type="text" class="form-control" placeholder="123456789" ng-model="addCareManagerdata.crm_mob" name="kmob"
+                                                                                    required  ng-pattern="/^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3" minlength="10" maxlength="10"/>
+                                                                             </div>
+                                                                             <div ng-show="form.kmob.$invalid">
+                                                                                    <p ng-show="form.kmob.$error.minlength" class="help-block">your mobile number must have 10 digit</p>
+                                                                                    <p ng-show="form.kmob.$error.maxlength" class="help-block"></p>
+                                                                                    <p ng-show="form.kmob.$error.pattern" class="help-block">Only Number </p>
+                                                                            </div>
+                                                                            <div ng-show="form.kmob.$touched">
+                                                                                <p ng-show="form.kmob.$error.required" class="help-block">Your name is required.</p>
+            
+                                                                            </div>
+                                                                               
+                                                                    </div>
+                                                                </div> -->
+                                                                <!-- <div class="form-group-inner">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                <label class="login2 pull-right pull-right-pro">Availability*</label>
+                                                                            </div>
+                                                                            
+                                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                                                   
+                                                                                        <select ng-model="selectedgender"  class="form-control" ng-options="gender.name for gender in gender"  >
+                                                                                            </select>
+                                                                            </div>  
+                                                                        </div>
+                                                                    </div> -->
+                                                                    
+                                                                    <!-- <div class="form-group-inner" ng-class="{'has-error':form.krelation.$invalid && !form.krelation.$pristine}">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >
+                                                                                    <label class="login2 pull-right pull-right-pro">Relationship*</label>
+                                                                                </div>
+                                                                                
+                                                                                        <div class="col-lg-4 col-md-5 col-sm-4 col-xs-12">
+                                                                                                <input type="text" class="form-control" ng-model="ad" name="krelation" required/>
+                                                                                         </div>
+                                                                                         <div ng-show="form.krelation.$touched">
+                                                                                                <p sg-show="form.krelation.$error.required">Relationshipe is require</p>
+                                                                                         </div>
+                                                                            </div>
+                                                                        </div> -->
+                                        </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  
+                        
+                                <ul class="list-inline pull-right">
+                                        <li>
+                                            <a ><button class="btn btn-primary" ng-click="addCustomer();" type="submit"    ng-disabled="form.name1.$error.required ||form.name1.$error.pattern||form.mobileNo.$error.required ||form.mobileNo.$error.minlength||form.mobileNo.$error.maxlength||form.mobileNo.$error.pattern
+                                                ||form.email.$error.required||form.altNumber.$error.minlength||form.altNumber.$error.pattern||form.pName.$error.required ||form.pName.$error.pattern||form.mobileNo2.$error.required||form.mobileNo2.$error.minlength||form.mobileNo2.$error.pattern||form.commu.$error.required" >Add </button></a>
+                                         </li>
+                                         <li>
+                                            <a href="/customer/"><button class="btn btn-default prev-step" style="color:black;" >Cancel</button></a>
+                                          </li>
+                                    </ul>
+                                
+                                     
+                                    
+                      </div>
+                      
+                      
+                      
+                    </div>
+               </form>
+                
+          
+          
+              </div>
+            </div>
+          </div>
+</div>

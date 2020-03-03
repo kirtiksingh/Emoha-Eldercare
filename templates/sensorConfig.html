@@ -1,0 +1,926 @@
+<!----Emergency----->
+<div class="all-content-wrapper">
+    
+    <div class="data-table-area mg-tb-15" >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <!----Breadcrumb----->
+                                <h5><span class="table-project-n">Sensor Config >></span></h5>
+                                <!----Breadcrumb----->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="admintab-wrap mg-t-30">
+                                       
+                                        <!---Tabs Content-->
+                                        <div class="tab-content">
+                                            <!--All Table Data-->
+                                            <!-- <div id="NewEmergency" class="tab-pane in active custon-tab-style1" > -->
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="sparkline13-list">
+                                                            <div class="sparkline13-hd">
+                                                                <div class="main-sparkline13-hd">
+                                                                  
+                                                                    <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                        <ul class="list-inline">
+                                                                            <li></li>
+                                                                            <li>
+                                                                               <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:#ff470d;border-color:#ff470d;">
+                                                                                    <a class="btn btn-primary next-step" href="/sensorConfig/#NewEmergency" data-toggle="modal" data-target="#Assign" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Emergency Cases</a>
+                                                                                          
+                                                                                </div>
+                                                                            </li>
+                                                                          </ul>  
+                                                                    </div> -->
+                                                                    
+                                                                        <!--Search-->
+                                                                       <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " ng-init="custmerDetails();">
+                                                                          <select ng-model="customerId" class="form-control" ng-change="sensordata();"  ng-options="customerData.cust_name for customerData in customerDetails" >
+                                                                                <option value="" >Select Customer</option>                                
+                                                                         </select>
+                                                                       </div> -->
+                                                                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " ng-init="custmerDetails();">
+                                                                        <!-- <select ng-model="customerId" class="form-control" ng-change="sensordata();getRoomType();" ng-options="customerData.cust_name for customerData in customerDetails" >
+                                                                              <option value="" >Select Customer</option>                                
+                                                                       </select> -->
+                                                                       <input type="text" name="country" id="country" ng-model="customername" ng-keyup="complete(customername)" class="form-control" placeholder="Customer Name"/>
+                                                                       <ul class="list-group">
+                                                                           <li class="list-group-item" style="font-size: 13px;"ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata);" ng-show="customername">{{countrydata.cust_name}}</li>
+                                                                           <li ng-if="(totalcustomerData == '0')" class="list-group-item" style="font-size: 13px;" ng-show="customername">No Result Found</li>
+                                                                   
+                                                                        </ul>
+                                                                      
+                                                                     </div>
+                                                                     
+                                                                       <!--Search-->
+                                                                   <br style="clear:both;">
+                                                                </div>
+                                                            </div>
+                                            <!---Assign Sensor Modal-->
+                                            <div id="Assign" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-login-form-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="basic-login-inner modal-basic-inner">
+                                                                                                          
+                                                                            <form name="Sform">
+                                                                                <div class="form-group-inner" >
+                                                                                    <div class="row" ng-init="sensorValue();">
+                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                            <label class="login2">Customer Name</label>
+                                                                                        </div>
+                                                                                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 " >
+                                                                                                   <input type="text" class="form-control" ng-model="custnamevalue" readonly>
+                                                                                                 </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group-inner" ng-init="RoomType();">
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                            <label class="login2">Room Name</label>
+                                                                                        </div>
+                                                                                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 " >
+                                                                                                    <select ng-model="ValueData" class="form-control" ng-change="roomTypeId();" ng-options="roomTypeDataLogout.room_name for roomTypeDataLogout in roomTypeData" >
+                                                                                                          <option value="" >Select Room Name</option>                                
+                                                                                                   </select>
+                                                                                                  
+                                                                                                 </div>
+                                                                                                 <!-- {{ValueData.id}} -->
+                                                                                                 <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " >
+                                                                                                    <select ng-model="customerId" class="form-control" ng-change="sensordata();getRoomType();" ng-options="customerData.cust_name for customerData in customerDetails" >
+                                                                                                          <option value="" >Select Customer</option>                                
+                                                                                                   </select>
+                                                                                                 </div> -->
+                                                                                    </div>
+                                                                                </div>
+                                                                                    <!-- <div class="form-group-inner" >
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                    <label class="login2">Sensor No.</label>
+                                                                                                </div>
+                                                                                                
+                                                                                                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                                                                                                <input type="text" class="form-control" ng-model="addsesorconfig.sensor_no"  ng-keyup="checkSensorNo();"/>
+                                                                                                                
+                                                                                                        </div>
+                                                                                                        <span ng-if="message" style="font-size:12px;">{{message}}</span>
+                                                                                            </div>
+                                                                                        </div> -->
+                                                                                        <div class="form-group-inner" ng-class="{ 'has-error' : Sform.sncNumber.$invalid && !Sform.sncNumber.$pristine }" >
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                        <label class="login2">Sensor No.</label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                                                                                                    <input type="text" class="form-control" ng-model="addsesorconfig.sensor_no" name="sncNumber" ng-keyup="checkSensorNo();" required
+                                                                                                                    ng-pattern="/^[0-9]+$/" maxlength=2/>
+                                                                                                                    <!-- <select ng-model="emrgCaseData.customerId" class="form-control"  ng-options="customerData.cust_name for customerData in customerDataDetails" >
+                                                                                                                        <option value="" >Select Customer</option>   
+                                                                                                                        
+                                                                                                                   </select> -->
+                                                                                                            </div>
+                                                                                                            <div ng-show="Sform.sncNumber.$invalid">
+                                                                                                                <p ng-show="Sform.sncNumber.$error.pattern" class="help-block" style="font-size:12px;">Only number </p>
+                                                                                                                
+    
+                                                                                                            </div><span ng-if="message" style="font-size:12px;">{{message}}</span>
+                                                                                                           
+                                                                                                </div>
+                                                                                        </div> 
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                        <label class="login2">Alert Type</label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                                                                                                    <select ng-model="selectedalerttype" class="form-control" ng-options="alertTypedata.name for alertTypedata in alertType"  >
+                                                                                                                        </select>
+                                                                                                                </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Alert Message</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <input type="text" class="form-control" ng-model="addsesorconfig.alert_msg"/>
+                                                                                                            </div>
+                                                                                                    </div>
+                                                                                                </div> -->
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                <label class="login2">Sensor Type</label>
+                                                                                                            </div>
+                                                                                                            
+                                                                                                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                                                                                                        <select ng-model="selectedalertlocation" class="form-control" ng-options="alertlocationdata.name for alertlocationdata in alertlocation"  >
+                                                                                                                               
+                                                                                                                        </select>
+                                                                                                                      </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                  
+                                                                                <div class="login-btn-inner">
+                                                                                   
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <!-- <a><button ng-disabled="Sform.sncNumber.$invalid" type="submit" class="btn btn-primary next-step" ng-click="addSensorConfig();">Submit</button></a> -->
+                                                                                                <button type="submit" data-dismiss="modal" class="btn btn-primary" ng-disabled="Sform.sncNumber.$invalid"  ng-click="addSensorConfig();" >Submit</button>
+                                                                                                <button type="submit"  ng-click="clearSensorConfig();" class="btn btn-secondry">Clear</button>
+                                                                                        
+                                                                                                <!-- <a class="btn btn-default prev-step" style="color:black;" ng-click="clearSensorConfig();">Clear</a> -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!---Assign Sensor Modal -->
+                                              <br>
+                                              <!-- <div class="container-fluid" >
+                                                    <div>
+                                                       
+                                                        <input type="text" name="country" id="country" ng-model="customername" ng-keyup="complete(customername)" class="form-control" />
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item" ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata)">{{countrydata.cust_name}}</li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                                </div>  -->
+                                        <form name="form" >
+                                                <div class="form-group-inner" >
+                                                    <div class="row">
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6 " style="width:135px;">
+                                                            <label class="login2" >Name</label>
+                                                        </div>
+                                                        <div class="col-lg-10 col-md-2 col-sm-2 col-xs-6 " style="margin-top:4px;">
+                                                            <span style="font-size: 13px;">{{searchName}}</span>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group-inner" >
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6 " style="width:135px;">
+                                                                <label class="login2">Address</label>
+                                                            </div>
+                                                            <div class="col-lg-10 col-md-4 col-sm-2 col-xs-6 " style="margin-top:4px;">
+                                                                <span style="font-size: 13px">{{searchAddress}}</span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner" >
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 " style="width:135px;">
+                                                                    <label class="login2 ">Mobile No.</label>
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="margin-top:4px;">
+                                                                    <span style="font-size: 13px"> {{searchMobileNo}}</span>
+                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group-inner" >
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 " style="width:135px;">
+                                                                        <label class="login2  ">Alert Mobile No</label>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 " style="margin-top:4px;">
+                                                                            <span style="font-size: 13px">{{searchAlertNo | limitTo : -10}}</span>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                </form>
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">     
+                                                                   
+                                                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                        <ul class="list-inline">
+                                                                            <li></li>
+                                                                            <li>
+                                                                               <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:#ff470d;border-color:#ff470d;">
+                                                                                    <!-- <a class="btn btn-primary next-step" ng-if="(customername == '')" ng-disabled="isDisabled == true" href="/sensorConfig/#NewEmergency" data-toggle="modal" data-target="#Assign" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Sensor</a> -->
+                                                                                    <button type="submit" class="btn btn-primary next-step" data-toggle="modal" ng-disabled="isDisabled" data-target="#Assign" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true" ></i>&nbsp;Add Sensor</button>
+                                                                                       
+                                                                                </div>
+                                                                            </li>
+                                                                          </ul>  
+                                                                    </div>
+                                                                    <br>
+                                                                    <br>
+                                                                    <br>
+                                                                    <!-- <div class="container col-md-6">
+                                                                        <div ng-init="loadCountry()">
+                                                                            <h3 align="center">AngularJS Autocomplete Textbox</h3>
+                                                                            <label>Enter Country Name</label>
+                                                                            <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" />
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item" ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata)">{{countrydata}}</li>
+                                                                            </ul>
+                                                                            
+                                                                        </div>
+                                                                    </div> -->
+                                                                     <!-- <div class="container-fluid">
+                                                                        <div>
+                                                                            <h3 align="center">AngularJS Autocomplete Textbox</h3>
+                                                                            <label>Enter Country Name</label>
+                                                                            <input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" />
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item" ng-repeat="countrydata in filterCountry" ng-click="fillTextbox(countrydata)">{{countrydata}}</li>
+                                                                            </ul>
+                                                                            
+                                                                        </div>
+                                                                    </div>  -->
+                                                                   <div class="container-fluid" style="overflow-x:auto;" > 
+                                                                      
+                                                                        <table id="customerTable" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                    
+                                                                                    <th class="th-sm" ><center>Sensor No.</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Alert Type</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>Sensor Type</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>Room Type</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>Room Name</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>Remove</center>
+                                                                                    </th>
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody ng-if="roomTypeValue">
+                                                                                    <tr ng-repeat="Sensordata in getSensorConfigDataValue | filter:roomTypeValue" >    
+                                                                                        <td><center>{{Sensordata.sensor_no}}</center></td>
+                                                                                        <td><center>{{Sensordata.alert_type}}</center></td>
+                                                                                        <td><center>{{Sensordata.alert_msg}}</center></td>
+                                                                                        <td><center>{{Sensordata.alert_location}}</center></td>
+                                                                                        <td><center>{{Sensordata.room_name}}</center></td>
+                                                                                       
+                                                                                        <!-- <td><center>{{Sensordata.alert_location}}</center></td> -->
+                                                                                        <td><center><button type="button" ng-click="removesensorconfig(Sensordata.cust_id,Sensordata.sensor_no)">Remove</button></center></td>
+                                                                                      
+                                                                                      </tr>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                  <tr>
+                                                                                        <th><center>Sensor No.</center>
+                                                                                        </th>
+                                                                                        <th><center>Alert Type</center>
+                                                                                        </th>
+                                                                                        <th><center>Sensor Type</center>
+                                                                                        </th>
+                                                                                        <th><center>Room Type</center>
+                                                                                        </th>
+
+                                                                                        <th><center>Room Name</center>
+                                                                                        </th>
+                                                                                        <th class="th-sm"><center>Remove</center>
+                                                                                        </th>
+                                                                                  </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <!-- </div> -->
+                                            <!--All Table Data-->
+
+                                            <!--All Region Data-->
+
+                                            <!---Add Region Modal-->
+                                            <div id="AddRegion" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-close-area modal-close-df">
+                                                                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="modal-login-form-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="basic-login-inner modal-basic-inner">
+                                                                                                              
+                                                                                <form action="#">
+                                                                                   
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                        <label class="login2">Region Name*</label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                    <input type="text" class="form-control" ng-model="addRegion.region_name"/>
+                                                                                                                </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Region Location*</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <input type="text" class="form-control" ng-model="addRegion.region_location"/>
+                                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                <label class="login2">Region Center Address</label>
+                                                                                                            </div>
+                                                                                                            
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                            <textarea class="form-control" type="text" ng-model="addRegion.region_address"></textarea>
+                                                                                                                        </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group-inner">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                    <label class="login2">Phone No*</label>
+                                                                                                                </div>
+                                                                                                                
+                                                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                <input type="text" class="form-control" ng-model="addRegion.region_phone"/>
+                                                                                                                            </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="form-group-inner">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                        <label class="login2">Region Manager</label>
+                                                                                                                    </div>
+                                                                                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                                                                            
+                                                                                                                                <select ng-model="addRegion.regiondata" class="form-control"  ng-options="regionManager.rm_name for regionManager in regionManagerDetails track by regionManager.rm_id" >
+                                                                                                                                        <option value="" >Select Manager</option>   
+                                                                                                                                        
+                                                                                                                                   </select>
+                                                                                                                                <!-- <select class="form-control" ng-model="addRegion.regiondata">Select Manager
+                                                                                                                                    <option ng-repeat="regionManager in regionManagerDetails" value="{{regionManager.rm_id}}">{{regionManager.rm_name}}</option>
+                                                                                                                                  
+                                                                                                                                </select> -->
+                                                                                                                               <!-- {{region}} -->
+                                                                                                                                
+                                                                                                                    </div>            
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="form-group-inner" >
+                                                                                                                    <div class="row">
+                                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                            <label class="login2">Mobile No.*</label>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                        <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                                                                <input type="text" class="form-control" placeholder="91"/>
+                                                                                                                            </div> -->
+                                                                                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                                                                                    <input type="text" class="form-control" ng-model="addRegion.regiondata.rm_mob" />
+                                                                                                                                    <!-- {{mobile.rm_id}} -->
+                                                                                                                                </div>
+                                                                                                                               
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                    <div class="login-btn-inner">
+                                                                                       
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                                <div class="login-horizental">
+                                                                                                    <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                                                                    <a class="btn btn-primary next-step" ng-click="addRegion();">Add</a>
+                                                                                                    <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                                                                    <a class="btn btn-default prev-step" style="color:black;">Cancel</a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <!---Add Region Modal-->
+
+                                            <!--Edit Region Modal-->
+                                                <div id="EditRegion" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-close-area modal-close-df">
+                                                                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="modal-login-form-inner">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                               
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="basic-login-inner modal-basic-inner">
+                                                                                                                  
+                                                                                    <form action="#">
+                                                                                       
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Region Name*</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <input type="text" class="form-control"/>
+                                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                <label class="login2">Region Location*</label>
+                                                                                                            </div>
+                                                                                                            
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                            <input type="text" class="form-control"/>
+                                                                                                                        </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group-inner">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                    <label class="login2">Region Center Address</label>
+                                                                                                                </div>
+                                                                                                                
+                                                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                <textarea class="form-control" type="text"></textarea>
+                                                                                                                            </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="form-group-inner">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                        <label class="login2">Phone No*</label>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                    <input type="text" class="form-control"/>
+                                                                                                                                </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="form-group-inner">
+                                                                                                                    <div class="row">
+                                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                            <label class="login2">Region Manager</label>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                                                                                <div class="form-select-list">
+                                                                                                                                        <select class="form-control custom-select-value" name="account">
+                                                                                                                                                <option>Ankita</option>
+                                                                                                                                                <option>Rahul</option>
+                                                                                                                                                <option>Roshni</option>
+                                                                                                                                                <option>Deepali</option>
+                                                                                                                                            </select>
+                                                                                                                                    </div>
+                                                                                                                        </div>            
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="form-group-inner">
+                                                                                                                        <div class="row">
+                                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                                <label class="login2">Mobile No.*</label>
+                                                                                                                            </div>
+                                                                                                                            
+                                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                                                                    <input type="text" class="form-control" placeholder="91"/>
+                                                                                                                                </div>
+                                                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                                                                                        <input type="text" class="form-control" placeholder="123456789"/>
+                                                                                                                                    </div>
+                                                                                                                                   
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                        <div class="login-btn-inner">
+                                                                                           
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                                    <div class="login-horizental">
+                                                                                                        <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                                                                        <a class="btn btn-primary next-step">Save</a>
+                                                                                                        <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                                                                        <a class="btn btn-default prev-step" style="color:black;">Cancel</a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            <!--Edit Region Modal-->
+                                            <div id="EmergencyLog" class="tab-pane custon-tab-style1">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="sparkline13-list">
+                                                            <div class="sparkline13-hd">
+                                                                <div class="main-sparkline13-hd">
+                                                                        <!-- <div class="columns columns-right btn-group pull-right"> -->
+                                                                                <!-- <button class="btn btn-default" type="button" name="paginationSwitch" aria-label="pagination Switch" title="Hide/Show pagination"><i class="glyphicon glyphicon-collapse-down icon-chevron-down"></i></button> -->
+                                                                                <!-- <button class="btn btn-default" type="button" name="refresh" aria-label="refresh" title="Refresh"><i class="glyphicon glyphicon-refresh icon-refresh"></i></button> -->
+                                                                                <!-- <button class="btn btn-default" type="button" name="toggle" aria-label="toggle" title="Toggle"><i class="glyphicon glyphicon-list-alt icon-list-alt"></i></button><div class="keep-open btn-group" title="Columns"> -->
+                                                                                <!-- <button type="button" aria-label="columns" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="glyphicon glyphicon-th icon-th"></i> <span class="caret"></span></button> -->
+                                                                                <!-- <ul class="dropdown-menu" role="menu">
+                                                                                    <li role="menuitem">
+                                                                                        <label>
+                                                                                            <input type="checkbox" data-field="id" value="1" checked="checked">
+                                                                                             ID
+                                                                                         </label>
+                                                                                     </li>
+                                                                                     <li role="menuitem"><label>
+                                                                                         <input type="checkbox" data-field="name" value="2" checked="checked"> Product Title</label>
+                                                                                     </li>
+                                                                                     <li role="menuitem">
+                                                                                         <label>
+                                                                                             <input type="checkbox" data-field="company" value="3" checked="checked"> Stock</label>
+                                                                                     </li>
+                                                                                     <li role="menuitem">
+                                                                                         <label><input type="checkbox" data-field="price" value="4" checked="checked"> Price</label>
+                                                                                     </li><li role="menuitem">
+                                                                                         <label><input type="checkbox" data-field="date" value="5" checked="checked"> Date</label>
+                                                                                     </li>
+                                                                                     <li role="menuitem">
+                                                                                         <label><input type="checkbox" data-field="task" value="6" checked="checked"> Status</label>
+                                                                                     </li>
+                                                                                     <li role="menuitem">
+                                                                                         <label><input type="checkbox" data-field="email" value="7" checked="checked"> Total Sales</label>
+                                                                                     </li>
+                                                                                     <li role="menuitem"><label><input type="checkbox" data-field="action" value="8" checked="checked"> Action</label>
+                                                                                     </li>
+                                                                                 </ul> -->
+                                                                             <!-- </div> -->
+                                                                             <!-- <div class="export btn-group">
+                                                                                 <button class="btn btn-default dropdown-toggle" aria-label="export type" title="Export data" data-toggle="dropdown" type="button" aria-expanded="false">
+                                                                                     <i class="glyphicon glyphicon-export icon-share"></i> <span class="caret"></span>
+                                                                                 </button>
+                                                                                 <ul class="dropdown-menu" role="menu">
+                                                                                     <li role="menuitem" data-type="json">
+                                                                                         <a href="javascript:void(0)">JSON</a></li><li role="menuitem" data-type="xml">
+                                                                                             <a href="javascript:void(0)">XML</a></li><li role="menuitem" data-type="csv">
+                                                                                                 <a href="javascript:void(0)">CSV</a></li><li role="menuitem" data-type="txt">
+                                                                                                     <a href="javascript:void(0)">TXT</a></li><li role="menuitem" data-type="sql">
+                                                                                                         <a href="javascript:void(0)">SQL</a></li><li role="menuitem" data-type="excel">
+                                                                                                             <a href="javascript:void(0)">MS-Excel</a>
+                                                                                                         </li>
+                                                                                                     </ul>
+                                                                                                 </div> -->
+                                                                                             <!-- </div> -->
+                                                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right search">
+                                                                                                    <input class="form-control" type="text" placeholder="Search">
+                                                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                    <div class="row">
+                                                                            <ul class="list-inline">
+                                                                                    <li></li>
+                                                                                    <li>
+                                                                                       <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:#ff470d;border-color:#ff470d;">
+                                                                                            <a class="btn btn-primary next-step" href="/zone#Region" data-toggle="modal" data-target="#AddRegion" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Region</a>
+                                                                                       
+                                                                                        </div>
+                                                                                    </li>
+                                                                                  </ul>     
+                                                                    </div>
+                                                                    <br>
+                                                                   <div class="container-fluid"> 
+                                                                        <table id="customerTable" class="table table-bordered table-sm" ng-init="getRegionData();" cellspacing="0" width="100%">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                    <th class="th-sm" onclick="sortTable(0)"><center>Region</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Location</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Address</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" onclick="sortTable(1)"><center>Region Manager</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm"><center>Phone no.</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Action</center>
+                                                                                    </th>
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                  <tr ng-repeat="getregiondata in getregionManagerdata | filter:q">    
+                                                                                    <td><center>{{getregiondata.region_name}}</center></td>
+                                                                                    <td><center>{{getregiondata.region_location}}</center></td>
+                                                                                    <td><center>{{getregiondata.region_address}}</center></td>
+                                                                                    <td><center>{{getregiondata.rm_name}}</center></td>
+                                                                                    <td><center>{{getregiondata.region_phone}}</center></td> 
+                                                                                    <td>
+                                                                                        <center>
+                                                                                            <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                    <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                            </div>
+                                                                                        </center>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                                 
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                  <tr>
+                                                                                    <th><center>Region</center>
+                                                                                    </th>
+                                                                                    <th><center>Location</center>
+                                                                                    </th>
+                                                                                    <th><center>Address</center>
+                                                                                    </th>
+                                                                                    <th><center>Region Manager</center>
+                                                                                    </th>
+                                                                                    <th><center>Phone No.</center>
+                                                                                    </th>
+                                                                                    <th><center>Action</center>
+                                                                                    </th>
+                                                                                  </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                              <div class="row">
+                                                                                <h4>Total count : 50
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                      </ul>
+                                                                                        </div>
+                                                                                </h4>
+                                                                              </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--All Region Data-->
+
+                                            <!--All Cluster Data-->
+
+                                            <!---Add Cluster Modal-->
+                                            <div id="AddCluster" ng-init="regionManager();clusterManager();" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-close-area modal-close-df">
+                                                                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="modal-login-form-inner">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                            <div class="basic-login-inner modal-basic-inner">
+                                                                                                              
+                                                                                    <form>
+                                                                                   
+                                                                                            <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Cluster Name*</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <input type="text" class="form-control" ng-model="addCluster.cluster_name"/>
+                                                                                                                    </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                <label class="login2">Region*</label>
+                                                                                                            </div>
+                                                                                                            
+                                                                                                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                                                                    <!-- <div class="form-select-list">
+                                                                                                                            <select class="form-control custom-select-value" name="account">
+                                                                                                                                    <option>Gurgaon</option>
+                                                                                                                                    <option>Delhi</option>
+                                                                                                                                    <option>Noida</option>
+                                                                                                                                    
+                                                                                                                                </select>
+                                                                                                                        </div> -->
+                                                                                                                        <select ng-model="addCluster.regiondata" class="form-control"  ng-options="regionManager.rm_name for regionManager in regionManagerDetails track by regionManager.rm_id" >
+                                                                                                                            <option value="" >Select Manager</option>   
+                                                                                                                            
+                                                                                                                       </select>
+
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                
+                                                                                                <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                <label class="login2">Cluster Location*</label>
+                                                                                                            </div>
+                                                                                                            
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                            <input type="text" class="form-control" ng-model="addCluster.cluster_location"/>
+                                                                                                                        </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="form-group-inner">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                    <label class="login2">Cluster Center Address</label>
+                                                                                                                </div>
+                                                                                                                
+                                                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                <textarea class="form-control" type="text" ng-model="addCluster.cluster_address"></textarea>
+                                                                                                                            </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="form-group-inner">
+                                                                                                                <div class="row">
+                                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                        <label class="login2">Phone No*</label>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                    <input type="text" class="form-control" ng-model="addCluster.cluster_phone"/>
+                                                                                                                                </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="form-group-inner">
+                                                                                                                    <div class="row">
+                                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                            <label class="login2">Cluster Manager</label>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                                                                                                                <!-- <div class="form-select-list">
+                                                                                                                                        <select class="form-control custom-select-value" name="account">
+                                                                                                                                                <option>Ankita</option>
+                                                                                                                                                <option>Rahul</option>
+                                                                                                                                                <option>Roshni</option>
+                                                                                                                                                <option>Deepali</option>
+                                                                                                                                            </select>
+                                                                                                                                    </div> -->
+                                                                                                                                    <select ng-model="addCluster.clusterdata" class="form-control"  ng-options="clusterManager.clm_name for clusterManager in clusterManagerDetails track by clusterManager.clm_id" >
+                                                                                                                                        <option value="" >Select Manager</option>   
+                                                                                                                                        
+                                                                                                                                   </select>
+                                                                                                                        </div>            
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="form-group-inner">
+                                                                                                                        <div class="row">
+                                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                                <label class="login2">Mobile No.*</label>
+                                                                                                                            </div>
+                                                                                                                            
+                                                                                                                            <!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:90px;">
+                                                                                                                                    <input type="text" class="form-control" placeholder="91"/>
+                                                                                                                                </div> -->
+                                                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                                                                                        <input type="text" class="form-control" placeholder="123456789" ng-model="addCluster.clusterdata.clm_mob"/>
+                                                                                                                                    </div>
+                                                                                                                                   
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                        <div class="login-btn-inner">
+                                                                                           
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                                    <div class="login-horizental">
+                                                                                                        <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
+                                                                                                        <a class="btn btn-primary next-step" ng-click="addCluster();">Add</a>
+                                                                                                        <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
+                                                                                                        <a class="btn btn-default prev-step" style="color:black;">Cancel</a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                        </div>
+                                        <!---Tabs Content-->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----Emergency----->

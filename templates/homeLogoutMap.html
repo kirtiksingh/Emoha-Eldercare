@@ -1,0 +1,408 @@
+<!----Emergency----->
+<div class="all-content-wrapper" ng-init="custmerDetails();">
+    
+    <div class="data-table-area mg-tb-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <!----Breadcrumb----->
+                                <h5><span class="table-project-n">Home Layout Map >></span></h5>
+                                <!----Breadcrumb----->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="admintab-wrap mg-t-30">
+                                       
+                                        <!---Tabs Content-->
+                                        <div class="tab-content">
+                                            <!--All Table Data-->
+                                            <!-- <div id="NewEmergency" class="tab-pane in active custon-tab-style1" > -->
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <!-- <div class="sparkline13-list"> -->
+                                                            <!-- <div class="sparkline13-hd"> -->
+                                                                <!-- <div class="main-sparkline13-hd"> -->
+                                                                  
+                                                                    <!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                        <ul class="list-inline">
+                                                                            <li></li>
+                                                                            <li>
+                                                                               <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:#ff470d;border-color:#ff470d;">
+                                                                                    <a class="btn btn-primary next-step" href="/sensorConfig/#NewEmergency" data-toggle="modal" data-target="#Assign" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Emergency Cases</a>
+                                                                                          
+                                                                                </div>
+                                                                            </li>
+                                                                          </ul>  
+                                                                    </div> -->
+                                                                    
+                                                                        <!--Search-->
+                                                                       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 " >
+                                                                          <select ng-model="customerId" class="form-control" ng-change="customerIdData();" ng-options="customerData.cust_name for customerData in customerDetails" >
+                                                                                <option value="" >Select Customer</option>                                
+                                                                         </select>
+                                                                       </div>
+                                                                       <!--Search-->
+                                                                   <br><br>
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                            <!---Add Room Modal-->
+                                            <div id="AddRoom" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog" ng-init="getHomeValue();">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                                <form name="formnm"> 
+                                                            <div class="modal-login-form-inner">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                                        <div class="form-group-inner" hidden>
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6 " style="width:130px;">
+                                                                                                    <label class="login2" >Name:{{custData}}</label>
+                                                                                                </div>
+                                                                                                <!-- <div class="col-lg-10 col-md-2 col-sm-2 col-xs-6 " style="margin-top:0px;">
+                                                                                                    <span style="font-size: 13px;">{{customerId.cust_name}}</span>
+                                                                                                    </div> -->
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                        <label class="login2">Room Type</label>
+                                                                                                    </div>
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                <select ng-model="selectedRoomType" class="form-control" ng-options="room.name for room in roomtype"  >
+                                                                                                                  
+                                                                                                                </select>
+                                                                                                                </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group-inner" ng-class="{ 'has-error' : formnm.Troom.$invalid && !formnm.Troom.$pristine }">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Room Name</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <input type="text" class="form-control" ng-model="addRoomValue.room_name" name="Troom" required
+                                                                                                                        />
+                                                                                                                </div>
+                                                         
+                                                                                                                <div ng-show="formnm.Troom.$touched">
+                                                                                                                        <p ng-show="formnm.Troom.$error.required" class="help-block">Your Room name is required.</p>
+                                                                                                                       
+                                                                                                                </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <!-- <div class="form-group-inner">
+                                                                                                        <div class="row">
+                                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                                <label class="login2">Alert Location</label>
+                                                                                                            </div>
+                                                                                                            
+                                                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                        <select ng-model="selectedalertlocation" class="form-control" ng-options="alertlocationdata.name for alertlocationdata in alertlocation"  >
+                                                                                                                        </select>
+                                                                                                                      </div>
+                                                                                                        </div>
+                                                                                                    </div> -->
+                                                                                                  
+                                                                                <div class="login-btn-inner">
+                                                                                   
+                                                                                    <div class="row">
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                            <div class="login-horizental">
+                                                                                                <!-- <a class="btn btn-primary next-step" ng-click="addRoom();">Add</a> -->
+                                                                                                <button type="button"  ng-disabled = "formnm.Troom.$error.required" ng-click="addRoom();" class="btn btn-primary" data-dismiss="modal">Add</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    <!-- </div> -->
+                                                </div>
+                                            </div>
+                                        <!---Add Room Modal -->
+                                        <div id="EditHomeLogoutMap" ng-init="getEditHomeMap();" class="modal modal-adminpro-general modal-zoomInDown fade" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-close-area modal-close-df">
+                                                        <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="modal-login-form-inner">
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                    <div class="basic-login-inner modal-basic-inner">
+                                                                                                      
+                                                                        <!-- <form action="#"> -->
+                                                                            <!-- <div class="form-group-inner" >
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                        <label class="login2">Customer Name</label>
+                                                                                    </div>
+                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 " ng-init="custmerDetails();">
+                                                                                                <select ng-model="customerId" class="form-control"  ng-options="customerData.cust_name for customerData in customerDetails" >
+                                                                                                      <option value="" >Select Customer</option>                                
+                                                                                               </select>
+                                                                                             </div>
+                                                                                </div>
+                                                                            </div> -->
+                                                                                <!-- <div class="form-group-inner" >
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                <label class="login2">Sensor No.</label>
+                                                                                            </div>
+                                                                                            
+                                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                            <input type="text" class="form-control" ng-model="addsesorconfig.sensor_no"/>
+                                                                                                            <!-- <select ng-model="emrgCaseData.customerId" class="form-control"  ng-options="customerData.cust_name for customerData in customerDataDetails" >
+                                                                                                                <option value="" >Select Customer</option>   
+                                                                                                                
+                                                                                                           </select> -->
+                                                                                                    </div>
+                                                                                                   
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group-inner" hidden>
+                                                                                        <div class="row">
+                                                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6 " style="width:130px;">
+                                                                                                <label class="login2" >Name:{{custiddata}}</label>
+                                                                                            </div>
+                                                                                            <!-- <div class="col-lg-10 col-md-2 col-sm-2 col-xs-6 " style="margin-top:0px;">
+                                                                                                <span style="font-size: 13px;">{{customerId.cust_name}}</span>
+                                                                                                </div> -->
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group-inner">
+                                                                                            <div class="row">
+                                                                                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                    <label class="login2">Room Type</label>
+                                                                                                </div>
+                                                                                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                            <!-- <select ng-model="selectedRoomType" class="form-control" ng-options="room.name for room in roomtype"  >
+                                                                                                              <option>{{homeValue.room_type}}</option>
+                                                                                                            </select> -->
+                                                                                                            <select ng-model="room_type"  class="form-control" >
+                                                                                                                <option>{{room_type}}</option>
+                                                                                                                <option>Bedroom</option>
+                                                                                                                <option>Drawing Room</option>
+                                                                                                                <option>Toilet</option>
+                                                                                                                <option>Kitchen</option>
+                                                                                                            </select>
+                                                                                                            </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group-inner">
+                                                                                                <div class="row">
+                                                                                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                        <label class="login2">Room Name</label>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                    <input type="text" class="form-control" ng-model="room_name"/>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- <div class="form-group-inner">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:130px;">
+                                                                                                            <label class="login2">Alert Location</label>
+                                                                                                        </div>
+                                                                                                        
+                                                                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                                                                                    <select ng-model="selectedalertlocation" class="form-control" ng-options="alertlocationdata.name for alertlocationdata in alertlocation"  >
+                                                                                                                    </select>
+                                                                                                                  </div>
+                                                                                                    </div>
+                                                                                                </div> -->
+                                                                                              
+                                                                            <div class="login-btn-inner">
+                                                                               
+                                                                                <div class="row">
+                                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+                                                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                                                        <div class="login-horizental">
+                                                                                                <a><button type="submit"  ng-click="savehomeMap();" ><span class="close" data-dismiss="modal" style="font-weight: 10;font-size: 18px;padding:5px;" >Save</span></button></a>
+                                                                                        
+                                                                                            <!-- <a ng-click="savehomeMap();"><span class="close" data-dismiss="modal" style="font-weight: 10;font-size: 18px;padding:5px;" >Save</span></a> -->
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        <!-- </form> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                              <br>
+
+                                        <form name="form" >
+                                                <div class="form-group-inner" >
+                                                    <div class="row">
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6 " style="width:135px;">
+                                                            <label class="login2" >Name</label>
+                                                        </div>
+                                                        <div class="col-lg-10 col-md-2 col-sm-2 col-xs-6 " style="margin-top:4px;">
+                                                            <span style="font-size: 13px;">{{customerId.cust_name}}</span>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group-inner" >
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-6 " style="width:135px;">
+                                                                <label class="login2">Address</label>
+                                                            </div>
+                                                            <div class="col-lg-10 col-md-4 col-sm-2 col-xs-6 " style="margin-top:4px;">
+                                                                <span style="font-size: 13px">{{customerId.cust_address}}</span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner" >
+                                                            <div class="row">
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 " style="width:135px;">
+                                                                    <label class="login2 ">Mobile No.</label>
+                                                                </div>
+                                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="margin-top:4px;">
+                                                                    <span style="font-size: 13px"> {{customerId.cust_mob}}</span>
+                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="form-group-inner" >
+                                                                <div class="row">
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 " style="width:135px;">
+                                                                        <label class="login2  ">Alert Mobile No</label>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 " style="margin-top:4px;">
+                                                                            <span style="font-size: 13px">{{customerId.alert_mob}}</span>
+                                                                        </div>
+                                                                </div>
+                                                            </div> -->
+                                                </form>
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">     
+                                                                   
+                                                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                        <ul class="list-inline" >
+                                                                            <li></li>
+                                                                            <li>
+                                                                               <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:#ff470d;border-color:#ff470d;">
+                                                                                    <!-- <a class="btn btn-primary next-step" href="#AddRoom" data-toggle="modal" data-target="#AddRoom" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true" ng-click="customerDataIdValue(customerId.cust_id);"></i>&nbsp;Add Room</a> -->
+                                                                                    <button ng-disabled="!customerId" style="background-color:#ff470d;border-color:#ff470d;" class="btn btn-primary next-step" data-toggle="modal" data-target="#AddRoom"  ng-click="customerDataIdValue(customerId.cust_id);" ><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Room</button>  
+                                                                                        
+                                                                                </div>
+                                                                                <!-- <button ng-hide="show" class="btn-on">
+                                                                                    <a style="background-color:#ff470d;border-color:#ff470d;" ng-disabled="!customerId" class="btn btn-primary next-step"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Room</a>  
+                                                                                   
+                                                                                  </button>
+                                                                                  <button ng-show="show" class="btn-off">
+                                                                                    <a style="background-color:#ff470d;border-color:#ff470d;" class="btn btn-primary next-step" data-toggle="modal" data-target="#AddRoom" ng-click="customerDataIdValue(customerId.cust_id);" ><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Room</a>  
+                                                                                  
+                                                                                  </button> -->
+                                                                                <!-- <td>
+                                                                                    <center>
+                                                                                        <div class="modal-bootstrap modal-login-form" style="padding:1px; background-color:#ff470d;border-color:#ff470d;">      
+                                                                                            <button type="button"><a style="color:black;" href="#{{emergency.emg_case_no}}" data-toggle="modal" data-target="#Assigndata" ng-click="assigndatavalue(emergency.emg_case_no);" >Assign</a></button>  
+                                                                                             
+                                                                                        </div>
+                                                                                    </center>
+                                                                                </td> -->
+                                                                            </li>
+                                                                          </ul>  
+                                                                    </div>
+                                                                    <br>
+                                                                    <br>
+                                                                    <br>
+                                                                   
+                                                                   <div class="container-fluid" style="overflow-x:auto;"> 
+                                                                      
+                                                                        <table id="customerTable" class="table table-bordered table-sm" cellspacing="0" width="100%" ng-init="gethomeLogoutMap();">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                    <th class="th-sm" ><center>Room Type</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Room Name</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Edit</center>
+                                                                                    </th>
+                                                                                    <th class="th-sm" ><center>Remove</center>
+                                                                                    </th>
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody ng-if="customerId.cust_id">
+                                                                                    <tr ng-repeat="getMapdata in gethomeLogoutMapData | filter:customerId.cust_id">    
+                                                                                        <td><center>{{getMapdata.room_type}}</center></td>
+                                                                                        <td><center>{{getMapdata.room_name}}</center></td>
+                                                                                        <td>
+                                                                                            <center>
+                                                                                                <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                        <button type="button"><a style="color:black;" data-toggle="modal" data-target="#EditHomeLogoutMap" ng-click="edithomeMap(getMapdata.id,getMapdata.cust_id,getMapdata.room_type,getMapdata.room_name);">Edit</a></button>  
+                                                                                                </div>
+                                                                                            </center>
+                                                                                        </td>
+                                                                                        <td><center><button type="button" value="{{getMapdata.cust_id}}" ng-click="removehomeMap(getMapdata.id,getMapdata.cust_id)">Remove</button></center></td>
+                                                                                      
+                                                                                      </tr>
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <th><center>Room Type</center>
+                                                                                        </th>
+                                                                                        <th><center>Room Name</center>
+                                                                                        </th>
+                                                                                        <th><center>Edit</center>
+                                                                                        </th>
+                                                                                        <th><center>Remove</center>
+                                                                                        </th>
+                                                                                      </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <!-- </div> -->
+                                           
+                                            
+                                        </div>
+                                        <!---Tabs Content-->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----Emergency----->
